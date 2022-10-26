@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 import { Ui_RatingProps } from './type'
 import React from 'react'
-import Ui_Functions from '../../_utils'
+import { Helper } from '@vermorxt/pandora_utils'
 
 const Ui_Rating: any = forwardRef<HTMLDivElement, Ui_RatingProps>(
   ({ onChange, className, name, style, color, halfSymbol, shape, disabled, defaultCheckedValue, ...rest }, ref) => {
@@ -44,7 +44,7 @@ const Ui_Rating: any = forwardRef<HTMLDivElement, Ui_RatingProps>(
                 type="radio"
                 name={name}
                 disabled={disabled}
-                className={Ui_Functions.Helper.isFloat(inputIndex) ? classNameStar1 : classNameStar2}
+                className={Helper.isFloat(inputIndex) ? classNameStar1 : classNameStar2}
                 defaultChecked={defaultCheckedValue === inputIndex}
                 onChange={onChange ? () => onChange({ value: inputIndex }) : () => null}
               />

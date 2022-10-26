@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/vermorxt"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006",
@@ -21,6 +21,8 @@
   "license": "MIT",
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@vermorxt/pandora_ui": "^0.0.1",
+    "@vermorxt/pandora_utils": "^0.0.2",
     "axios": "^1.1.3",
     "daisyui": "^2.28.0",
     "dayjs": "^1.11.5",

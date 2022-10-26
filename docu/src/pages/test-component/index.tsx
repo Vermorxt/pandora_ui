@@ -8,12 +8,12 @@ import {
   Ui_Card,
   Ui_Collapse,
   Ui_Countdown,
-  Ui_Functions,
   Ui_Kbd,
   Ui_Mask,
   Ui_MockupCode,
   Ui_Range,
 } from '@vermorxt/pandora_ui'
+import { Helper } from '@vermorxt/pandora_utils'
 
 const imgSrc = 'https://api.lorem.space/image/shoes?w=160&h=160'
 
@@ -37,7 +37,7 @@ const TestComponent = () => {
 
   useEffect(() => {
     ;(async () => {
-      await Ui_Functions.Helper.delay(2000)
+      await Helper.delay(2000)
 
       console.log('waited ...')
     })()

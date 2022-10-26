@@ -1,5 +1,5 @@
+import { Helper } from '@vermorxt/pandora_utils'
 import { AnyType } from '../../_types/AnyType'
-import { Helper } from '../../_utils/cms-utils'
 
 export interface GetClassNameAttributesProps {
   names: any

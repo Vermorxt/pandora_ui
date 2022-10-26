@@ -3406,7 +3406,25 @@
     "@typescript-eslint/types" "5.41.0"
     eslint-visitor-keys "^3.3.0"
 
-"@vermorxt/pandora_ui@0.0.1":
+"@vermorxt/pandora_ui@0.0.2":
+  version "0.0.2"
+  resolved "https://npm.pkg.github.com/download/@vermorxt/pandora_ui/0.0.2/d6834c21794c2da20cdc54111e8f0e1240ef7ff0#d6834c21794c2da20cdc54111e8f0e1240ef7ff0"
+  integrity sha512-JLmtRbIVz/YPZec5X+YGgS66fGsQ562MCWuPtV25G07ohORtErf5996vaC4aVQ3jMaSlfOzUZe/QVIzShZIhEQ==
+  dependencies:
+    "@heroicons/react" "^1.0.6"
+    "@vermorxt/pandora_ui" "^0.0.1"
+    "@vermorxt/pandora_utils" "^0.0.2"
+    axios "^1.1.3"
+    daisyui "^2.28.0"
+    dayjs "^1.11.5"
+    next "^12.3.1"
+    next-themes "^0.2.1"
+    react "^18.2.0"
+    react-dom "^18.2.0"
+    react-icons "^4.6.0"
+    tailwindcss "^3.1.8"
+
+"@vermorxt/pandora_ui@^0.0.1":
   version "0.0.1"
   resolved "https://npm.pkg.github.com/download/@vermorxt/pandora_ui/0.0.1/06d4704b5249dd66df7150c4c48d193e96d1a43a#06d4704b5249dd66df7150c4c48d193e96d1a43a"
   integrity sha512-FA9YXt9nsgJw7IwaF6dgxWvRFQ9YrknYskTb6JGhUGyKYHVLD5C66Xj37b1/VGPVIsjWHefvOc0bUCIpdxxizQ==
@@ -3421,6 +3439,13 @@
     react-dom "^18.2.0"
     react-icons "^4.6.0"
     tailwindcss "^3.1.8"
+
+"@vermorxt/pandora_utils@^0.0.2":
+  version "0.0.2"
+  resolved "https://npm.pkg.github.com/download/@vermorxt/pandora_utils/0.0.2/5f62e770fd7fcf91412be5b81e53f4796bba0f5b#5f62e770fd7fcf91412be5b81e53f4796bba0f5b"
+  integrity sha512-ojadcfx6ZcPsZYBvwzYmXEWNiKciK8usSB7dejJI731oNPohd46g0jQlUcE4tnaqP98Jungir6NHs58kbTuIpA==
+  dependencies:
+    dayjs "^1.11.5"
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"

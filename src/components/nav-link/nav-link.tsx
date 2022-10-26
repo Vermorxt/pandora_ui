@@ -3,8 +3,8 @@ import { DRAWER_ID_SIDEBAR } from '../../_constants/main'
 import { generateClassNames, getClassNamesFromAttributes } from '../_utils/css-class-generator'
 import { Ui_NavLinkProps } from './type'
 import React from 'react'
-import Ui_Functions from '../../_utils'
 import { useRouter } from 'next/router'
+import { Helper } from '@vermorxt/pandora_utils'
 
 const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
   (
@@ -56,7 +56,7 @@ const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
         console.log('NAV LINK click: ', router)
 
         void router?.replace(href).then(h => {
-          if (!skipScrollTop) Ui_Functions.Helper.scrollTop()
+          if (!skipScrollTop) Helper.scrollTop()
 
           const elem = document.getElementById(DRAWER_ID_SIDEBAR) as HTMLInputElement
 

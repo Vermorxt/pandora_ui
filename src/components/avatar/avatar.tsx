@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { Helper } from '@vermorxt/pandora_utils'
 import React, { FC, forwardRef } from 'react'
-import Ui_Functions from '../../_utils'
 import { DEFAULT_AVATAR } from '../../_constants/main'
 import { getUsedAttributes } from '../_utils/css-class-generator'
 import { Ui_AvatarProps } from './type'
@@ -15,11 +15,11 @@ const Ui_Avatar: any = forwardRef<HTMLDivElement, Ui_AvatarProps & { Group: FC }
 
     // NOTE: radius styles
     const usedRadius = getUsedAttributes(rest, { roundedXl, rounded2xl, rounded3xl, roundedLg, roundedFull })
-    const radiusStyle = usedRadius.map(s => Ui_Functions.Helper.splitCamelCaseMinus(s)).toString()
+    const radiusStyle = usedRadius.map(s => Helper.splitCamelCaseMinus(s)).toString()
 
     // NOTE: ring styles
     const usedRing = getUsedAttributes(rest, { ringPrimary, ringSecondary })
-    const ringStyle = usedRing.map(s => Ui_Functions.Helper.splitCamelCaseMinus(s)).toString()
+    const ringStyle = usedRing.map(s => Helper.splitCamelCaseMinus(s)).toString()
 
     const ringOffsetStyle = ringOffset ? `ring-offset-${ringOffset}` : ''
 
