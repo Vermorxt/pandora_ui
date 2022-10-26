@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_Countdown should match snapshot 1`] = `
+<div>
+  <span
+    class="countdown 
+      
+      "
+  >
+    <span>
+      --
+    </span>
+  </span>
+</div>
+`;

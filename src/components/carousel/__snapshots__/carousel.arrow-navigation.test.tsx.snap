@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_Carousel.ArrowNavigation should match snapshot 1`] = `
+<div>
+  <div
+    class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 "
+  >
+    <button
+      class="
+        btn 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        btn-circle
+        
+        
+        
+        
+        
+        
+        
+        
+        "
+      type="button"
+    >
+      ❮
+    </button>
+    <button
+      class="
+        btn 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        btn-circle
+        
+        
+        
+        
+        
+        
+        
+        
+        "
+      type="button"
+    >
+      ❯
+    </button>
+  </div>
+</div>
+`;

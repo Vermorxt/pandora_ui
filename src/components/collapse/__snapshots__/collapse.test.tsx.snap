@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_Collapse should match snapshot 1`] = `
+<div>
+  <div
+    class="collapse 
+      
+      
+      
+      
+      
+      
+      
+      
+      "
+    tabindex="0"
+  >
+    <input
+      class="peer"
+      style="min-height: 0;"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;

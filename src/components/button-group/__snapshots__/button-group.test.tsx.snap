@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_ButtonGroup should create snapshot 1`] = `
+<div>
+  <div
+    class="
+          btn-group  
+           
+        "
+  />
+</div>
+`;

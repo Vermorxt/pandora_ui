@@ -1,0 +1,29 @@
+{
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "anytype",
+    "artboard",
+    "Birthprep",
+    "chartdiv",
+    "childs",
+    "classname",
+    "daisyui",
+    "docu",
+    "formfield",
+    "pdfid",
+    "squircle",
+    "tailwindcss",
+    "tfood",
+    "vermorxt"
+  ],
+  "editor.tokenColorCustomizations": {
+    "comments": "",
+    "textMateRules": []
+  },
+  "json.maxItemsComputed": 50000,
+  "files.exclude": {
+    ".gitignore": true,
+    "next-i18next.config.js": false,
+    "node_modules": true
+  }
+}

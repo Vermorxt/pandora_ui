@@ -1,0 +1,81 @@
+.spinner {
+  // animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: 20px 0 10px -17px;
+  width: 35px;
+  height: 35px;
+}
+
+.large {
+  animation: rotate_large 2s linear infinite;
+  transform: scale(2);
+}
+
+.medium {
+  animation: rotate_medium 2s linear infinite;
+  transform: scale(1.5);
+}
+
+.small {
+  animation: rotate_small 2s linear infinite;
+  transform: scale(1);
+}
+
+.tiny {
+  animation: rotate_tiny 2s linear infinite;
+  transform: scale(0.5);
+}
+
+.path {
+  stroke: unquote('hsla(var(--s))');
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+@keyframes rotate_large {
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+@keyframes rotate_medium {
+  100% {
+    transform: rotate(360deg) scale(1.5);
+  }
+}
+
+@keyframes rotate_small {
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotate_tiny {
+  100% {
+    transform: rotate(360deg) scale(0.5);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}

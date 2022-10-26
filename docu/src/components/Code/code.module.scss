@@ -1,0 +1,24 @@
+.preview {
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.code {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.bg_dark {
+  --tab-bg: #191d24;
+  background-color: var(--tab-bg) !important;
+
+  > code {
+    background-color: transparent !important;
+  }
+}
+.bg_light {
+  --tab-bg: #fafafa;
+  background-color: var(--tab-bg) !important;
+}

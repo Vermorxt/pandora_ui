@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
+<div>
+  <div
+    class="
+      alert shadow-lg
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      test
+      "
+  >
+    <div />
+    <div
+      class="flex-none"
+    >
+      <button
+        class="
+        btn 
+        
+        
+        
+        
+        
+        
+        
+        btn-ghost
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        btn-sm
+        
+        
+        
+        
+        
+        "
+        type="button"
+      >
+        deny
+      </button>
+      <button
+        class="
+        btn 
+        btn-primary
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        btn-sm
+        
+        
+        
+        
+        
+        "
+        type="button"
+      >
+        ok
+      </button>
+    </div>
+  </div>
+</div>
+`;

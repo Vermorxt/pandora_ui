@@ -1,0 +1,80 @@
+@import './imports';
+
+[data-theme='light'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='emerald'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='corporate'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='retro'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='cyberpunk'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='valentine'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='garden'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='lofi'] input {
+  color: #1b1b1b;
+}
+
+[data-theme='autumn'] input {
+  color: #9e8c82;
+}
+
+.table :where(th, td) {
+  padding: 1rem 0.5rem;
+}
+
+.table-compact :where(th, td) {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 1000ms ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// NOTE: override browser autofill form input styles
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px inset unquote('hsl(var(--b1)') / unquote('var(--tw-bg-opacity))');
+}
+
+// TODO: exclude daisyui for preview docu code snippets
+.component-preview .preview {
+  background-image: unquote('radial-gradient(hsla(var(--bc) / 0.2) 0.5px, hsla(var(--b2) / 1) 0.5px)');
+}

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_Checkbox should match snapshot 1`] = `
+<div>
+  <input
+    class="
+      checkbox 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+      "
+    type="checkbox"
+  />
+</div>
+`;

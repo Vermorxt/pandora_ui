@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/[object Object] should create snapshot 1`] = `
+<div>
+  <label
+    class="swap   "
+  >
+    <input
+      aria-label="swap"
+      type="checkbox"
+    />
+    <div
+      class="swap-on "
+    />
+    <div
+      class="swap-off "
+    />
+  </label>
+</div>
+`;

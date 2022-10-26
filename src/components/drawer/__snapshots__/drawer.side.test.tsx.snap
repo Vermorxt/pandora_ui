@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/Ui_Drawer.Side should match snapshot 1`] = `
+<div>
+  <div
+    class="drawer-side "
+  >
+    <label
+      class="drawer-overlay z-10"
+    />
+    Title
+  </div>
+</div>
+`;

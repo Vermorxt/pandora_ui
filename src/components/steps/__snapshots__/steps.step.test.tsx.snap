@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@cms/core/[object Object] should create snapshot 1`] = `
+<div>
+  <ul
+    class="
+          steps
+          
+          
+          
+          
+          
+          
+        "
+  >
+    <li
+      class="step 
+            
+            
+          "
+      data-content="x"
+    >
+      Test
+    </li>
+  </ul>
+</div>
+`;
