@@ -1,2 +1,2 @@
-export { default } from './divider'
+export { default } from './Divider'
 export type { Ui_DividerProps } from './type'

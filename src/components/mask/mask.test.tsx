@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { SkipTests, testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_MaskProps } from './type'
-import Ui_Mask from './mask'
+import Ui_Mask from './Mask'
 import React from 'react'
 
 const componentName = Ui_Mask

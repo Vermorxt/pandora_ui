@@ -1,2 +1,2 @@
-export { default } from './modal'
+export { default } from './Modal'
 export type { Ui_ModalProps } from './type'

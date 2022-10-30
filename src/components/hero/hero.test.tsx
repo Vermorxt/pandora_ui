@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_HeroProps } from './type'
-import Ui_Hero from './hero'
+import Ui_Hero from './Hero'
 import React from 'react'
 
 const componentName = Ui_Hero

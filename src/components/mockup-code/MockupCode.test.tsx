@@ -2,24 +2,24 @@ import '@testing-library/jest-dom'
 import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
-import { Ui_MockupPhoneProps } from './type'
-import Ui_MockupPhone from './mockup-phone'
+import { Ui_MockupCodeProps } from './type'
+import Ui_MockupCode from './MockupCode'
 import React from 'react'
 
-const componentName = Ui_MockupPhone
-const componentSelector = 'mockup-phone'
+const componentName = Ui_MockupCode
+const componentSelector = 'mockup-code'
 const refType = HTMLDivElement
-const defaultProps: Ui_MockupPhoneProps = {}
+const defaultProps: Ui_MockupCodeProps = {}
 
 interface SpecialPropsMerged extends SpecialProps {
   className: string
-  prop?: Ui_MockupPhoneProps
+  prop?: Ui_MockupCodeProps
 }
 
 const component = (
-  <Ui_MockupPhone {...defaultProps} ref={null}>
+  <Ui_MockupCode {...defaultProps} ref={null}>
     Test
-  </Ui_MockupPhone>
+  </Ui_MockupCode>
 ) as unknown as FC<{}>
 
 const testName = `@cms/core/${componentName}`

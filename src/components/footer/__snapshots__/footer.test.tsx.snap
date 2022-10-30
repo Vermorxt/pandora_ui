@@ -13,48 +13,48 @@ exports[`@cms/core/({
   ...rest
 }) => {
   /* istanbul ignore next */
-  cov_62yuomkb0().f[5]++;
-  cov_62yuomkb0().s[33]++;
+  cov_1zagrirrfd().f[5]++;
+  cov_1zagrirrfd().s[33]++;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("footer", {
     className: \`
             footer \${className ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[16][0]++, className) :
+    (cov_1zagrirrfd().b[16][0]++, className) :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[16][1]++, "p-10")} 
+    (cov_1zagrirrfd().b[16][1]++, "p-10")} 
             \${shadow ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[17][0]++, \`shadow-\${typeof shadow === "boolean" ?
+    (cov_1zagrirrfd().b[17][0]++, \`shadow-\${typeof shadow === "boolean" ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[18][0]++, "xl") :
+    (cov_1zagrirrfd().b[18][0]++, "xl") :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[18][1]++, shadow)}\`) :
+    (cov_1zagrirrfd().b[18][1]++, shadow)}\`) :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[17][1]++, "")}
+    (cov_1zagrirrfd().b[17][1]++, "")}
             \${rounded ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[19][0]++, \`rounded-\${typeof rounded === "boolean" ?
+    (cov_1zagrirrfd().b[19][0]++, \`rounded-\${typeof rounded === "boolean" ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[20][0]++, "box") :
+    (cov_1zagrirrfd().b[20][0]++, "box") :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[20][1]++, rounded)}\`) :
+    (cov_1zagrirrfd().b[20][1]++, rounded)}\`) :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[19][1]++, "")}
+    (cov_1zagrirrfd().b[19][1]++, "")}
             \${bgColor ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[21][0]++, \`bg-\${bgColor} text-\${bgColor}-content\`) :
+    (cov_1zagrirrfd().b[21][0]++, \`bg-\${bgColor} text-\${bgColor}-content\`) :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[21][1]++, "bg-base-300")}
+    (cov_1zagrirrfd().b[21][1]++, "bg-base-300")}
             \${center ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[22][0]++, \`footer-center\`) :
+    (cov_1zagrirrfd().b[22][0]++, \`footer-center\`) :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[22][1]++, "")}
+    (cov_1zagrirrfd().b[22][1]++, "")}
             \${itemsCenter ?
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[23][0]++, \`items-center\`) :
+    (cov_1zagrirrfd().b[23][0]++, \`items-center\`) :
     /* istanbul ignore next */
-    (cov_62yuomkb0().b[23][1]++, "")}
+    (cov_1zagrirrfd().b[23][1]++, "")}
             \`,
     id: id,
     style: style,

@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_TooltipProps } from './type'
-import Ui_Tooltip from './tooltip'
+import Ui_Tooltip from './Tooltip'
 
 const componentName = Ui_Tooltip
 const selector = 'tooltip'

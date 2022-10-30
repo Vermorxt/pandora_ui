@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_DrawerProps } from './type'
-import { Ui_Drawer } from './drawer'
+import { Ui_Drawer } from './Drawer'
 import React from 'react'
 
 const defaultProps: Ui_DrawerProps = {}

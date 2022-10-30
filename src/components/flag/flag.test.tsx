@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_FlagProps } from './type'
-import Ui_Flag from './flag'
+import Ui_Flag from './Flag'
 import React from 'react'
 
 const defaultProps: Ui_FlagProps = {}

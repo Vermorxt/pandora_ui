@@ -5,7 +5,7 @@ import { checkAccessibility, itRendersChildren, itSupportsSystemProps } from '..
 import { itHasButtonAndCallbackFired } from '../../_tests-utils/it-has-button-and-callback-fired'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 import { Ui_AlertProps } from './type'
-import Ui_Alert from './alert'
+import Ui_Alert from './Alert'
 
 const defaultProps: Ui_AlertProps = {
   className: 'test',

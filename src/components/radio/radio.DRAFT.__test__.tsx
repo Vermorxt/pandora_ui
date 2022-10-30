@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { SkipTests, testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_RadioProps } from './type'
-import Ui_Radio from './radio'
+import Ui_Radio from './Radio'
 import React from 'react'
 
 const componentName = Ui_Radio

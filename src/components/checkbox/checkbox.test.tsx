@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_CheckboxProps } from './type'
-import Ui_Checkbox from './checkbox'
+import Ui_Checkbox from './Checkbox'
 import React from 'react'
 
 const defaultProps: Ui_CheckboxProps = {}

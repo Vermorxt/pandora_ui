@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { checkAccessibility, itRendersChildren, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_BreadcrumbsProps } from './type'
-import Ui_Breadcrumbs from './breadcrumbs'
+import Ui_Breadcrumbs from './Breadcrumbs'
 import React from 'react'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 

@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { checkAccessibility, itRendersChildren, itSupportsSystemProps } from '../../_tests-utils'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 import { Ui_BadgeProps } from './type'
-import Ui_Badge from './badge'
+import Ui_Badge from './Badge'
 import React from 'react'
 
 const defaultProps: Ui_BadgeProps = {}

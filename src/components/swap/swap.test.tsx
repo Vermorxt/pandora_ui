@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { SkipTests, testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_SwapProps } from './type'
-import Ui_Swap from './swap'
+import Ui_Swap from './Swap'
 import React from 'react'
 
 const componentName = Ui_Swap

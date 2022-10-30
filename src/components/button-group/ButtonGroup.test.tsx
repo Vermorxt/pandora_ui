@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { Ui_ButtonGroupProps } from './type'
 import React from 'react'
 import { checkAccessibility, itRendersChildren, itSupportsSystemProps } from '../../_tests-utils'
-import Ui_ButtonGroup from './button-group'
+import Ui_ButtonGroup from './ButtonGroup'
 
 const defaultProps: Ui_ButtonGroupProps = {}
 

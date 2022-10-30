@@ -4,7 +4,7 @@ import { SpecialProps } from '../../_tests-utils/it-supports-special-props'
 import { getTextClassString } from '../../_tests-utils/_utils/get-text-class-string'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_ButtonProps } from './type'
-import Ui_Button from './button'
+import Ui_Button from './Button'
 import React from 'react'
 
 const componentName = Ui_Button

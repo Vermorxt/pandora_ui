@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_DividerProps } from './type'
-import Ui_Divider from './divider'
+import Ui_Divider from './Divider'
 import React from 'react'
 
 const defaultProps: Ui_DividerProps = {}

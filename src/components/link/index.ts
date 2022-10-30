@@ -1,2 +1,2 @@
-export { default } from './link'
+export { default } from './Link'
 export type { Ui_LinkProps } from './type'

@@ -1,2 +1,2 @@
-export { default } from './carousel'
+export { default } from './Carousel'
 export type { Ui_CarouselProps } from './type'

@@ -1,2 +1,2 @@
-export { default } from './steps'
+export { default } from './Steps'
 export type { Ui_StepsProps } from './type'

@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_MockupWindowProps } from './type'
-import Ui_MockupWindow from './mockup-window'
+import Ui_MockupWindow from './MockupWindow'
 import React from 'react'
 
 const componentName = Ui_MockupWindow

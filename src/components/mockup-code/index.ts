@@ -1,2 +1,2 @@
-export { default } from './mockup-code'
+export { default } from './MockupCode'
 export type { Ui_MockupCodeProps } from './type'

@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_ProgressProps } from './type'
-import Ui_Progress from './progress'
+import Ui_Progress from './Progress'
 import React from 'react'
 
 const componentName = Ui_Progress

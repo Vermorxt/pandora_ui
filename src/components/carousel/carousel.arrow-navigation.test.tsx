@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_CarouselProps } from './type'
-import Ui_Carousel from './carousel'
+import Ui_Carousel from './Carousel'
 import React from 'react'
 
 const defaultProps: Ui_CarouselProps = {}

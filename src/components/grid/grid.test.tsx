@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom'
 import { FC } from 'react'
-import { Ui_GridProps } from './type'
-import Ui_Grid from './grid'
+import Ui_Grid from '.'
 import React from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
+import { Ui_GridProps } from './type'
 
 const componentName = Ui_Grid
 const selector = 'grid'

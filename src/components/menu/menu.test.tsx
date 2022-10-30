@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_MenuProps } from './type'
-import Ui_Menu from './menu'
+import Ui_Menu from './Menu'
 import React from 'react'
 
 const componentName = Ui_Menu

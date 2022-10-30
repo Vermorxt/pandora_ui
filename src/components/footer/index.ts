@@ -1,2 +1,2 @@
-export { default } from './footer'
+export { default } from './Footer'
 export type { Ui_FooterProps } from './type'

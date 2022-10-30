@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { FC } from 'react'
 import { Ui_FlexProps } from './type'
-import { Ui_Flex } from './flex'
+import { Ui_Flex } from './Flex'
 import React from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'

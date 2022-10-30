@@ -20,7 +20,7 @@ interface SetValues {
 }
 
 export const getTimeRemaining = (endTime: string) => {
-  const total = Date.parse(endTime?.toString()) - Date.parse(new Date() as unknown as string)
+  const total = Date.parse(endTime?.toString()) - Date.parse(new Date().toUTCString() as unknown as string)
 
   const seconds = Math.floor((total / 1000) % 60)
   const minutes = Math.floor((total / 1000 / 60) % 60)

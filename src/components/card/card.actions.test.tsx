@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_CardProps } from './type'
-import Ui_Card from './card'
+import Ui_Card from './Card'
 import React from 'react'
 const defaultProps: Ui_CardProps = {}
 

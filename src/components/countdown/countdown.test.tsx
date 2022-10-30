@@ -5,9 +5,11 @@ import { RefObject } from 'react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 import { ShowTimeValues, Ui_CountdownProps } from './type'
-import { getTimeRemaining, setCountDownValue } from './countdown'
-import Ui_Countdown from './countdown'
+import { getTimeRemaining, setCountDownValue } from './Countdown'
+import Ui_Countdown from './Countdown'
 import React from 'react'
+const utc = require('dayjs/plugin/utc')
+dayjs.extend(utc)
 
 const defaultProps: Ui_CountdownProps = {}
 
@@ -86,7 +88,7 @@ describe('@cms/core/Ui_Countdown', () => {
   })
   it('should calculate time values form future', () => {
     const addDays = 15
-    const addHours = 2
+    const addHours = 3
     const addMinutes = 4
     const addSeconds = 6
 
@@ -103,7 +105,7 @@ describe('@cms/core/Ui_Countdown', () => {
 
     expect(total).toBeGreaterThan(1200000000)
     expect(days).toBe(addDays)
-    expect(hours).toBe(addHours + 1)
+    expect(hours).toBe(addHours)
     expect(minutes).toBe(addMinutes)
     expect(seconds).toBe(addSeconds)
   })

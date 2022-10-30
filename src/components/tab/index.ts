@@ -1,2 +1,2 @@
-export { default } from './tabs'
+export { default } from './Tabs'
 export type { Ui_TabProps } from './type'

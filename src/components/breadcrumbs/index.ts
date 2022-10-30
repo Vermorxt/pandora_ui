@@ -1,2 +1,2 @@
-export { default } from './breadcrumbs'
+export { default } from './Breadcrumbs'
 export type { Ui_BreadcrumbsProps } from './type'

@@ -1,2 +1,2 @@
-export { default } from './card'
+export { default } from './Card'
 export type { Ui_CardProps } from './type'

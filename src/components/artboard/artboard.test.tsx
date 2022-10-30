@@ -4,7 +4,7 @@ import { checkAccessibility, itRendersChildren, itSupportsSystemProps } from '..
 import { Ui_ArtboardProps } from './type'
 import React from 'react'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
-import Ui_Artboard from './artboard'
+import Ui_Artboard from './Artboard'
 
 const defaultProps: Ui_ArtboardProps = {
   phone1: false,

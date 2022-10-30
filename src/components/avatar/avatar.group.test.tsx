@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { Ui_AvatarProps } from './type'
-import Ui_Avatar from './avatar'
+import Ui_Avatar from './Avatar'
 import React from 'react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 

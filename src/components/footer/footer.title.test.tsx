@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_FooterProps } from './type'
-import Ui_Footer from './footer'
+import Ui_Footer from './Footer'
 import React from 'react'
 
 const componentName = Ui_Footer.Title

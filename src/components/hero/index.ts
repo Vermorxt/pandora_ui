@@ -1,2 +1,2 @@
-export { default } from './hero'
+export { default } from './Hero'
 export type { Ui_HeroProps } from './type'

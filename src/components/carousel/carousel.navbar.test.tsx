@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 import { Ui_CarouselProps } from './type'
-import Ui_Carousel from './carousel'
+import Ui_Carousel from './Carousel'
 
 const defaultProps: Ui_CarouselProps = {}
 

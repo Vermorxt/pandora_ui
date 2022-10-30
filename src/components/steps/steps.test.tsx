@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_StepsProps } from './type'
-import Ui_Steps from './steps'
+import Ui_Steps from './Steps'
 
 const componentName = Ui_Steps
 const selector = 'steps'

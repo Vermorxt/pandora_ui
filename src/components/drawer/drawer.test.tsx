@@ -4,7 +4,7 @@ import React from 'react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
 import { Ui_DrawerProps } from './type'
-import { Ui_Drawer } from './drawer'
+import { Ui_Drawer } from './Drawer'
 
 const defaultProps: Ui_DrawerProps = {}
 

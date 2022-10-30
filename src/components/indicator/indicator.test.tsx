@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_IndicatorProps } from './type'
-import Ui_Indicator from './indicator'
+import Ui_Indicator from './Indicator'
 import React from 'react'
 
 const componentName = Ui_Indicator

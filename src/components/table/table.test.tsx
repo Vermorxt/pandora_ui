@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_TableProps } from './type'
-import Ui_Table from './table'
+import Ui_Table from './Table'
 import React from 'react'
 
 const componentName = Ui_Table

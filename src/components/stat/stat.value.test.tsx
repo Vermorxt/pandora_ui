@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { Ui_StatProps } from './type'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
-import Ui_Stat from './stat'
+import Ui_Stat from './Stat'
 import React from 'react'
 
 const componentName = Ui_Stat.Value

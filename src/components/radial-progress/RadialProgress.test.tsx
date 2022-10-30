@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_RadialProgressProps } from './type'
-import Ui_RadialProgress from './radial-progress'
+import Ui_RadialProgress from './RadialProgress'
 import React from 'react'
 
 const componentName = Ui_RadialProgress

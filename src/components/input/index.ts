@@ -1,2 +1,2 @@
-export { default } from './input'
+export { default } from './Input'
 export type { Ui_InputProps } from './type'

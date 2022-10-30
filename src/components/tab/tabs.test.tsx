@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_TabProps } from './type'
-import Ui_Tabs from './tabs'
+import Ui_Tabs from './Tabs'
 
 const componentName = Ui_Tabs
 const selector = 'tabs'

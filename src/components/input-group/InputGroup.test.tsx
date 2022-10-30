@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { SpecialProps } from '../../_tests-utils/it-should-have-class'
 import { testGenerator, TestGeneratorProps } from '../../_tests-utils/_utils/test-generator'
 import { Ui_InputGroupProps } from './type'
-import Ui_InputGroup from './input-group'
+import Ui_InputGroup from './InputGroup'
 import React from 'react'
 
 const componentName = Ui_InputGroup

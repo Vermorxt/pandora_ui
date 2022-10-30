@@ -1,2 +1,2 @@
-export { default } from './toggle'
+export { default } from './Toggle'
 export type { Ui_ToggleProps } from './type'
