@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
-import { Ui_Sizes } from './../_types/sizes/sizes'
+import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Ui_Sizes } from './../_types/sizes/sizes'
 
 export interface Ui_RadialProgress_variants {
   outline?: boolean
@@ -14,7 +14,7 @@ export interface Ui_RadialProgress_singleClass {
   noAnimation?: boolean
 }
 
-export interface Ui_RadialProgress_sizes extends Ui_Sizes {
+export interface Ui_RadialProgress_sizes extends I_Ui_Sizes {
   wide?: boolean
   block?: boolean
   circle?: boolean
@@ -25,7 +25,7 @@ export type Ui_RadialProgressType = 'button' | 'submit' | 'reset' | undefined
 
 export interface Ui_RadialProgressProps
   extends Omit<HTMLProps<HTMLDivElement>, 'size'>,
-    Ui_colors,
+    T_Variants,
     Ui_RadialProgress_sizes,
     Ui_RadialProgress_variants,
     Ui_RadialProgress_singleClass {

@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
+import { T_Variants } from '../_types/colors/ui_variants'
 
 export interface Ui_Mask_shapes {
   squircle?: boolean
@@ -23,6 +23,6 @@ export interface Ui_Mask_shapes {
   star2?: boolean
 }
 
-export interface Ui_MaskProps extends HTMLProps<HTMLImageElement>, Ui_colors, Ui_Mask_shapes {
+export interface Ui_MaskProps extends HTMLProps<HTMLImageElement>, T_Variants, Ui_Mask_shapes {
   src?: string
 }

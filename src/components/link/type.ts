@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
-import { Ui_Sizes } from '../_types/sizes/sizes'
+import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Ui_Sizes } from '../_types/sizes/sizes'
 
 export interface Ui_Link_variants {
   outline?: boolean
@@ -9,6 +9,6 @@ export interface Ui_Link_variants {
   glass?: boolean
 }
 
-export interface Ui_LinkProps extends HTMLProps<HTMLAnchorElement>, Ui_colors, Ui_Sizes, Ui_Link_variants {
+export interface Ui_LinkProps extends HTMLProps<HTMLAnchorElement>, T_Variants, I_Ui_Sizes, Ui_Link_variants {
   hover?: boolean
 }

@@ -46,29 +46,29 @@ const sizeProps: SpecialPropsMerged[] = [
 ]
 
 const colorProps: SpecialPropsMerged[] = [
-  { primary: true, className: `${selector}-primary` },
-  { secondary: true, className: `${selector}-secondary` },
-  { accent: true, className: `${selector}-accent` },
-  { info: true, className: `${selector}-info` },
-  { error: true, className: `${selector}-error` },
-  { success: true, className: `${selector}-success` },
-  { warning: true, className: `${selector}-warning` },
-  { ghost: true, className: `${selector}-ghost` },
-  { neutral: true, className: `${selector}-neutral` },
-  { link: true, className: `${selector}-link` },
+  { variant: 'primary', className: `${selector}-primary` },
+  { variant: 'secondary', className: `${selector}-secondary` },
+  { variant: 'accent', className: `${selector}-accent` },
+  { variant: 'info', className: `${selector}-info` },
+  { variant: 'error', className: `${selector}-error` },
+  { variant: 'success', className: `${selector}-success` },
+  { variant: 'warning', className: `${selector}-warning` },
+  { variant: 'ghost', className: `${selector}-ghost` },
+  { variant: 'neutral', className: `${selector}-neutral` },
+  { variant: 'link', className: `${selector}-link` },
 ]
 
 const colorTextProps: SpecialPropsMerged[] = [
-  { primary: true, className: getTextClassString('primary') },
-  { secondary: true, className: getTextClassString('secondary') },
-  { accent: true, className: getTextClassString('accent') },
-  { info: true, className: getTextClassString('info') },
-  { error: true, className: getTextClassString('error') },
-  { success: true, className: getTextClassString('success') },
-  { warning: true, className: getTextClassString('warning') },
-  { ghost: true, className: getTextClassString('ghost') },
-  { neutral: true, className: getTextClassString('neutral') },
-  { link: true, className: getTextClassString('link') },
+  { variant: 'primary', className: getTextClassString('primary') },
+  { variant: 'secondary', className: getTextClassString('secondary') },
+  { variant: 'accent', className: getTextClassString('accent') },
+  { variant: 'info', className: getTextClassString('info') },
+  { variant: 'error', className: getTextClassString('error') },
+  { variant: 'success', className: getTextClassString('success') },
+  { variant: 'warning', className: getTextClassString('warning') },
+  { variant: 'ghost', className: getTextClassString('ghost') },
+  { variant: 'neutral', className: getTextClassString('neutral') },
+  { variant: 'link', className: getTextClassString('link') },
 ]
 
 const specialProps = [...componentProps, ...sizeProps, ...colorProps, ...colorTextProps] as unknown as SpecialProps[]

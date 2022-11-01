@@ -4,47 +4,13 @@ import { Ui_StackProps } from './type'
 import React from 'react'
 
 const Ui_Stack: any = forwardRef<HTMLDivElement, Ui_StackProps>(
-  (
-    {
-      className,
-      children,
-      style,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
-
+  ({ className, children, style, variant, ...rest }, ref) => {
     return (
       <div
         className={`
       stack${' '} 
         ${(className as string) || ''}
-        ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+        ${variant ? `text-${variant}-content bg-${variant}` : ''} 
       `}
         style={style}
         ref={ref}

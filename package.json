@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/vermorxt"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "rollup": "rollup -c",
     "storybook": "start-storybook -p 6006 -s public",
@@ -73,6 +73,7 @@
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.16",
     "postcss-preset-env": "^7.8.2",
+    "precss": "^4.0.0",
     "react-syntax-highlighter": "^15.5.0",
     "real-cancellable-promise": "^1.1.1",
     "rollup": "^2.60.0",
@@ -86,7 +87,9 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.43.5",
     "sass-loader": "^12.3.0",
+    "storybook-addon-theme-changer": "^0.1.2",
     "style-loader": "^3.3.1",
+    "tailwind-safelist-generator": "^1.0.0",
     "ts-jest": "^29.0.3",
     "typescript": "^4.7.4",
     "util": "^0.12.5"

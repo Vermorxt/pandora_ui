@@ -1,4 +1,4 @@
-export interface Ui_Sizes {
+export interface I_Ui_Sizes {
   large?: boolean
   medium?: boolean
   small?: boolean

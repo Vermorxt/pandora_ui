@@ -13,102 +13,27 @@ const Ui_Stat: any = forwardRef<
     Actions: FC<Ui_StatProps>
     Description: FC<Ui_StatProps>
   }
->(
-  (
-    {
-      children,
-      className,
-      style,
-      vertical,
-      onLargeHorizontal,
-      bgColor,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
-
-    return (
-      <div
-        tabIndex={0}
-        className={`stats shadow 
+>(({ children, className, style, vertical, onLargeHorizontal, bgColor, variant, ...rest }, ref) => {
+  return (
+    <div
+      tabIndex={0}
+      className={`stats shadow 
           ${className ? className : ''}
           ${vertical ? 'stats-vertical' : ''}
           ${onLargeHorizontal ? 'lg:stats-horizontal' : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
-          ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
       `}
-        style={style}
-        ref={ref}
-      >
-        {children}
-      </div>
-    )
-  }
-)
+      style={style}
+      ref={ref}
+    >
+      {children}
+    </div>
+  )
+})
 
 export const Item: any = forwardRef<HTMLDivElement, Ui_StatProps>(
-  (
-    {
-      children,
-      className,
-      style,
-      bgColor,
-      textColor,
-      center,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
+  ({ children, className, style, bgColor, textColor, center, variant, ...rest }, ref) => {
     return (
       <div
         tabIndex={0}
@@ -117,7 +42,7 @@ export const Item: any = forwardRef<HTMLDivElement, Ui_StatProps>(
           ${center ? 'place-items-center' : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
           ${textColor ? `text-${textColor}` : ''}
-          ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
       `}
         style={style}
         ref={ref}
@@ -129,42 +54,7 @@ export const Item: any = forwardRef<HTMLDivElement, Ui_StatProps>(
 )
 
 export const Title: any = forwardRef<HTMLDivElement, Ui_StatProps>(
-  (
-    {
-      children,
-      className,
-      style,
-      bgColor,
-      textColor,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
+  ({ children, className, style, bgColor, textColor, variant, ...rest }, ref) => {
     return (
       <div
         className={`
@@ -172,7 +62,7 @@ export const Title: any = forwardRef<HTMLDivElement, Ui_StatProps>(
         ${className ? className : ''}
         ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
         ${textColor ? `text-${textColor}` : ''}
-        ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
     `}
         style={style}
         ref={ref}
@@ -184,43 +74,7 @@ export const Title: any = forwardRef<HTMLDivElement, Ui_StatProps>(
 )
 
 export const Value: any = forwardRef<HTMLDivElement, Ui_StatProps>(
-  (
-    {
-      children,
-      className,
-      style,
-      bgColor,
-      textColor,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
-
+  ({ children, className, style, bgColor, textColor, variant, ...rest }, ref) => {
     return (
       <div
         className={`
@@ -228,7 +82,7 @@ export const Value: any = forwardRef<HTMLDivElement, Ui_StatProps>(
           ${className ? className : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
           ${textColor ? `text-${textColor}` : ''}
-          ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
         `}
         style={style}
         ref={ref}
@@ -240,42 +94,7 @@ export const Value: any = forwardRef<HTMLDivElement, Ui_StatProps>(
 )
 
 export const Description: any = forwardRef<HTMLDivElement, Ui_StatProps>(
-  (
-    {
-      children,
-      className,
-      style,
-      bgColor,
-      textColor,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
+  ({ children, className, style, bgColor, textColor, variant, ...rest }, ref) => {
     return (
       <div
         className={`
@@ -283,7 +102,7 @@ export const Description: any = forwardRef<HTMLDivElement, Ui_StatProps>(
           ${className ? className : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
           ${textColor ? `text-${textColor}` : ''}
-          ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
         `}
         style={style}
         ref={ref}
@@ -295,43 +114,7 @@ export const Description: any = forwardRef<HTMLDivElement, Ui_StatProps>(
 )
 
 export const Figure: any = forwardRef<HTMLDivElement, Ui_StatProps>(
-  (
-    {
-      children,
-      className,
-      style,
-      bgColor,
-      textColor,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
-
+  ({ children, className, style, bgColor, textColor, variant, ...rest }, ref) => {
     return (
       <div
         className={`
@@ -339,7 +122,7 @@ export const Figure: any = forwardRef<HTMLDivElement, Ui_StatProps>(
           ${className ? className : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
           ${textColor ? `text-${textColor}` : ''}
-          ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''} 
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
       `}
         style={style}
         ref={ref}
@@ -351,42 +134,7 @@ export const Figure: any = forwardRef<HTMLDivElement, Ui_StatProps>(
 )
 
 export const Actions: any = forwardRef<HTMLDivElement, Ui_StatProps>(
-  (
-    {
-      children,
-      className,
-      style,
-      bgColor,
-      textColor,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      ...rest
-    },
-    ref
-  ) => {
-    const colorClass = generateClassNames(
-      {
-        info,
-        warning,
-        success,
-        error,
-        primary,
-        secondary,
-        accent,
-        ghost,
-        link,
-        neutral,
-      },
-      'bg'
-    )
+  ({ children, className, style, bgColor, textColor, variant, ...rest }, ref) => {
     return (
       <div
         className={`
@@ -394,7 +142,7 @@ export const Actions: any = forwardRef<HTMLDivElement, Ui_StatProps>(
           ${className ? className : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
           ${textColor ? `text-${textColor}` : ''}
-          ${colorClass.classNames ? `${colorClass.classAttributesText}-content ${colorClass.classNames}` : ''}
+          ${variant ? `text-${variant}-content bg-${variant}` : ''} 
         `}
         style={style}
         ref={ref}

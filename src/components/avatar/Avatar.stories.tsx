@@ -7,17 +7,17 @@ export default {
   title: 'Avatar',
   component: Ui_Avatar,
   argTypes: {
-    roundedXl: { control: 'boolean' },
-    rounded2xl: { control: 'boolean' },
-    rounded3xl: { control: 'boolean' },
-    roundedLg: { control: 'boolean' },
-    roundedFull: { control: 'boolean' },
+    roundedXl: { control: 'radio' },
+    rounded2xl: { control: 'radio' },
+    rounded3xl: { control: 'radio' },
+    roundedLg: { control: 'radio' },
+    roundedFull: { control: 'radio' },
 
     ring: { control: 'boolean' },
     ringPrimary: { control: 'boolean' },
     ringSecondary: { control: 'boolean' },
-    ringOffset: { control: 'boolean' },
     ringOffsetBackground: { control: 'text' },
+    ringOffset: { control: { type: 'select' }, options: ['0', '1', '2', '4', '8'] },
 
     squircle: { control: 'boolean' },
     hexagon: { control: 'boolean' },
@@ -32,11 +32,7 @@ export default {
 } as ComponentMeta<typeof Ui_Avatar>
 
 const Template = ({ ...rest }: Ui_AvatarProps) => {
-  return (
-    <Ui_Avatar {...rest}>
-      <span>Avatar component.</span>
-    </Ui_Avatar>
-  )
+  return <Ui_Avatar {...rest} />
 }
 
 export const Basic = Template.bind({})

@@ -25,16 +25,16 @@ const component = (
 const testName = `@cms/core/${componentName}`
 
 const componentPropsColors: SpecialPropsMerged[] = [
-  { prop: { primary: true }, className: `${selector}-primary` },
-  { prop: { secondary: true }, className: `${selector}-secondary` },
-  { prop: { accent: true }, className: `${selector}-accent` },
-  { prop: { info: true }, className: `${selector}-info` },
-  { prop: { success: true }, className: `${selector}-success` },
-  { prop: { warning: true }, className: `${selector}-warning` },
-  { prop: { error: true }, className: `${selector}-error` },
-  { prop: { neutral: true }, className: `${selector}-neutral` },
-  { prop: { ghost: true }, className: `${selector}-ghost` },
-  { prop: { link: true }, className: `${selector}-link` },
+  { prop: { variant: 'primary' }, className: `${selector}-primary` },
+  { prop: { variant: 'secondary' }, className: `${selector}-secondary` },
+  { prop: { variant: 'accent' }, className: `${selector}-accent` },
+  { prop: { variant: 'info' }, className: `${selector}-info` },
+  { prop: { variant: 'success' }, className: `${selector}-success` },
+  { prop: { variant: 'warning' }, className: `${selector}-warning` },
+  { prop: { variant: 'error' }, className: `${selector}-error` },
+  { prop: { variant: 'neutral' }, className: `${selector}-neutral` },
+  { prop: { variant: 'ghost' }, className: `${selector}-ghost` },
+  { prop: { variant: 'link' }, className: `${selector}-link` },
 ]
 
 const componentPropsSize: SpecialPropsMerged[] = [
@@ -45,7 +45,7 @@ const componentPropsSize: SpecialPropsMerged[] = [
   { prop: { mini: true }, className: `${selector}-xxs` },
 ]
 
-const componentProps = [...componentPropsColors, ...componentPropsSize]
+const componentProps = [...componentPropsSize]
 
 const testConfig = {
   testName,

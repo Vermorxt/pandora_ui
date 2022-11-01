@@ -4,7 +4,7 @@ import React from 'react'
 import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 
 const Ui_Link: any = forwardRef<HTMLAnchorElement, Ui_LinkProps>(
-  ({ className, children, style, hover, href, target, onClick, ...rest }, ref) => {
+  ({ className, children, style, hover, href, target, variant, onClick, ...rest }, ref) => {
     const withoutPrefix_badge = [] as string[]
     const convertAttributeToClassName_badge = [
       ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
@@ -25,6 +25,7 @@ const Ui_Link: any = forwardRef<HTMLAnchorElement, Ui_LinkProps>(
       link${' '} 
       ${(className as string) || ''} 
       ${classAttributes} 
+      ${variant ? `${variant}` : ''}
       ${hover ? `link-hover` : ''}
       `}
         style={style}

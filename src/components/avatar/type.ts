@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { Ui_Sizes } from '../_types/sizes/sizes'
+import { I_Ui_Sizes } from '../_types/sizes/sizes'
 
 interface Ui_Avatar_radius {
   roundedXl?: boolean
@@ -30,7 +30,7 @@ interface Ui_Avatar_online {
 
 export interface Ui_AvatarProps
   extends HTMLProps<HTMLDivElement>,
-    Ui_Sizes,
+    I_Ui_Sizes,
     Ui_Avatar_radius,
     Ui_Avatar_shapes,
     Ui_Avatar_online,

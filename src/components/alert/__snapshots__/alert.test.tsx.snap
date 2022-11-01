@@ -5,16 +5,7 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
   <div
     class="
       alert shadow-lg
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
       test
       "
   >
@@ -25,16 +16,7 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
       <button
         class="
         btn 
-        
-        
-        
-        
-        
-        
-        
-        btn-ghost
-        
-        
+      btn-ghost
         
         
         
@@ -56,16 +38,7 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
       <button
         class="
         btn 
-        btn-primary
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      btn-primary
         
         
         

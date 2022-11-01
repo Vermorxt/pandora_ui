@@ -27,16 +27,7 @@ export const Ui_Dropdown: any = forwardRef<
     disabled,
     noAnimation,
     allowFullScreen,
-    info,
-    warning,
-    success,
-    error,
-    primary,
-    secondary,
-    accent,
-    ghost,
-    link,
-    neutral,
+    variant,
     outline,
     ...rest
   } = props
@@ -86,16 +77,7 @@ export const Ui_Dropdown: any = forwardRef<
           tabIndex={0}
           className={`btn m-1 
           btn${' '}
-        ${primary ? 'btn-primary' : ''}
-        ${secondary ? 'btn-secondary' : ''}
-        ${warning ? 'btn-warning' : ''}
-        ${info ? 'btn-info' : ''}
-        ${success ? 'btn-success' : ''}
-        ${error ? 'btn-error' : ''}
-        ${accent ? 'btn-accent' : ''}
-        ${ghost ? 'btn-ghost' : ''}
-        ${link ? 'btn-link' : ''}
-        ${neutral ? 'btn-neutral' : ''}
+        ${variant ? `btn-${variant}` : ''}
         ${outline ? 'btn-outline' : ''}
         ${loading ? 'loading' : ''}
         ${wide ? 'btn-wide' : ''}

@@ -1,6 +1,6 @@
 module.exports = {
   // mode: 'jit',
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './src/styles/safelist.txt'],
   // safelist: [{ pattern: /.*/ }],
   // NOTE: save all css classes that are generated dynamically and not able to find by parser/jit
   // safelist: [
@@ -30,8 +30,29 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui'), require('@tailwindcss/typography')],
-
+  variants: {},
+  plugins: [
+    require('daisyui'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss'),
+    require('precss'),
+    require('autoprefixer'),
+    require('tailwind-safelist-generator')({
+      path: './src/styles/safelist.txt',
+      patterns: [
+        'w-{width}',
+        'text-{colors}',
+        'btn-{colors}',
+        'bg-{colors}',
+        'bg-{colors}-focus',
+        'text-{colors}-content',
+        'border-{borderWidth}',
+        'rounded-{screens}',
+        '{screens}:gap-{gap}',
+        'alert-{colors}',
+      ],
+    }),
+  ],
   daisyui: {
     themes: [
       'light',

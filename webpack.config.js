@@ -4,4 +4,8 @@ module.exports = {
       util: require.resolve('util/'),
     },
   },
+  loader: 'css-loader',
+  options: {
+    modules: true, // This flag enables CSS modules
+  },
 }

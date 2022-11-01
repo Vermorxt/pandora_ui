@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
-export interface Ui_TableProps extends HTMLProps<HTMLTableElement>, Ui_colors {
+import { T_Variants } from '../_types/colors/ui_variants'
+export interface Ui_TableProps extends HTMLProps<HTMLTableElement>, T_Variants {
   active?: boolean
   hover?: boolean
   zebra?: boolean

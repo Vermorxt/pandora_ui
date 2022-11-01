@@ -11,39 +11,15 @@ const DefaultAlertIcon: FC<any> = () => (
 
 const Ui_Alert: FC<any & Ui_AlertProps> = forwardRef<HTMLDivElement, Ui_AlertProps>(
   ({ children, className, style, noIcon, ...rest }: Ui_AlertProps, ref?) => {
-    const {
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
-      onAcceptButtonText,
-      onDenyButtonText,
-      onAccept,
-      onDeny,
-    } = rest
+    const { variant, onAcceptButtonText, onDenyButtonText, onAccept, onDeny } = rest
 
-    const showIcon = !info && !warning && !success && !error && !noIcon
+    const showIcon = ['info', 'warning', 'success', 'error'].includes(variant || '') === false && !noIcon
 
     return (
       <div
         className={`
       alert shadow-lg
-        ${primary ? 'alert-primary' : ''}
-        ${secondary ? 'alert-secondary' : ''}
-        ${accent ? 'alert-accent' : ''}
-        ${ghost ? 'alert-ghost' : ''}
-        ${link ? 'alert-link' : ''}
-        ${neutral ? 'alert-neutral' : ''}
-        ${warning ? 'alert-warning' : ''}
-        ${info ? 'alert-info' : ''}
-        ${success ? 'alert-success' : ''}
-        ${error ? 'alert-error' : ''}
+      ${variant ? `alert-${variant}` : ''}
       ${className || ''}
       `}
         ref={ref}
@@ -51,20 +27,20 @@ const Ui_Alert: FC<any & Ui_AlertProps> = forwardRef<HTMLDivElement, Ui_AlertPro
       >
         <div>
           {showIcon && DefaultAlertIcon(null)}
-          {info && <InformationCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
-          {success && <CheckCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
-          {warning && <ExclamationCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
-          {error && <XCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
+          {variant && variant === 'info' && <InformationCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
+          {variant && variant === 'success' && <CheckCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
+          {variant && variant === 'warning' && <ExclamationCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
+          {variant && variant === 'error' && <XCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
           {children}
         </div>
         <div className="flex-none">
           {onDeny && (
-            <Ui_Button small ghost onClick={onDeny}>
+            <Ui_Button small variant="ghost" onClick={onDeny}>
               {onDenyButtonText || 'Deny'}
             </Ui_Button>
           )}
           {onAccept && (
-            <Ui_Button small primary onClick={onAccept}>
+            <Ui_Button small variant="primary" onClick={onAccept}>
               {onAcceptButtonText || 'Accept'}
             </Ui_Button>
           )}

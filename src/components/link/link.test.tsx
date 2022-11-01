@@ -26,16 +26,16 @@ const component = (
 const testName = `@cms/core/${componentName}`
 
 const componentPropsColors: SpecialPropsMerged[] = [
-  { prop: { primary: true }, className: `${selector}-primary` },
-  { prop: { secondary: true }, className: `${selector}-secondary` },
-  { prop: { accent: true }, className: `${selector}-accent` },
-  { prop: { info: true }, className: `${selector}-info` },
-  { prop: { success: true }, className: `${selector}-success` },
-  { prop: { warning: true }, className: `${selector}-warning` },
-  { prop: { error: true }, className: `${selector}-error` },
-  { prop: { neutral: true }, className: `${selector}-neutral` },
-  { prop: { ghost: true }, className: `${selector}-ghost` },
-  { prop: { link: true }, className: `${selector}-link` },
+  { prop: { variant: 'primary' }, className: `text-primary` },
+  { prop: { variant: 'secondary' }, className: `text-secondary` },
+  { prop: { variant: 'accent' }, className: `text-accent` },
+  { prop: { variant: 'info' }, className: `text-info` },
+  { prop: { variant: 'success' }, className: `text-success` },
+  { prop: { variant: 'warning' }, className: `text-warning` },
+  { prop: { variant: 'error' }, className: `text-error` },
+  { prop: { variant: 'neutral' }, className: `text-neutral` },
+  { prop: { variant: 'ghost' }, className: `text-ghost` },
+  { prop: { variant: 'link' }, className: `text-link` },
 ]
 
 const componentPropsSize: SpecialPropsMerged[] = [
@@ -54,7 +54,7 @@ const componentPropsDefault: SpecialPropsMerged[] = [
   { prop: { hover: true }, className: `link-hover` },
 ]
 
-const componentProps = [...componentPropsColors, ...componentPropsSize, ...componentPropsDefault]
+const componentProps = [...componentPropsSize, ...componentPropsDefault]
 
 const testConfig = {
   testName,

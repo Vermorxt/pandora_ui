@@ -3,7 +3,7 @@
 exports[`@cms/core/[object Object] should create snapshot 1`] = `
 <div>
   <kbd
-    class="kbd   "
+    class="kbd    "
   >
     Test
   </kbd>

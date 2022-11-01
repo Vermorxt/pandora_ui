@@ -8,16 +8,7 @@ exports[`@cms/core/Ui_Carousel.ArrowNavigation should match snapshot 1`] = `
     <button
       class="
         btn 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
         
         
         
@@ -39,16 +30,7 @@ exports[`@cms/core/Ui_Carousel.ArrowNavigation should match snapshot 1`] = `
     <button
       class="
         btn 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+      
         
         
         

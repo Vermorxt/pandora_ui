@@ -4,7 +4,7 @@ import { Ui_KbdProps } from './type'
 import React from 'react'
 
 const Ui_Kbd = forwardRef<HTMLDivElement, Ui_KbdProps>(
-  ({ onClick, className, name, children, style, ...rest }: Ui_KbdProps, ref) => {
+  ({ onClick, className, name, children, style, variant, ...rest }: Ui_KbdProps, ref) => {
     const withoutPrefix_kbd = [] as any[]
 
     const convertAttributeToClassName_kbd = [
@@ -21,7 +21,7 @@ const Ui_Kbd = forwardRef<HTMLDivElement, Ui_KbdProps>(
     return (
       <kbd
         {...{ onClick, name }}
-        className={`kbd${' '} ${`${classAttributes} ${(className as string) || ''}`}`}
+        className={`kbd${' '} ${`${classAttributes} ${variant ? `${variant}` : ''} ${(className as string) || ''}`}`}
         style={style}
         ref={ref}
       >

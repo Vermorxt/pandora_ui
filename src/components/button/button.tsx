@@ -6,6 +6,7 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
   (
     {
       onClick,
+      variant,
       className,
       name,
       children,
@@ -25,16 +26,7 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
       disabled,
       noAnimation,
       allowFullScreen,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
+
       outline,
       ...rest
     }: Ui_ButtonProps,
@@ -46,16 +38,7 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
         {...{ onClick, name }}
         className={`
         btn${' '}
-        ${primary ? 'btn-primary' : ''}
-        ${secondary ? 'btn-secondary' : ''}
-        ${warning ? 'btn-warning' : ''}
-        ${info ? 'btn-info' : ''}
-        ${success ? 'btn-success' : ''}
-        ${error ? 'btn-error' : ''}
-        ${accent ? 'btn-accent' : ''}
-        ${ghost ? 'btn-ghost' : ''}
-        ${link ? 'btn-link' : ''}
-        ${neutral ? 'btn-neutral' : ''}
+      ${variant ? `btn-${variant}` : ''}
         ${outline ? 'btn-outline' : ''}
         ${loading ? 'loading' : ''}
         ${wide ? 'btn-wide' : ''}

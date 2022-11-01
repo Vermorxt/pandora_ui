@@ -1,7 +1,7 @@
 import { HTMLProps, ReactElement, ReactNode } from 'react'
 import { AnyType } from '../../_types/AnyType'
 import { Ui_Button_singleClass, Ui_Button_sizes, Ui_Button_variants } from '../button/type'
-import { Ui_colors } from '../_types/colors/ui_colors'
+import { T_Variants } from '../_types/colors/ui_variants'
 
 export interface Ui_DropdownPosition {
   top?: boolean
@@ -19,7 +19,7 @@ export interface Ui_DropdownAction {
 }
 export interface Ui_DropdownProps
   extends Omit<HTMLProps<Element>, 'content'>,
-    Ui_colors,
+    T_Variants,
     Ui_DropdownPosition,
     Ui_DropdownType,
     Ui_Button_sizes,

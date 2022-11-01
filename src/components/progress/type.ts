@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
-import { Ui_Sizes } from '../_types/sizes/sizes'
+import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Ui_Sizes } from '../_types/sizes/sizes'
 
 export interface Ui_Progress_variants {
   outline?: boolean
@@ -13,7 +13,7 @@ export interface Ui_Progress_singleClass {
   loading?: boolean
 }
 
-export interface Ui_Progress_sizes extends Ui_Sizes {
+export interface Ui_Progress_sizes extends I_Ui_Sizes {
   wide?: boolean
   block?: boolean
   circle?: boolean
@@ -24,7 +24,7 @@ export type Ui_ProgressType = 'button' | 'submit' | 'reset' | undefined
 
 export interface Ui_ProgressProps
   extends HTMLProps<HTMLProgressElement>,
-    Ui_colors,
+    T_Variants,
     Ui_Progress_sizes,
     Ui_Progress_variants,
     Ui_Progress_singleClass {

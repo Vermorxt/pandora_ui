@@ -13,10 +13,6 @@ export default {
   title: 'Alert',
   component: Ui_Alert,
   argTypes: {
-    info: { control: 'boolean' },
-    warning: { control: 'boolean' },
-    success: { control: 'boolean' },
-    error: { control: 'boolean' },
     onAcceptButtonText: {
       control: 'text',
       defaultValue: 'accept',
@@ -24,6 +20,10 @@ export default {
     onDenyButtonText: { control: 'text', defaultValue: 'deny' },
     onDeny: { action: 'deny function' },
     onAccept: { action: 'accept function' },
+    variant: {
+      control: { type: 'radio' },
+      options: ['primary', 'secondary', 'info', 'success', 'warning', 'ghost', 'neutral', 'error'],
+    },
   },
 } as ComponentMeta<typeof Ui_Alert>
 

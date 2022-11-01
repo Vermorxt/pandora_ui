@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
-import { Ui_Sizes } from '../_types/sizes/sizes'
+import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Ui_Sizes } from '../_types/sizes/sizes'
 export type SelectPositionProps = 'top' | 'left' | 'bottom' | 'right'
 
 export interface Ui_Select_variants {
@@ -18,8 +18,8 @@ export interface Ui_Select_singleClass {
 
 export interface Ui_SelectProps
   extends HTMLProps<HTMLSelectElement>,
-    Ui_colors,
-    Ui_Sizes,
+    T_Variants,
+    I_Ui_Sizes,
     Ui_Select_variants,
     Ui_Select_singleClass {
   position?: SelectPositionProps

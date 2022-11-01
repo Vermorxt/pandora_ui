@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Helper } from '@vermorxt/pandora_utils'
-import React, { FC, forwardRef } from 'react'
+import React, { FC, forwardRef, ForwardRefExoticComponent } from 'react'
 import { DEFAULT_AVATAR } from '../../_constants/main'
 import { getUsedAttributes } from '../_utils/css-class-generator'
 import { Ui_AvatarProps } from './type'
 
-const Ui_Avatar: any = forwardRef<HTMLDivElement, Ui_AvatarProps & { Group: FC }>(
+const Ui_Avatar: any & FC<any> & { Group: any } = forwardRef<HTMLDivElement, Ui_AvatarProps & { Group: FC<any> }>(
   ({ className, src, style, usePlaceHolder, ...rest }, ref) => {
     const { roundedXl, rounded2xl, rounded3xl, roundedLg, roundedFull } = rest
     const { online, offline } = rest
@@ -19,6 +19,9 @@ const Ui_Avatar: any = forwardRef<HTMLDivElement, Ui_AvatarProps & { Group: FC }
 
     // NOTE: ring styles
     const usedRing = getUsedAttributes(rest, { ringPrimary, ringSecondary })
+
+    console.log('used ring::: ', usedRing)
+
     const ringStyle = usedRing.map(s => Helper.splitCamelCaseMinus(s)).toString()
 
     const ringOffsetStyle = ringOffset ? `ring-offset-${ringOffset}` : ''
@@ -44,14 +47,14 @@ const Ui_Avatar: any = forwardRef<HTMLDivElement, Ui_AvatarProps & { Group: FC }
         ${tiny ? 'w-8' : ''}
         ${!large && !medium && !small && !mini && !tiny ? 'w-24' : ''}
         ${radiusStyle || 'rounded'}  
-        ${
-          ring
-            ? 'ring ' +
-              `${ringStyle} ${
-                ringOffsetStyle ? `${ringOffsetStyle} ring-offset-${ringOffsetBackground || 'base-100'}` : ''
-              }`
-            : ''
-        }  
+         ${
+           ring
+             ? 'ring ' +
+               `${ringStyle} ${
+                 ringOffsetStyle ? `${ringOffsetStyle} ring-offset-${ringOffsetBackground || 'base-100'}` : ''
+               }`
+             : ''
+         }  
         ${squircle ? 'mask ' + 'mask-squircle' : ''}
         ${hexagon ? 'mask ' + 'mask-hexagon' : ''}
         ${triangle ? 'mask ' + 'mask-triangle' : ''}

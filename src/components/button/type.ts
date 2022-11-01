@@ -1,9 +1,9 @@
 import { HTMLProps } from 'react'
-import { Ui_colors } from '../_types/colors/ui_colors'
-import { Ui_Sizes } from '../_types/sizes/sizes'
+import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Ui_Sizes } from '../_types/sizes/sizes'
 import { TooltipProps } from '../_types/tooltip/tooltip-props'
 
-export interface Ui_Button_variants {
+export interface Ui_Button_variants extends T_Variants {
   outline?: boolean
   active?: boolean
   disabled?: boolean
@@ -15,7 +15,7 @@ export interface Ui_Button_singleClass {
   noAnimation?: boolean
 }
 
-export interface Ui_Button_sizes extends Ui_Sizes {
+export interface Ui_Button_sizes extends I_Ui_Sizes {
   wide?: boolean
   block?: boolean
   circle?: boolean
@@ -27,7 +27,6 @@ export type Ui_ButtonType = 'button' | 'submit' | 'reset' | undefined
 
 export interface Ui_ButtonProps
   extends HTMLProps<HTMLButtonElement>,
-    Ui_colors,
     Ui_Button_sizes,
     Ui_Button_variants,
     Ui_Button_singleClass {

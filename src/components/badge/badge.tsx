@@ -10,6 +10,7 @@ const Ui_Badge = forwardRef<HTMLDivElement, Ui_BadgeProps>(
       name,
       children,
       style,
+      variant,
       loading,
       wide,
       full,
@@ -21,16 +22,7 @@ const Ui_Badge = forwardRef<HTMLDivElement, Ui_BadgeProps>(
       disabled,
       noAnimation,
       allowFullScreen,
-      info,
-      warning,
-      success,
-      error,
-      primary,
-      secondary,
-      accent,
-      ghost,
-      link,
-      neutral,
+
       outline,
       ...rest
     }: Ui_BadgeProps,
@@ -40,16 +32,7 @@ const Ui_Badge = forwardRef<HTMLDivElement, Ui_BadgeProps>(
       <div
         {...{ onClick, name }}
         className={`badge${' '}  
-        ${primary ? 'badge-primary' : ''}
-        ${secondary ? 'badge-secondary' : ''}
-        ${warning ? 'badge-warning' : ''}
-        ${info ? 'badge-info' : ''}
-        ${success ? 'badge-success' : ''}
-        ${error ? 'badge-error' : ''}
-        ${accent ? 'badge-accent' : ''}
-        ${ghost ? 'badge-ghost' : ''}
-        ${link ? 'badge-link' : ''}
-        ${neutral ? 'badge-neutral' : ''}
+        ${variant ? `badge-${variant}` : ''}
         ${outline ? 'badge-outline' : ''}
         ${loading ? 'loading' : ''}
         ${wide ? 'badge-wide' : ''}
