@@ -14,19 +14,10 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
       type,
       style,
       loading,
-      wide,
-      block,
-      full,
-      square,
-      large,
-      medium,
-      small,
-      tiny,
-      circle,
+      size,
       disabled,
       noAnimation,
       allowFullScreen,
-
       outline,
       ...rest
     }: Ui_ButtonProps,
@@ -39,19 +30,19 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
         className={`
         btn${' '}
       ${variant ? `btn-${variant}` : ''}
-        ${outline ? 'btn-outline' : ''}
-        ${loading ? 'loading' : ''}
-        ${wide ? 'btn-wide' : ''}
-        ${square ? 'btn-square' : ''}
-        ${circle ? 'btn-circle' : ''}
-        ${disabled ? 'btn-disabled' : ''}
-        ${medium ? 'btn-md' : ''}
-        ${small ? 'btn-sm' : ''}
-        ${tiny ? 'btn-xs' : ''}
-        ${large ? 'btn-lg' : ''}
-        ${noAnimation ? 'no-animation' : ''}
-        ${block || full ? 'btn-block' : ''}
-        ${`${(className as string) || ''}`}
+      ${size && size === 'large' ? 'btn-lg' : ''} 
+      ${size && size === 'medium' ? 'btn-md' : ''} 
+      ${size && size === 'small' ? 'btn-sm' : ''} 
+      ${size && size === 'mini' ? 'btn-xs' : ''} 
+      ${size && size === 'tiny' ? 'btn-xxs' : ''} 
+      ${size && size === 'block' ? 'btn-block' : ''} 
+      ${size && size === 'full' ? 'btn-block' : ''} 
+      ${size && size === 'wide' ? 'btn-wide' : ''} 
+      ${loading && loading === true ? 'loading' : ''}
+      ${outline && outline === true ? 'btn-outline' : ''}
+      ${disabled ? 'btn-disabled overflow-hidden' : ''}
+      ${noAnimation ? 'no-animation' : ''}
+      ${`${(className as string) || ''}`}
         `}
         style={style}
         ref={ref}
