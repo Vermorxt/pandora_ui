@@ -27,10 +27,10 @@ describe('@cms/core/Ui_Breadcrumbs', () => {
   })
 
   it('renders SIZE classes', async () => {
-    await itHasCssClass(<Ui_Breadcrumbs large />, `.${selector}-lg`)
-    await itHasCssClass(<Ui_Breadcrumbs medium />, `.${selector}-md`)
-    await itHasCssClass(<Ui_Breadcrumbs small />, `.${selector}-sm`)
-    await itHasCssClass(<Ui_Breadcrumbs tiny />, `.${selector}-xs`)
-    await itHasCssClass(<Ui_Breadcrumbs mini />, `.${selector}-xxs`)
+    await itHasCssClass(<Ui_Breadcrumbs size="large" />, `.${selector}-lg`)
+    await itHasCssClass(<Ui_Breadcrumbs size="medium" />, `.${selector}-md`)
+    await itHasCssClass(<Ui_Breadcrumbs size="small" />, `.${selector}-sm`)
+    await itHasCssClass(<Ui_Breadcrumbs size="mini" />, `.${selector}-xs`)
+    await itHasCssClass(<Ui_Breadcrumbs size="tiny" />, `.${selector}-xxs`)
   })
 })

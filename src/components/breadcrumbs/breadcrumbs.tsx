@@ -3,35 +3,18 @@ import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 import { Ui_BreadcrumbsProps } from './type'
 
 const Ui_Breadcrumbs = forwardRef<HTMLDivElement, Ui_BreadcrumbsProps>(
-  (
-    {
-      className,
-      children,
-      style,
-
-      ...rest
-    }: Ui_BreadcrumbsProps,
-    ref
-  ) => {
-    const withoutPrefix_badge = ['loading', 'noAnimation']
-    const convertAttributeToClassName_badge = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_badge,
-      withoutPrefix: withoutPrefix_badge,
-      addPrefix: 'text',
-    })
-
+  ({ className, children, style, size, variant, ...rest }: Ui_BreadcrumbsProps, ref) => {
     return (
       <div
         className={`
       breadcrumbs${' '} 
-      ${(className as string) || ''} 
-      ${classAttributes} 
+      ${(className as string) || ''}
+      ${variant ? `text-${variant}` : ''} 
+      ${size && size === 'large' ? 'text-lg' : ''} 
+      ${size && size === 'medium' ? 'text-md' : ''} 
+      ${size && size === 'small' ? 'text-sm' : ''} 
+      ${size && size === 'mini' ? 'text-xs' : ''} 
+      ${size && size === 'tiny' ? 'text-xxs' : ''} 
       `}
         style={style}
         ref={ref}
