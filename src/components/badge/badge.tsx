@@ -10,17 +10,9 @@ const Ui_Badge = forwardRef<HTMLDivElement, Ui_BadgeProps>(
       name,
       children,
       style,
+      size,
       variant,
-      loading,
-      wide,
-      full,
-      large,
-      medium,
-      small,
-      mini,
-      tiny,
       disabled,
-      noAnimation,
       allowFullScreen,
 
       outline,
@@ -33,17 +25,14 @@ const Ui_Badge = forwardRef<HTMLDivElement, Ui_BadgeProps>(
         {...{ onClick, name }}
         className={`badge${' '}  
         ${variant ? `badge-${variant}` : ''}
-        ${outline ? 'badge-outline' : ''}
-        ${loading ? 'loading' : ''}
-        ${wide ? 'badge-wide' : ''}
-        ${disabled ? 'badge-disabled' : ''}
-        ${medium ? 'badge-md' : ''}
-        ${small ? 'badge-sm' : ''}
-        ${tiny ? 'badge-xs' : ''}
-        ${large ? 'badge-lg' : ''}
-        ${mini ? 'badge-xxs' : ''}
-        ${noAnimation ? 'no-animation' : ''}
-        ${full ? 'badge-block' : ''} ${(className as string) || ''}`}
+        ${outline && outline === true ? 'badge-outline' : ''}
+        ${disabled && disabled === true ? 'badge-disabled' : ''}
+        ${size && size === 'large' ? 'badge-lg' : ''} 
+        ${size && size === 'medium' ? 'badge-md' : ''} 
+        ${size && size === 'small' ? 'badge-sm' : ''} 
+        ${size && size === 'mini' ? 'badge-xs' : ''} 
+        ${size && size === 'tiny' ? 'badge-xxs' : ''} 
+        ${(className as string) || ''}`}
         style={style}
         ref={ref}
       >
