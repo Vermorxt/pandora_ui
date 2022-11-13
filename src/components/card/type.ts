@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 interface Ui_Card_style {
   bgPrimary?: boolean
   bgSecondary?: boolean

@@ -17,10 +17,10 @@ exports[`@cms/core/Ui_Avatar should match snapshot 1`] = `
          
          
          
+         
+        w-24 
+        rounded-full  
         
-        w-24
-        rounded-xl,rounded-2xl,rounded-3xl,rounded-lg,rounded-full  
-           
         
         
         

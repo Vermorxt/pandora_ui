@@ -5,3 +5,4 @@ export interface I_Ui_Sizes {
   tiny?: boolean
   mini?: boolean
 }
+export type T_Ui_Size = 'large' | 'medium' | 'small' | 'tiny' | 'mini'

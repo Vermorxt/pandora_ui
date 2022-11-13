@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from '../_types/sizes/sizes'
 
 export interface Ui_Menu_variants {
@@ -9,7 +9,7 @@ export interface Ui_Menu_variants {
   glass?: boolean
 }
 
-export interface Ui_MenuProps extends HTMLProps<HTMLUListElement>, T_Variants, I_Ui_Sizes, Ui_Menu_variants {
+export interface Ui_MenuProps extends HTMLProps<HTMLUListElement>, I_Variants, I_Ui_Sizes, Ui_Menu_variants {
   hover?: boolean
   horizontal?: boolean
   bgColor?: string

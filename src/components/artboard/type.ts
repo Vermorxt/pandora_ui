@@ -1,7 +1,7 @@
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { HTMLProps } from 'react'
 
-export interface Ui_ArtboardProps extends HTMLProps<HTMLSpanElement>, T_Variants {
+export interface Ui_ArtboardProps extends HTMLProps<HTMLSpanElement>, I_Variants {
   phone1?: boolean
   phone2?: boolean
   phone3?: boolean

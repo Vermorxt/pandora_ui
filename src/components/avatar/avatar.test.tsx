@@ -7,11 +7,7 @@ import Ui_Avatar from '.'
 import React from 'react'
 
 const defaultProps: Ui_AvatarProps = {
-  roundedXl: false,
-  rounded2xl: false,
-  rounded3xl: false,
-  roundedLg: false,
-  roundedFull: false,
+  borderRadius: 'full',
   ringOffset: '8',
 }
 
@@ -57,35 +53,38 @@ describe('@cms/core/Ui_Avatar', () => {
   })
 
   it('renders SIZE classes', async () => {
-    await itHasCssClass(<Ui_Avatar large />, '.w-32')
-    await itHasCssClass(<Ui_Avatar medium />, '.w-20')
-    await itHasCssClass(<Ui_Avatar small />, '.w-16')
-    await itHasCssClass(<Ui_Avatar mini />, '.w-12')
-    await itHasCssClass(<Ui_Avatar tiny />, '.w-8')
+    await itHasCssClass(<Ui_Avatar size="large" />, '.w-32')
+    await itHasCssClass(<Ui_Avatar size="medium" />, '.w-20')
+    await itHasCssClass(<Ui_Avatar size="small" />, '.w-16')
+    await itHasCssClass(<Ui_Avatar size="mini" />, '.w-12')
+    await itHasCssClass(<Ui_Avatar size="tiny" />, '.w-8')
   })
 
   it('renders SHAPE classes', async () => {
-    await itHasCssClass(<Ui_Avatar triangle />, '.mask-triangle')
-    await itHasCssClass(<Ui_Avatar squircle />, '.mask-squircle')
-    await itHasCssClass(<Ui_Avatar hexagon />, '.mask-hexagon')
+    await itHasCssClass(<Ui_Avatar mask="triangle" />, '.mask-triangle')
+    await itHasCssClass(<Ui_Avatar mask="squircle" />, '.mask-squircle')
+    await itHasCssClass(<Ui_Avatar mask="hexagon" />, '.mask-hexagon')
   })
 
   it('renders RING classes', async () => {
     const offset = '8'
     const color = 'primary'
 
-    await itHasCssClass(<Ui_Avatar ring />, '.ring')
-    await itHasCssClass(<Ui_Avatar ring ringPrimary />, '.ring-primary')
-    await itHasCssClass(<Ui_Avatar ring ringSecondary />, '.ring-secondary')
-    await itHasCssClass(<Ui_Avatar ring ringOffset={offset} />, `.ring-offset-${offset}`)
-    await itHasCssClass(<Ui_Avatar ring ringOffset={offset} ringOffsetBackground={color} />, `.ring-offset-${color}`)
+    await itHasCssClass(<Ui_Avatar ring={true} />, '.ring')
+    await itHasCssClass(<Ui_Avatar ring="primary" />, '.ring-primary')
+    await itHasCssClass(<Ui_Avatar ring="secondary" />, '.ring-secondary')
+    await itHasCssClass(<Ui_Avatar ring={true} ringOffset={offset} />, `.ring-offset-${offset}`)
+    await itHasCssClass(
+      <Ui_Avatar ring={true} ringOffset={offset} ringOffsetBackground={color} />,
+      `.ring-offset-${color}`
+    )
   })
 
   it('renders BORDER_RADIUS classes', async () => {
-    await itHasCssClass(<Ui_Avatar roundedXl />, `.rounded-xl`)
-    await itHasCssClass(<Ui_Avatar rounded2xl />, `.rounded-2xl`)
-    await itHasCssClass(<Ui_Avatar rounded3xl />, `.rounded-3xl`)
-    await itHasCssClass(<Ui_Avatar roundedLg />, `.rounded-lg`)
-    await itHasCssClass(<Ui_Avatar roundedFull />, `.rounded-full`)
+    await itHasCssClass(<Ui_Avatar borderRadius="xl" />, `.rounded-xl`)
+    await itHasCssClass(<Ui_Avatar borderRadius="2xl" />, `.rounded-2xl`)
+    await itHasCssClass(<Ui_Avatar borderRadius="3xl" />, `.rounded-3xl`)
+    await itHasCssClass(<Ui_Avatar borderRadius="lg" />, `.rounded-lg`)
+    await itHasCssClass(<Ui_Avatar borderRadius="full" />, `.rounded-full`)
   })
 })

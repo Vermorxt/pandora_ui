@@ -1,9 +1,9 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from '../_types/sizes/sizes'
 import { TooltipProps } from '../_types/tooltip/tooltip-props'
 
-export interface Ui_Button_variants extends T_Variants {
+export interface Ui_Button_variants extends I_Variants {
   outline?: boolean
   active?: boolean
   disabled?: boolean

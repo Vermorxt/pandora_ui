@@ -1,7 +1,7 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 
-export interface Ui_MockupWindowProps extends HTMLProps<HTMLSpanElement>, T_Variants {
+export interface Ui_MockupWindowProps extends HTMLProps<HTMLSpanElement>, I_Variants {
   bgColor?: string
   border?: string
   shadow?: 'sm' | 'lg' | 'xl' | '2xl' | 'md' | 'none' | boolean

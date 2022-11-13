@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from '../_types/sizes/sizes'
 export type RangePositionProps = 'top' | 'left' | 'bottom' | 'right'
 
@@ -19,7 +19,7 @@ export interface Ui_Range_singleClass {
 
 export interface Ui_RangeProps
   extends HTMLProps<HTMLSpanElement>,
-    T_Variants,
+    I_Variants,
     I_Ui_Sizes,
     Ui_Range_variants,
     Ui_Range_singleClass {

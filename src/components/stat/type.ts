@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
-export interface Ui_StatProps extends HTMLProps<HTMLDivElement>, T_Variants {
+import { I_Variants } from '../_types/colors/ui_variants'
+export interface Ui_StatProps extends HTMLProps<HTMLDivElement>, I_Variants {
   center?: boolean
   vertical?: boolean
   onLargeHorizontal?: boolean

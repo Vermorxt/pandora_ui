@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from './../_types/sizes/sizes'
 
 export interface Ui_RadialProgress_variants {
@@ -25,7 +25,7 @@ export type Ui_RadialProgressType = 'button' | 'submit' | 'reset' | undefined
 
 export interface Ui_RadialProgressProps
   extends Omit<HTMLProps<HTMLDivElement>, 'size'>,
-    T_Variants,
+    I_Variants,
     Ui_RadialProgress_sizes,
     Ui_RadialProgress_variants,
     Ui_RadialProgress_singleClass {

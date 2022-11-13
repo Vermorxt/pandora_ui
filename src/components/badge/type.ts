@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from '../_types/sizes/sizes'
 
 export type TooltipPositionProps = 'top' | 'left' | 'bottom' | 'right'
@@ -18,7 +18,7 @@ export interface Ui_Badge_singleClass {
 
 export interface Ui_BadgeProps
   extends HTMLProps<HTMLSpanElement>,
-    T_Variants,
+    I_Variants,
     I_Ui_Sizes,
     Ui_Badge_variants,
     Ui_Badge_singleClass {

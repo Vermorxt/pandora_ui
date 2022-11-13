@@ -1,5 +1,5 @@
 import { HTMLProps } from 'react'
-import { T_Variants } from '../_types/colors/ui_variants'
+import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from '../_types/sizes/sizes'
 export type RadioPositionProps = 'top' | 'left' | 'bottom' | 'right'
 
@@ -17,7 +17,7 @@ export interface Ui_Radio_singleClass {
 
 export interface Ui_RadioProps
   extends HTMLProps<HTMLSpanElement>,
-    T_Variants,
+    I_Variants,
     I_Ui_Sizes,
     Ui_Radio_variants,
     Ui_Radio_singleClass {

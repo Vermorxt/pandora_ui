@@ -7,21 +7,40 @@ export default {
   title: 'Avatar',
   component: Ui_Avatar,
   argTypes: {
-    roundedXl: { control: 'radio' },
-    rounded2xl: { control: 'radio' },
-    rounded3xl: { control: 'radio' },
-    roundedLg: { control: 'radio' },
-    roundedFull: { control: 'radio' },
-
-    ring: { control: 'boolean' },
-    ringPrimary: { control: 'boolean' },
-    ringSecondary: { control: 'boolean' },
-    ringOffsetBackground: { control: 'text' },
+    borderRadius: {
+      options: ['xl', '2xl', '3xl', 'lg', 'full', 'rounded'],
+      control: { type: 'radio' },
+    },
+    size: {
+      options: ['large', 'medium', 'small', 'mini', 'tiny'],
+      control: { type: 'radio' },
+    },
+    mask: {
+      options: ['squircle', 'hexagon', 'triangle', 'default'],
+      control: { type: 'radio' },
+    },
+    ring: {
+      options: [
+        true,
+        false,
+        'primary',
+        'secondary',
+        'accent',
+        'ghost',
+        'link',
+        'info',
+        'success',
+        'warning',
+        'error',
+        'neutral',
+      ],
+      control: { type: 'select' },
+    },
     ringOffset: { control: { type: 'select' }, options: ['0', '1', '2', '4', '8'] },
-
-    squircle: { control: 'boolean' },
-    hexagon: { control: 'boolean' },
-    triangle: { control: 'boolean' },
+    ringOffsetBackground: {
+      options: ['primary', 'secondary', 'accent', 'ghost', 'link', 'info', 'success', 'warning', 'error', 'neutral'],
+      control: { type: 'select' },
+    },
 
     online: { control: 'boolean' },
     offline: { control: 'boolean' },
