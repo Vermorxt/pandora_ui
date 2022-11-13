@@ -26,11 +26,11 @@ describe('@cms/core/Ui_Checkbox', () => {
   })
 
   it('renders SIZE classes', async () => {
-    await itHasCssClass(<Ui_Checkbox large label="x" />, `.${selector}-xl`)
-    await itHasCssClass(<Ui_Checkbox medium label="x" />, `.${selector}-base`)
-    await itHasCssClass(<Ui_Checkbox small label="x" />, `.${selector}-sm`)
-    await itHasCssClass(<Ui_Checkbox tiny label="x" />, `.${selector}-xs`)
-    await itHasCssClass(<Ui_Checkbox mini label="x" />, `.${selector}-xxs`)
+    await itHasCssClass(<Ui_Checkbox size="large" label="x" />, `.${selector}-xl`)
+    await itHasCssClass(<Ui_Checkbox size="medium" label="x" />, `.${selector}-base`)
+    await itHasCssClass(<Ui_Checkbox size="small" label="x" />, `.${selector}-sm`)
+    await itHasCssClass(<Ui_Checkbox size="mini" label="x" />, `.${selector}-xs`)
+    await itHasCssClass(<Ui_Checkbox size="tiny" label="x" />, `.${selector}-xxs`)
   })
 
   it('should be disabled', async () => {

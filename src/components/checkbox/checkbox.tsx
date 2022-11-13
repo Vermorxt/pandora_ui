@@ -20,8 +20,7 @@ const Ui_Checkbox = forwardRef<HTMLInputElement, Ui_CheckboxProps>(
   ) => {
     const refElem = useRef<HTMLInputElement>(null) || ref
 
-    const { large, medium, small, tiny, mini } = rest
-    const { variant } = rest
+    const { variant, size } = rest
 
     useEffect(() => {
       if (refElem?.current && indeterminate) {
@@ -38,11 +37,7 @@ const Ui_Checkbox = forwardRef<HTMLInputElement, Ui_CheckboxProps>(
         style={style}
         className={`
       checkbox${' '}
-        ${large ? 'checkbox-lg' : ''}
-        ${medium ? 'checkbox-md' : ''}
-        ${small ? 'checkbox-sm' : ''}
-        ${tiny ? 'checkbox-xs' : ''}
-        ${mini ? 'checkbox-xxs' : ''}
+        ${size ? `checkbox-${size}` : ''}
         ${variant ? `checkbox-${variant}` : ''}
       ${(className as string) || ''}
       `}
@@ -53,15 +48,15 @@ const Ui_Checkbox = forwardRef<HTMLInputElement, Ui_CheckboxProps>(
     if (label) {
       if (labelPosition === 'right') {
         return (
-          <label className="cursor-pointer label">
+          <label className="cursor-pointer label" style={{ width: 'fit-content' }}>
             {CheckboxElement}
             <span
               className={`label-text pl-3 
-                ${large ? 'text-xl' : ''}
-                ${medium ? 'text-base' : ''}
-                ${small ? 'text-sm' : ''}
-                ${tiny ? 'text-xs' : ''}
-                ${mini ? 'text-xxs' : ''}
+                ${size && size === 'large' ? 'text-xl' : ''}
+                ${size && size === 'medium' ? 'text-base' : ''}
+                ${size && size === 'small' ? 'text-sm' : ''}
+                ${size && size === 'mini' ? 'text-xs' : ''}
+                ${size && size === 'tiny' ? 'text-xxs' : ''}
                 ${variant ? `checkbox-${variant}` : ''}
             `}
             >
@@ -73,12 +68,13 @@ const Ui_Checkbox = forwardRef<HTMLInputElement, Ui_CheckboxProps>(
         return (
           <label className="cursor-pointer label">
             <span
-              className={`label-text pr-3 ${large ? 'text-xl' : ''}
-                ${medium ? 'text-base' : ''}
-                ${small ? 'text-sm' : ''}
-                ${tiny ? 'text-xs' : ''}
-                ${mini ? 'text-xxs' : ''}
-                 ${variant ? `checkbox-${variant}` : ''}
+              className={`label-text pr-3 
+                ${size && size === 'large' ? 'text-xl' : ''}
+                ${size && size === 'medium' ? 'text-base' : ''}
+                ${size && size === 'small' ? 'text-sm' : ''}
+                ${size && size === 'mini' ? 'text-xs' : ''}
+                ${size && size === 'tiny' ? 'text-xxs' : ''}
+                ${variant ? `checkbox-${variant}` : ''}
               `}
             >
               {label}
