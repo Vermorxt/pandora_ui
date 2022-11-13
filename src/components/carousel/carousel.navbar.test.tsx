@@ -30,10 +30,10 @@ describe('@cms/core/Ui_Carousel.Navbar', () => {
   it('renders CAROUSEL_NAVBAR default class', () => {
     const { container: available } = render(<Ui_Carousel.Navbar {...defaultProps} ref={null} />)
 
-    expect(available.querySelectorAll(`.flex.justify-center.w-full`)).toHaveLength(1)
+    expect(available.querySelectorAll(`.flex.justify-center`)).toHaveLength(1)
   })
 
   it('renders CENTER classes', async () => {
-    await itHasCssClass(<Ui_Carousel.Navbar full />, `.w-full`)
+    await itHasCssClass(<Ui_Carousel.Navbar width="full" />, `.w-full`)
   })
 })

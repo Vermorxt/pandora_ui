@@ -3,7 +3,8 @@
 exports[`@cms/core/Ui_Carousel.Navbar should match snapshot 1`] = `
 <div>
   <div
-    class="flex justify-center w-full py-2 gap-2 
+    class="flex justify-center py-2 gap-2 
+      
       
       
     "

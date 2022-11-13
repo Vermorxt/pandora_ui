@@ -34,8 +34,8 @@ describe('@cms/core/Ui_Carousel.Item', () => {
   })
 
   it('renders CENTER classes', async () => {
-    await itHasCssClass(<Ui_Carousel.Item full />, `.w-full`)
-    await itHasCssClass(<Ui_Carousel.Item fullHeight />, `.h-full`)
+    await itHasCssClass(<Ui_Carousel.Item width="full" />, `.w-full`)
+    await itHasCssClass(<Ui_Carousel.Item height="full" />, `.h-full`)
     await itHasCssClass(<Ui_Carousel.Item relative />, `.relative`)
   })
 })

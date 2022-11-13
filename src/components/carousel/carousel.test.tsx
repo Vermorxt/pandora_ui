@@ -30,8 +30,8 @@ describe('@cms/core/Ui_Carousel', () => {
   })
 
   it('renders STYLE classes', async () => {
-    await itHasCssClass(<Ui_Carousel center />, `.${selector}-center`)
-    await itHasCssClass(<Ui_Carousel end />, `.${selector}-end`)
+    await itHasCssClass(<Ui_Carousel position="center" />, `.${selector}-center`)
+    await itHasCssClass(<Ui_Carousel position="end" />, `.${selector}-end`)
     await itHasCssClass(<Ui_Carousel vertical />, `.${selector}-vertical`)
     await itHasCssClass(<Ui_Carousel rounded />, `.rounded-box`)
   })

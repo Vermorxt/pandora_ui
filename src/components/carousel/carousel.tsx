@@ -12,18 +12,22 @@ const Ui_Carousel: any = forwardRef<
     ArrowNavigation: FC<Ui_CarouselArrowNavigationProps>
   }
 >(({ children, className, ...rest }, ref) => {
-  const { center, end, vertical, rounded, style } = rest
+  const { vertical, rounded, position, width, height, style } = rest
 
   return (
     <div
       ref={ref}
       style={style}
       className={`carousel
-      ${className ? className : ''} 
-      ${rounded ? 'rounded-box' : ''} 
-      ${center ? 'carousel-center' : ''} 
-      ${end ? 'carousel-end' : ''} 
-      ${vertical ? 'carousel-vertical' : ''} 
+      ${className ? className : ''}
+      ${height ? `h-${height}` : ''}
+      ${width && width === 'full' ? 'w-full' : ''}
+      ${width && width === 'half' ? 'w-1/2' : ''}
+      ${rounded && rounded === true ? 'rounded-box' : ''} 
+      ${position && position === 'start' ? 'carousel-start' : ''} 
+      ${position && position === 'center' ? 'carousel-center' : ''} 
+      ${position && position === 'end' ? 'carousel-end' : ''} 
+      ${vertical && vertical === true ? 'carousel-vertical' : ''} 
       `}
     >
       {children}
@@ -32,19 +36,17 @@ const Ui_Carousel: any = forwardRef<
 })
 
 const Item: FC = forwardRef<HTMLDivElement, Ui_CarouselProps>(({ children, className, ...rest }, ref) => {
-  const { full, fullHeight, halfWidth, id, relative, style } = rest
+  const { height, id, relative, style } = rest
 
   return (
     <div
       id={id}
       ref={ref}
       style={style}
-      className={`carousel-item 
+      className={`carousel-item w-full
       ${className ? className : ''}
-      ${full ? 'w-full' : ''}
-      ${fullHeight ? 'h-full' : ''}
-      ${halfWidth ? 'w-1/2' : ''}
-      ${relative ? 'relative' : ''}
+      ${height ? `h-${height}` : ''}
+      ${relative && relative === true ? 'relative' : ''}
     `}
     >
       {children}
@@ -53,15 +55,16 @@ const Item: FC = forwardRef<HTMLDivElement, Ui_CarouselProps>(({ children, class
 })
 
 const Navbar: FC = forwardRef<HTMLDivElement, Ui_CarouselProps>(({ children, className, style, ...rest }, ref) => {
-  const { full } = rest
+  const { width } = rest
 
   return (
     <div
       ref={ref}
       style={style}
-      className={`flex justify-center w-full py-2 gap-2 
+      className={`flex justify-center py-2 gap-2 
+      ${width && width === 'full' ? 'w-full' : ''}
+      ${width && width === 'half' ? 'w-1/2' : ''}
       ${className ? className : ''}
-      ${full ? 'w-full' : ''}
     `}
     >
       {children}
@@ -70,7 +73,7 @@ const Navbar: FC = forwardRef<HTMLDivElement, Ui_CarouselProps>(({ children, cla
 })
 
 const ArrowNavigation: FC<any> = forwardRef<HTMLDivElement, Ui_CarouselArrowNavigationProps>(({ ...rest }, ref) => {
-  const { itemLength, index, usedId, style, className } = rest
+  const { width, itemLength, index, usedId, style, className } = rest
 
   const prevIndex = index - 1 < 0 ? itemLength - 1 : index - 1
   const nextIndex = index + 1 > itemLength - 1 ? 0 : index + 1
@@ -87,7 +90,9 @@ const ArrowNavigation: FC<any> = forwardRef<HTMLDivElement, Ui_CarouselArrowNavi
     <div
       className={`absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 ${
         className ? className : ''
-      }`}
+      }
+      ${width && width === 'full' ? 'w-full' : ''}
+      ${width && width === 'half' ? 'w-1/2' : ''}`}
       ref={ref}
       style={style}
     >

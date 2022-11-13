@@ -41,6 +41,7 @@ module.exports = {
       path: './src/styles/safelist.txt',
       patterns: [
         'w-{width}',
+        'h-{height}',
         'text-{colors}',
         'btn-{colors}',
         'bg-{colors}',
