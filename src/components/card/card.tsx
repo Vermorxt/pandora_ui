@@ -9,36 +9,21 @@ interface CardComponent extends FC<Ui_CardProps> {
 }
 
 const Ui_Card: FC<Ui_CardProps> & CardComponent = ({ children, className, style, ...rest }) => {
-  const { imageAsBackground, compact, bgBase, cardSideLarge } = rest
-  const {
-    bgPrimary,
-    bgSecondary,
-    bgNeutral,
-    textPrimaryContent,
-    textSecondaryContent,
-    textNeutralContent,
-    glass,
-    cardSide,
-    w96,
-  } = rest
+  const { imageAsBackground, compact, bgBase, cardSide, variant } = rest
+  const { glass, size } = rest
 
   return (
     <div
-      className={`card shadow-xl 
+      className={`card shadow-xl style-override
       ${imageAsBackground ? 'image-full' : ''}
       ${bgBase ? `bg-base-${bgBase}` : ''}
-      ${!bgBase && !bgPrimary && !bgSecondary && !bgNeutral && !glass ? 'bg-base-100' : ''}
+      ${!bgBase && !variant && !glass ? 'bg-base-100' : ''}
       ${compact ? 'card-compact' : ''}
-      ${bgPrimary ? 'bg-primary' : ''}
-      ${bgSecondary ? 'bg-secondary' : ''}
-      ${bgNeutral ? 'bg-neutral' : ''}
-      ${textPrimaryContent ? 'text-primary-content' : ''}
-      ${textSecondaryContent ? 'text-secondary-content' : ''}
-      ${textNeutralContent ? 'text-neutral-content' : ''}
+      ${variant ? `bg-${variant} text-${variant}-content` : ''}
       ${glass ? 'glass' : ''}
-      ${cardSide ? 'card-side' : ''}
-      ${w96 ? 'w-96' : ''}
-      ${cardSideLarge ? 'lg:card-side' : ''}
+      ${cardSide && cardSide === true ? 'card-side' : ''}
+      ${cardSide && cardSide === 'large' ? 'lg:card-side' : ''}
+      ${size ? `w-${size}` : 'w-96'}
       ${className ? className : ''}`}
       style={style}
     >
@@ -73,14 +58,12 @@ const CardBody = forwardRef<HTMLDivElement, Ui_CardProps>(({ children, className
 })
 
 const CardActions = forwardRef<HTMLDivElement, Ui_CardProps>(
-  ({ children, className, style, actionCenter, actionStart, actionSpaceBetween, ...rest }, ref) => {
+  ({ children, className, style, actionPlacement, ...rest }, ref) => {
     return (
       <div
         className={`card-actions 
-        ${actionStart ? 'justify-start' : ''} 
-        ${actionCenter ? 'justify-center' : ''} 
-        ${actionSpaceBetween ? 'justify-between' : ''} 
-        ${!actionStart && !actionCenter && !actionSpaceBetween ? 'justify-end' : ''} 
+        ${actionPlacement ? `justify-${actionPlacement}` : ''} 
+        ${!actionPlacement ? 'justify-end' : ''} 
         ${className ? className : ''}`}
         ref={ref}
         style={style}

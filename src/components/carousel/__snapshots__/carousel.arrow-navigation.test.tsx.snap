@@ -11,19 +11,19 @@ exports[`@cms/core/Ui_Carousel.ArrowNavigation should match snapshot 1`] = `
       class="
         btn 
       
-        
-        
-        
-        
-        btn-circle
-        
-        
-        
-        
-        
-        
-        
-        
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+      
+      
+      
         "
       type="button"
     >
@@ -33,19 +33,19 @@ exports[`@cms/core/Ui_Carousel.ArrowNavigation should match snapshot 1`] = `
       class="
         btn 
       
-        
-        
-        
-        
-        btn-circle
-        
-        
-        
-        
-        
-        
-        
-        
+       
+       
+       
+       
+       
+       
+       
+       
+      
+      
+      
+      
+      
         "
       type="button"
     >

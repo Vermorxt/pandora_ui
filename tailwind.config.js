@@ -51,6 +51,7 @@ module.exports = {
         'rounded-{screens}',
         '{screens}:gap-{gap}',
         'alert-{colors}',
+        'glass',
       ],
     }),
   ],

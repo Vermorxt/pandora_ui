@@ -15,10 +15,8 @@ export const Ui_Dropdown: any = forwardRef<
     content,
     style,
     loading,
-    wide,
-    block,
     full,
-    square,
+    size,
     large,
     medium,
     small,
@@ -28,7 +26,6 @@ export const Ui_Dropdown: any = forwardRef<
     noAnimation,
     allowFullScreen,
     variant,
-    outline,
     ...rest
   } = props
 
@@ -78,18 +75,15 @@ export const Ui_Dropdown: any = forwardRef<
           className={`btn m-1 
           btn${' '}
         ${variant ? `btn-${variant}` : ''}
-        ${outline ? 'btn-outline' : ''}
         ${loading ? 'loading' : ''}
-        ${wide ? 'btn-wide' : ''}
-        ${square ? 'btn-square' : ''}
+        ${size ? `btn-${size}` : ''}
         ${circle ? 'btn-circle' : ''}
         ${disabled ? 'btn-disabled' : ''}
         ${medium ? 'btn-md' : ''}
         ${small ? 'btn-sm' : ''}
         ${tiny ? 'btn-xs' : ''}
         ${large ? 'btn-lg' : ''}
-        ${noAnimation ? 'no-animation' : ''}
-        ${block || full ? 'btn-block' : ''}`.trim()}
+        ${noAnimation ? 'no-animation' : ''}`.trim()}
         >
           {label}
         </Ui_Dropdown.Label>

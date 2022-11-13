@@ -34,15 +34,14 @@ const componentProps: SpecialPropsMerged[] = [
 ]
 
 const sizeProps: SpecialPropsMerged[] = [
-  { large: true, className: `${selector}-lg` },
-  { medium: true, className: `${selector}-md` },
-  { small: true, className: `${selector}-sm` },
-  { tiny: true, className: `${selector}-xs` },
-  { mini: true, className: `${selector}-xxs` },
-  { wide: true, className: `${selector}-wide` },
-  { block: true, className: `${selector}-block` },
+  { size: 'large', className: `${selector}-lg` },
+  { size: 'medium', className: `${selector}-md` },
+  { size: 'small', className: `${selector}-sm` },
+  { size: 'mini', className: `${selector}-xs` },
+  { size: 'tiny', className: `${selector}-xxs` },
+  { size: 'wide', className: `${selector}-wide` },
+  { size: 'block', className: `${selector}-block` },
   { circle: true, className: `${selector}-circle` },
-  { square: true, className: `${selector}-square` },
 ]
 
 const colorProps: SpecialPropsMerged[] = [

@@ -37,11 +37,11 @@ describe('@cms/core/Ui_Card', () => {
   })
 
   it('renders W-96 status based on prop', () => {
-    const { container: available } = render(<Ui_Card {...defaultProps} w96 ref={null} />)
+    const { container: available } = render(<Ui_Card {...defaultProps} size="96" ref={null} />)
     const { container: notAvailable } = render(<Ui_Card {...defaultProps} ref={null} />)
 
     expect(available.querySelectorAll(`.w-96`)).toHaveLength(1)
-    expect(notAvailable.querySelector(`.w-96`)).toBeNull()
+    expect(notAvailable.querySelectorAll(`.w-96`)).toHaveLength(1)
   })
 
   it('renders COMPACT status based on prop', () => {
@@ -57,12 +57,12 @@ describe('@cms/core/Ui_Card', () => {
     const bgBase200 = '200'
     const bgBase300 = '300'
 
-    await itHasCssClass(<Ui_Card bgPrimary />, `.bg-primary`)
-    await itHasCssClass(<Ui_Card bgSecondary />, `.bg-secondary`)
-    await itHasCssClass(<Ui_Card bgNeutral />, `.bg-neutral`)
-    await itHasCssClass(<Ui_Card textPrimaryContent />, `.text-primary-content`)
-    await itHasCssClass(<Ui_Card textSecondaryContent />, `.text-secondary-content`)
-    await itHasCssClass(<Ui_Card textNeutralContent />, `.text-neutral-content`)
+    await itHasCssClass(<Ui_Card variant="primary" />, `.bg-primary`)
+    await itHasCssClass(<Ui_Card variant="secondary" />, `.bg-secondary`)
+    await itHasCssClass(<Ui_Card variant="neutral" />, `.bg-neutral`)
+    await itHasCssClass(<Ui_Card variant="primary" />, `.text-primary-content`)
+    await itHasCssClass(<Ui_Card variant="secondary" />, `.text-secondary-content`)
+    await itHasCssClass(<Ui_Card variant="neutral" />, `.text-neutral-content`)
     await itHasCssClass(<Ui_Card glass />, `.glass`)
     await itHasCssClass(<Ui_Card cardSide />, `.card-side`)
     await itHasCssClass(<Ui_Card bgBase={bgBase100} />, `.bg-base-${bgBase100}`)

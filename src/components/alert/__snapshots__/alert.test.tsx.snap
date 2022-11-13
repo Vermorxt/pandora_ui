@@ -17,19 +17,19 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
         class="
         btn 
       btn-ghost
-        
-        
-        
-        
-        
-        
-        
-        btn-sm
-        
-        
-        
-        
-        
+       
+       
+      btn-sm 
+       
+       
+       
+       
+       
+      
+      
+      
+      
+      
         "
         type="button"
       >
@@ -39,19 +39,19 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
         class="
         btn 
       btn-primary
-        
-        
-        
-        
-        
-        
-        
-        btn-sm
-        
-        
-        
-        
-        
+       
+       
+      btn-sm 
+       
+       
+       
+       
+       
+      
+      
+      
+      
+      
         "
         type="button"
       >

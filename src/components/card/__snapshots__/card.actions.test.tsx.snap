@@ -5,8 +5,6 @@ exports[`@cms/core/Ui_Card.Actions should match snapshot 1`] = `
   <div
     class="card-actions 
          
-         
-         
         justify-end 
         "
   />

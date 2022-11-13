@@ -35,12 +35,12 @@ const Ui_Alert: FC<any & Ui_AlertProps> = forwardRef<HTMLDivElement, Ui_AlertPro
         </div>
         <div className="flex-none">
           {onDeny && (
-            <Ui_Button small variant="ghost" onClick={onDeny}>
+            <Ui_Button size="small" variant="ghost" onClick={onDeny}>
               {onDenyButtonText || 'Deny'}
             </Ui_Button>
           )}
           {onAccept && (
-            <Ui_Button small variant="primary" onClick={onAccept}>
+            <Ui_Button size="small" variant="primary" onClick={onAccept}>
               {onAcceptButtonText || 'Accept'}
             </Ui_Button>
           )}

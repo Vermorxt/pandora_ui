@@ -52,7 +52,7 @@ const Template = ({ ...rest }: Ui_CarouselProps) => {
         {carouselItems.map((item, index) => (
           <Ui_Button
             key={index}
-            tiny
+            size="tiny"
             onClick={() =>
               document?.getElementById(`carousel_8_${index}`)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
             }

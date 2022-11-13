@@ -2,3 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'tailwindcss/variants';
+
+
+.style-override.card-side figure {
+  display: contents;
+}

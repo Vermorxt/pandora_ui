@@ -1,6 +1,7 @@
+import { I_Ui_Sizes } from './../_types/sizes/sizes'
 import { HTMLProps, ReactElement, ReactNode } from 'react'
 import { AnyType } from '../../_types/AnyType'
-import { Ui_Button_singleClass, Ui_Button_sizes, Ui_Button_variants } from '../button/type'
+import { Ui_Button_singleClass, Ui_Button_variants } from '../button/type'
 import { I_Variants } from '../_types/colors/ui_variants'
 
 export interface Ui_DropdownPosition {
@@ -22,7 +23,7 @@ export interface Ui_DropdownProps
     I_Variants,
     Ui_DropdownPosition,
     Ui_DropdownType,
-    Ui_Button_sizes,
+    I_Ui_Sizes,
     Ui_Button_variants,
     Ui_Button_singleClass,
     Ui_DropdownAction {

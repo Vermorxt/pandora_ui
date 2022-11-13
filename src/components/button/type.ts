@@ -22,7 +22,7 @@ export interface Ui_ButtonProps
   extends Omit<HTMLProps<HTMLButtonElement>, 'size'>,
     Ui_Button_variants,
     Ui_Button_singleClass {
-  size: T_Ui_Size | 'block' | 'wide' | 'full'
+  size?: T_Ui_Size | 'block' | 'wide' | 'full'
   outline?: boolean
   tooltip?: TooltipProps
   type?: Ui_ButtonType

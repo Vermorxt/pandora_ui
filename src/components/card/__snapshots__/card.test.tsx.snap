@@ -3,7 +3,7 @@
 exports[`@cms/core/Ui_Card should match snapshot 1`] = `
 <div>
   <div
-    class="card shadow-xl 
+    class="card shadow-xl style-override
       
       
       bg-base-100
@@ -12,12 +12,7 @@ exports[`@cms/core/Ui_Card should match snapshot 1`] = `
       
       
       
-      
-      
-      
-      
-      
-      
+      w-96
       "
   />
 </div>
