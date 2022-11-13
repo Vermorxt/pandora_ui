@@ -7,16 +7,8 @@ import { Ui_AvatarProps } from './type'
 
 const Ui_Avatar: any & FC<any> & { Group: any } = forwardRef<HTMLDivElement, Ui_AvatarProps & { Group: FC<any> }>(
   ({ className, src, style, usePlaceHolder, ...rest }, ref) => {
-    const { borderRadius, size, mask } = rest
-    const { online, offline } = rest
+    const { borderRadius, size, mask, onlineStatus } = rest
     const { ring, ringOffset, ringOffsetBackground } = rest
-
-    // NOTE: ring styles
-    // const usedRing = getUsedAttributes(rest, { ringPrimary, ringSecondary })
-
-    // const ringStyle = usedRing.map(s => Helper.splitCamelCaseMinus(s)).toString()
-
-    const ringOffsetStyle = ringOffset ? `ring-offset-${ringOffset}` : ''
 
     return (
       <div
@@ -25,7 +17,7 @@ const Ui_Avatar: any & FC<any> & { Group: any } = forwardRef<HTMLDivElement, Ui_
         className={`
         avatar
         ${usePlaceHolder ? 'placeholder' : ''} 
-        ${online ? 'online' : ''} ${offline ? 'offline' : ''}
+        ${onlineStatus ? `${onlineStatus}` : ''}
         ${className ? className : ''} 
         `}
       >
@@ -42,7 +34,7 @@ const Ui_Avatar: any & FC<any> & { Group: any } = forwardRef<HTMLDivElement, Ui_
         ${
           ring
             ? `ring ring-${ring} ${
-                ringOffset ? `${ringOffsetStyle} ring-offset-${ringOffsetBackground || 'base-100'}` : ''
+                ringOffset ? `ring-offset-${ringOffset} ring-offset-${ringOffsetBackground || 'base-100'}` : ''
               }`
             : ''
         }

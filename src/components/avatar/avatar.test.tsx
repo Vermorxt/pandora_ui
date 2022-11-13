@@ -29,7 +29,7 @@ describe('@cms/core/Ui_Avatar', () => {
   })
 
   it('renders ONLINE status based on prop', () => {
-    const { container: available } = render(<Ui_Avatar {...defaultProps} online ref={null} />)
+    const { container: available } = render(<Ui_Avatar {...defaultProps} onlineStatus="online" ref={null} />)
     const { container: notAvailable } = render(<Ui_Avatar {...defaultProps} ref={null} />)
 
     expect(available.querySelectorAll(`.online`)).toHaveLength(1)
@@ -37,7 +37,7 @@ describe('@cms/core/Ui_Avatar', () => {
   })
 
   it('renders OFFLINE status based on prop', () => {
-    const { container: available } = render(<Ui_Avatar {...defaultProps} offline ref={null} />)
+    const { container: available } = render(<Ui_Avatar {...defaultProps} onlineStatus="offline" ref={null} />)
     const { container: notAvailable } = render(<Ui_Avatar {...defaultProps} ref={null} />)
 
     expect(available.querySelectorAll(`.offline`)).toHaveLength(1)

@@ -16,12 +16,12 @@ interface Ui_Avatar_ring {
   ringOffsetBackground?: Ui_RingOffsetBackground
 }
 
-interface Ui_Avatar_online {
-  online?: boolean
-  offline?: boolean
+type Ui_Avatar_online = 'online' | 'offline' | null
+interface Ui_Avatar_onlineStatus {
+  onlineStatus?: Ui_Avatar_online
 }
 
-export interface Ui_AvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'>, Ui_Avatar_online {
+export interface Ui_AvatarProps extends Omit<HTMLProps<HTMLDivElement>, 'size'>, Ui_Avatar_onlineStatus {
   borderRadius?: Ui_BorderRadius
   size?: T_Ui_Size
   mask?: T_Ui_Mask

@@ -41,9 +41,10 @@ export default {
       options: ['primary', 'secondary', 'accent', 'ghost', 'link', 'info', 'success', 'warning', 'error', 'neutral'],
       control: { type: 'select' },
     },
-
-    online: { control: 'boolean' },
-    offline: { control: 'boolean' },
+    onlineStatus: {
+      options: ['online', 'offline', null],
+      control: { type: 'radio' },
+    },
 
     src: { control: 'text' },
     usePlaceHolder: { control: 'text' },
