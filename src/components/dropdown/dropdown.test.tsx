@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import { Ui_DropdownProps } from './type'
-import { Ui_Dropdown } from './Dropdown'
 import React from 'react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
+import Ui_Dropdown from './dropdown'
 
 const defaultProps: Ui_DropdownProps = {}
 

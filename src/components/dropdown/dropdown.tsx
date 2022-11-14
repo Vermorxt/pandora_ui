@@ -13,15 +13,12 @@ export const Ui_Dropdown: any = forwardRef<
     tabIndex,
     label,
     content,
+    position,
     style,
     loading,
-    full,
+    action,
     size,
-    large,
-    medium,
-    small,
-    tiny,
-    circle,
+    outline,
     disabled,
     noAnimation,
     allowFullScreen,
@@ -50,7 +47,14 @@ export const Ui_Dropdown: any = forwardRef<
 
   if (!label && !content) {
     return (
-      <div ref={ref} style={style} className={defaultClassNames}>
+      <div
+        ref={ref}
+        style={style}
+        className={`dropdown m-1 dropdown-rounded ${position ? `dropdown-${position} ` : ''} 
+        ${action ? `dropdown-${action} ` : ''}
+        ${className ? className : ''}
+        `}
+      >
         {children}
       </div>
     )
@@ -59,7 +63,25 @@ export const Ui_Dropdown: any = forwardRef<
   if (label && !content) {
     return (
       <div className={defaultClassNames}>
-        <Ui_Dropdown.Label tabIndex={tabIndex || 0} className="btn m-1">
+        <Ui_Dropdown.Label
+          tabIndex={tabIndex || 0}
+          className={`btn m-1 
+        ${className ? className : ''}
+        ${variant ? `btn-${variant}` : ''}
+        ${loading && loading === true ? 'loading' : ''}
+        ${size && size === 'large' ? 'btn-lg' : ''} 
+        ${size && size === 'medium' ? 'btn-md' : ''} 
+        ${size && size === 'small' ? 'btn-sm' : ''} 
+        ${size && size === 'mini' ? 'btn-xs' : ''} 
+        ${size && size === 'tiny' ? 'btn-xxs' : ''} 
+        ${size && size === 'block' ? 'btn-block' : ''} 
+        ${size && size === 'full' ? 'btn-block' : ''} 
+        ${size && size === 'wide' ? 'btn-wide' : ''} 
+        ${loading && loading === true ? 'loading' : ''}
+        ${outline && outline === true ? 'btn-outline' : ''}
+        ${disabled ? 'btn-disabled' : ''}
+        ${noAnimation ? 'no-animation' : ''}`.trim()}
+        >
           {label}
         </Ui_Dropdown.Label>
         {children}
@@ -74,15 +96,20 @@ export const Ui_Dropdown: any = forwardRef<
           tabIndex={0}
           className={`btn m-1 
           btn${' '}
+        ${className ? className : ''}
         ${variant ? `btn-${variant}` : ''}
-        ${loading ? 'loading' : ''}
-        ${size ? `btn-${size}` : ''}
-        ${circle ? 'btn-circle' : ''}
+        ${loading && loading === true ? 'loading' : ''}
+        ${size && size === 'large' ? 'btn-lg' : ''} 
+        ${size && size === 'medium' ? 'btn-md' : ''} 
+        ${size && size === 'small' ? 'btn-sm' : ''} 
+        ${size && size === 'mini' ? 'btn-xs' : ''} 
+        ${size && size === 'tiny' ? 'btn-xxs' : ''} 
+        ${size && size === 'block' ? 'btn-block' : ''} 
+        ${size && size === 'full' ? 'btn-block' : ''} 
+        ${size && size === 'wide' ? 'btn-wide' : ''} 
+        ${loading && loading === true ? 'loading' : ''}
+        ${outline && outline === true ? 'btn-outline' : ''}
         ${disabled ? 'btn-disabled' : ''}
-        ${medium ? 'btn-md' : ''}
-        ${small ? 'btn-sm' : ''}
-        ${tiny ? 'btn-xs' : ''}
-        ${large ? 'btn-lg' : ''}
         ${noAnimation ? 'no-animation' : ''}`.trim()}
         >
           {label}
@@ -98,15 +125,36 @@ export const Ui_Dropdown: any = forwardRef<
   return <></>
 })
 
-const Label: FC = forwardRef<HTMLLabelElement, Ui_DropdownProps>(({ children, className, tabIndex }, ref) => {
-  return (
-    <label tabIndex={tabIndex || 0} className={`${className ? className : ''}`} ref={ref}>
-      {children}
-    </label>
-  )
-})
+const Label: FC = forwardRef<HTMLLabelElement, Ui_DropdownProps>(
+  ({ children, className, tabIndex, loading, size, disabled, noAnimation, variant, outline, position }, ref) => {
+    return (
+      <label
+        tabIndex={tabIndex || 0}
+        className={`btn m-1 
+        ${className ? className : ''}
+        ${variant ? `btn-${variant}` : ''}
+        ${loading && loading === true ? 'loading' : ''}
+        ${size && size === 'large' ? 'btn-lg' : ''} 
+        ${size && size === 'medium' ? 'btn-md' : ''} 
+        ${size && size === 'small' ? 'btn-sm' : ''} 
+        ${size && size === 'mini' ? 'btn-xs' : ''} 
+        ${size && size === 'tiny' ? 'btn-xxs' : ''} 
+        ${size && size === 'block' ? 'btn-block' : ''} 
+        ${size && size === 'full' ? 'btn-block' : ''} 
+        ${size && size === 'wide' ? 'btn-wide' : ''} 
+        ${loading && loading === true ? 'loading' : ''}
+        ${outline && outline === true ? 'btn-outline' : ''}
+        ${disabled ? 'btn-disabled' : ''}
+        ${noAnimation ? 'no-animation' : ''}`.trim()}
+        ref={ref}
+      >
+        {children}
+      </label>
+    )
+  }
+)
 
-const Content: FC = forwardRef<HTMLDivElement, Ui_DropdownProps>(({ children, className }, ref) => {
+const Content: FC = forwardRef<HTMLDivElement, Ui_DropdownProps>(({ children, className, type }, ref) => {
   const classNamesArray = className?.split(' ') || ([] as string[])
   const hasBgClass = classNamesArray.find(t => t.includes('bg-'))
 
@@ -117,7 +165,11 @@ const Content: FC = forwardRef<HTMLDivElement, Ui_DropdownProps>(({ children, cl
   if (!hasBgClass) defaultClasses += defaultBgClass
 
   return (
-    <div className={`${defaultClasses} ${className ? className : ''}`} ref={ref}>
+    <div
+      className={`${defaultClasses} ${className ? className : ''} 
+      ${type && type === 'card' ? 'card card-compact w-64' : ''} ${type && type === 'full' ? 'w-full' : ''}`}
+      ref={ref}
+    >
       {children}
     </div>
   )

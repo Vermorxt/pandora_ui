@@ -3,7 +3,10 @@
 exports[`@cms/core/Ui_Dropdown should match snapshot 1`] = `
 <div>
   <div
-    class="dropdown   "
+    class="dropdown m-1 dropdown-rounded  
+        
+        
+        "
   >
     Test
   </div>

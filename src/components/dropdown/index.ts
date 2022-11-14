@@ -1,2 +1,2 @@
-export { default } from './Dropdown'
+export { default } from './dropdown'
 export type { Ui_DropdownProps } from './type'

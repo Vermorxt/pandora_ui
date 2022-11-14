@@ -1,7 +1,6 @@
 import { T_Ui_Size } from './../_types/sizes/sizes'
 import { HTMLProps } from 'react'
 import { I_Variants } from '../_types/colors/ui_variants'
-import { I_Ui_Sizes } from '../_types/sizes/sizes'
 import { TooltipProps } from '../_types/tooltip/tooltip-props'
 
 export interface Ui_Button_variants extends I_Variants {

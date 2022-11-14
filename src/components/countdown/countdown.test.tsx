@@ -45,11 +45,11 @@ describe('@cms/core/Ui_Countdown', () => {
       <Ui_Countdown {...defaultProps} showTimeValues={showTimeValues as any} ref={null} />
     )
 
-    await itHasCssClass(<Ui_Countdown large value={5} />, `.text-6xl`)
-    await itHasCssClass(<Ui_Countdown medium value={5} />, `.text-4xl`)
-    await itHasCssClass(<Ui_Countdown small value={5} />, `.text-2xl`)
-    await itHasCssClass(<Ui_Countdown tiny value={5} />, `.text-xs`)
-    await itHasCssClass(<Ui_Countdown mini value={5} />, `.text-xxs`)
+    await itHasCssClass(<Ui_Countdown size="large" value={5} />, `.text-6xl`)
+    await itHasCssClass(<Ui_Countdown size="medium" value={5} />, `.text-4xl`)
+    await itHasCssClass(<Ui_Countdown size="small" value={5} />, `.text-2xl`)
+    await itHasCssClass(<Ui_Countdown size="mini" value={5} />, `.text-xs`)
+    await itHasCssClass(<Ui_Countdown size="tiny" value={5} />, `.text-xxs`)
   })
 
   it('renders COUNTDOWN display values', async () => {

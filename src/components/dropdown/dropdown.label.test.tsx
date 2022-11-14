@@ -3,7 +3,7 @@ import { render } from '@testing-library/react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { Ui_DropdownProps } from './type'
 import React from 'react'
-import Ui_Dropdown from './Dropdown'
+import Ui_Dropdown from './dropdown'
 
 const defaultProps: Ui_DropdownProps = {}
 

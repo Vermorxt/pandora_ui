@@ -3,7 +3,7 @@
 exports[`@cms/core/Ui_Dropdown.Label should match snapshot 1`] = `
 <div>
   <label
-    class=""
+    class="btn m-1"
     tabindex="0"
   >
     Test
