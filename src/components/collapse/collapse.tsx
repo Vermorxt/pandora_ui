@@ -18,13 +18,13 @@ const Ui_Collapse: any = forwardRef<
         tabIndex={0}
         className={`collapse 
       ${className ? className : ''}
-      ${border ? 'border border-base-300 bg-base-100' : ''}
-      ${rounded ? 'rounded-box' : ''}
-      ${arrow ? 'collapse-arrow' : ''}
-      ${plus ? 'collapse-plus' : ''}
-      ${open ? 'collapse-open' : ''}
-      ${close ? 'collapse-close' : ''}
-      ${group ? 'group' : ''}
+      ${border && border === true ? 'border border-base-300 bg-base-100' : ''}
+      ${rounded && rounded === true ? 'rounded-box' : ''}
+      ${arrow && arrow === true ? 'collapse-arrow' : ''}
+      ${plus && plus === true ? 'collapse-plus' : ''}
+      ${open && open === true ? 'collapse-open' : ''}
+      ${close && close === true ? 'collapse-close' : ''}
+      ${group && group === true ? 'group' : ''}
       `}
         style={style}
         ref={ref}
