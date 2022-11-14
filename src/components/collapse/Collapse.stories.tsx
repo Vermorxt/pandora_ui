@@ -7,11 +7,20 @@ export default {
   title: 'Collapse',
   component: Ui_Collapse,
   argTypes: {
-    bgColorOpened: {
-      control: { type: 'text', value: ['primary', 'secondary', 'neutral'] },
+    group: {
+      control: { type: 'boolean' },
     },
-    colorOpened: {
-      control: { type: 'text', value: ['primary', 'secondary', 'neutral'] },
+    bgColor: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary', 'info', 'success', 'warning', 'ghost', 'neutral', 'error'],
+      },
+    },
+    bgColorOpened: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary', 'info', 'success', 'warning', 'ghost', 'neutral', 'error'],
+      },
     },
     border: {
       control: { type: 'boolean' },
@@ -35,9 +44,6 @@ export default {
       control: { type: 'boolean' },
     },
     close: {
-      control: { type: 'boolean' },
-    },
-    group: {
       control: { type: 'boolean' },
     },
   },

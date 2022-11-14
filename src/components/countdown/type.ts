@@ -1,6 +1,5 @@
 import { HTMLProps } from 'react'
-import { I_Variants } from '../_types/colors/ui_variants'
-import { I_Ui_Sizes } from '../_types/sizes/sizes'
+import { I_Ui_Sizes, T_Ui_Size } from '../_types/sizes/sizes'
 
 export interface ShowTimeValues {
   useValues: ('day' | 'hour' | 'minute' | 'second')[]
@@ -8,9 +7,10 @@ export interface ShowTimeValues {
 }
 
 export type OnFinishCallback = (arg: boolean) => void
-export interface Ui_CountdownProps extends HTMLProps<HTMLDivElement>, I_Variants, I_Ui_Sizes {
+export interface Ui_CountdownProps extends Omit<HTMLProps<HTMLDivElement>, 'size'>, I_Ui_Sizes {
   value?: number
   targetTime?: string
+  size?: T_Ui_Size
   showTimeValues?: ShowTimeValues
   template?: 'compact' | 'clock' | 'inline' | 'boxed'
   center?: boolean

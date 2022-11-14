@@ -97,20 +97,7 @@ export const handleTime = (
 
 const Ui_Countdown = forwardRef<HTMLDivElement, Ui_CountdownProps>(
   ({ children, className, style, ...rest }: Ui_CountdownProps, ref) => {
-    const {
-      value,
-      showTimeValues,
-      targetTime,
-      large,
-      medium,
-      small,
-      tiny,
-      mini,
-      template,
-      center,
-      finishColor,
-      onFinishCallback,
-    } = rest
+    const { value, size, showTimeValues, targetTime, template, center, finishColor, onFinishCallback } = rest
 
     const [isFinished, setIsFinished] = useState(false)
 
@@ -152,11 +139,11 @@ const Ui_Countdown = forwardRef<HTMLDivElement, Ui_CountdownProps>(
         <span
           className={`countdown 
       ${className ? className : ''}
-      ${large ? 'text-6xl' : ''}
-      ${medium ? 'text-4xl' : ''}
-      ${small ? 'text-2xl' : ''}
-      ${tiny ? 'text-xs' : ''}
-      ${mini ? 'text-xxs' : ''}
+      ${size && size === 'large' ? 'text-6xl' : ''}
+      ${size && size === 'medium' ? 'text-4xl' : ''}
+      ${size && size === 'small' ? 'text-2xl' : ''}
+      ${size && size === 'mini' ? 'text-xs' : ''}
+      ${size && size === 'tiny' ? 'text-xxs' : ''}
       `}
         >
           <span ref={ref}></span>
@@ -165,17 +152,17 @@ const Ui_Countdown = forwardRef<HTMLDivElement, Ui_CountdownProps>(
     }
     if (showTimeValues?.useValues?.length) {
       let gap = 'gap-5'
-      if (medium) gap = 'gap-4'
-      if (small) gap = 'gap-3'
-      if (tiny) gap = 'gap-2'
+      if (size === 'medium') gap = 'gap-4'
+      if (size === 'small') gap = 'gap-3'
+      if (size === 'tiny') gap = 'gap-2'
 
       let paddingSeparator = 'pl-1'
 
       let textSize = 'text-6xl'
-      if (medium) textSize = 'text-4xl'
-      if (small) textSize = 'text-2xl'
-      if (tiny) textSize = 'text-xs'
-      if (mini) textSize = 'text-xxs'
+      if (size === 'medium') textSize = 'text-4xl'
+      if (size === 'small') textSize = 'text-2xl'
+      if (size === 'tiny') textSize = 'text-xs'
+      if (size === 'mini') textSize = 'text-xxs'
 
       let wrapperClasses = `flex ${gap}`
       let childClasses = `font-mono`
