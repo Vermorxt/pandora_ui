@@ -5,7 +5,8 @@
   },
   "version": "0.0.7",
   "scripts": {
-    "rollup": "rollup -c",
+    "copy-flags": "mkdir './dist' & mkdir './dist/flags' & './dist' & cp -R './node_modules/flag-icons/flags/' './dist/flags'",
+    "rollup": "rollup -c & yarn copy-flags",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "story:new": "npx hygen story new",
@@ -25,6 +26,7 @@
     "@vermorxt/pandora_utils": "^0.0.2",
     "daisyui": "^2.28.0",
     "dayjs": "^1.11.5",
+    "flag-icons": "^6.6.6",
     "next": "^12.3.1",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
