@@ -4,10 +4,14 @@ exports[`@cms/core/Ui_Checkbox should match snapshot 1`] = `
 <div>
   <input
     class="
-      checkbox 
-        
-        
-      
+        checkbox 
+          
+          
+          
+          
+          
+          
+          
       "
     type="checkbox"
   />

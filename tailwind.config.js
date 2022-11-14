@@ -47,6 +47,7 @@ module.exports = {
         'bg-{colors}',
         'bg-{colors}-focus',
         'text-{colors}-content',
+        'text-{size}',
         'border-{borderWidth}',
         'rounded-{screens}',
         '{screens}:gap-{gap}',
