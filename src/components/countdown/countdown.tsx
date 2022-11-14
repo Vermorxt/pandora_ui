@@ -63,13 +63,17 @@ export const getRef = (val: string, { refDay, refHour, refMinute, refSecond }: R
   if (val === 'second') return refSecond
 }
 
+let timeOutTimer = null as any
+
 export const handleTime = (
   targetTime: string,
   showTimeValues: ShowTimeValues,
   { setDayValue, setHourValue, setMinuteValue, setSecondValue, setIsFinished, onFinishCallback }: SetValues
 ) => {
-  setTimeout(() => {
-    const timeRemaining = getTimeRemaining(targetTime as string)
+  clearTimeout(timeOutTimer)
+
+  timeOutTimer = setTimeout(() => {
+    const timeRemaining = getTimeRemaining(new Date(targetTime) as unknown as string)
 
     if (timeRemaining) {
       if (showTimeValues?.useValues?.includes('day')) setDayValue(timeRemaining.days)
@@ -132,7 +136,7 @@ const Ui_Countdown = forwardRef<HTMLDivElement, Ui_CountdownProps>(
           onFinishCallback,
         })
       }
-    }, [])
+    }, [targetTime])
 
     if (value?.toString()) {
       return (

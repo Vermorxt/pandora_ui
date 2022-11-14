@@ -6,13 +6,15 @@ export interface ShowTimeValues {
   displayValues?: string[]
 }
 
+export type T_Ui_CountdownTemplate = 'compact' | 'clock' | 'inline' | 'boxed'
+
 export type OnFinishCallback = (arg: boolean) => void
 export interface Ui_CountdownProps extends Omit<HTMLProps<HTMLDivElement>, 'size'>, I_Ui_Sizes {
   value?: number
   targetTime?: string
   size?: T_Ui_Size
   showTimeValues?: ShowTimeValues
-  template?: 'compact' | 'clock' | 'inline' | 'boxed'
+  template?: T_Ui_CountdownTemplate
   center?: boolean
   finishColor?: string
   onFinishCallback?: OnFinishCallback
