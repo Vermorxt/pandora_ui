@@ -9,7 +9,7 @@ const FooterTitle = forwardRef<HTMLDivElement, Ui_FooterProps>(({ children, clas
     </div>
   )
 })
-interface FooterComponent extends FC<Ui_FooterProps> {
+export interface FooterComponent extends FC<Ui_FooterProps> {
   Title: typeof FooterTitle
 }
 
