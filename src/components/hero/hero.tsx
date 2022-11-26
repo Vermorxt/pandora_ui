@@ -11,11 +11,11 @@ export const Ui_Hero: any = forwardRef<
         className={`
           hero ${className ? className : ''} 
           ${shadow ? `shadow-${typeof shadow === 'boolean' ? 'xl' : shadow}` : ''}
-          ${rounded ? `rounded-${typeof rounded === 'boolean' ? 'box' : rounded}` : ''}
+          ${rounded && rounded === true ? `rounded-${typeof rounded === 'boolean' ? 'box' : rounded}` : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : 'bg-base-200'}
-          ${center ? `hero-center` : ''}
-          ${minHeightScreen ? `min-h-screen` : ''}
-          ${itemsCenter ? `items-center` : ''}
+          ${center && center === true ? `hero-center` : ''}
+          ${minHeightScreen && minHeightScreen === true ? `min-h-screen` : ''}
+          ${itemsCenter && itemsCenter === true ? `items-center` : ''}
         `}
         id={id}
         style={style}
