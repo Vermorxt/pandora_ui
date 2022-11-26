@@ -5,7 +5,7 @@
   },
   "version": "0.0.7",
   "scripts": {
-    "copy-flags": "mkdir './dist' & mkdir './dist/flags' & './dist' & cp -R './node_modules/flag-icons/flags/' './dist/flags'",
+    "copy-flags": "mkdir './dist' & mkdir './dist/flags' & cp -R './node_modules/flag-icons/flags/' './dist/flags'",
     "rollup": "rollup -c & yarn copy-flags",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",

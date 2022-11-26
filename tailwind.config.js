@@ -43,6 +43,7 @@ module.exports = {
         'w-{width}',
         'h-{height}',
         'text-{colors}',
+        'rounded-{size}',
         'btn-{colors}',
         'bg-{colors}',
         'bg-{colors}-focus',
