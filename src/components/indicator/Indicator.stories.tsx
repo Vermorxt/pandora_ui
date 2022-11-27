@@ -1,8 +1,6 @@
 import React from 'react'
 import { ComponentMeta } from '@storybook/react'
 import Ui_Indicator from './Indicator'
-import Ui_Card from './../card'
-import Ui_Button from './../button'
 import { Ui_IndicatorProps } from './type'
 
 export default {

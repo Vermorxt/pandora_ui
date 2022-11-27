@@ -1,6 +1,6 @@
 import { HTMLProps } from 'react'
 import { I_Variants } from '../_types/colors/ui_variants'
-import { I_Ui_Sizes } from '../_types/sizes/sizes'
+import { T_Ui_Size } from '../_types/sizes/sizes'
 
 export type InputPositionProps = 'top' | 'left' | 'bottom' | 'right'
 
@@ -19,10 +19,9 @@ export interface Ui_Input_singleClass {
 }
 
 export interface Ui_InputProps
-  extends HTMLProps<HTMLSpanElement>,
+  extends Omit<HTMLProps<HTMLSpanElement>, 'size'>,
     I_Variants,
-    I_Ui_Sizes,
     Ui_Input_variants,
     Ui_Input_singleClass {
-  position?: InputPositionProps
+  size?: T_Ui_Size
 }

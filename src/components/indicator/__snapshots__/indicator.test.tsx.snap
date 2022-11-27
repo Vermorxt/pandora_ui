@@ -7,10 +7,17 @@ exports[`@cms/core/[object Object] should create snapshot 1`] = `
             indicator  
             
             
-            
             "
   >
-    Test
+    <div
+      class="
+            
+            
+            "
+      style="overflow: hidden;"
+    >
+      Test
+    </div>
   </div>
 </div>
 `;

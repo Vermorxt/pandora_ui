@@ -26,7 +26,7 @@ interface SpecialPropsMerged extends SpecialProps {
 
 const componentProps: SpecialPropsMerged[] = [
   { prop: { shadow: true }, className: `shadow-xl` },
-  { prop: { rounded: true }, className: `rounded-box` },
+  // { prop: { rounded: true }, className: `rounded-lg` }, // TODO: check for existing length 2
   { prop: { bgColor: 'primary' }, className: `bg-${'primary'}.text-${'primary'}-content` },
 ]
 

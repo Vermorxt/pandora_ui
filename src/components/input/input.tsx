@@ -1,13 +1,7 @@
 import { FC, useEffect, useRef } from 'react'
-import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 import { Ui_InputProps } from './type'
 import React from 'react'
 
-export const withoutPrefix_input = ['disabled']
-export const convertAttributeToClassName_input = [
-  ['large', 'medium', 'small', 'tiny'], // NOTE: attributes to convert
-  ['lg', 'md', 'sm', 'xs'], // NOTE: attributes translated based on attributes above
-]
 export const Ui_Input: FC<Ui_InputProps> = ({
   onChange,
   className,
@@ -17,34 +11,24 @@ export const Ui_Input: FC<Ui_InputProps> = ({
   type,
   disabled,
   label,
+  variant,
   altLabel,
+  size,
   placeholder,
   indeterminate,
+  loading,
+  checked,
+  bordered,
+  labelPosition,
   ...rest
 }) => {
   const ref = useRef<HTMLInputElement>(null)
-
-  const { large, medium, small, tiny, mini } = rest
-
-  const classAttributes = getClassNamesFromAttributes({
-    names: rest,
-    convert: convertAttributeToClassName_input,
-    withoutPrefix: withoutPrefix_input,
-    addPrefix: 'input',
-  })
 
   useEffect(() => {
     if (ref?.current && indeterminate) {
       ref.current.indeterminate = true
     }
   }, [])
-
-  let textSize = 'text-base'
-  if (large) textSize = 'text-base'
-  if (medium) textSize = 'text-md'
-  if (small) textSize = 'text-sm'
-  if (tiny) textSize = 'text-xs'
-  if (mini) textSize = 'text-xxs'
 
   const InputElement = (
     <input
@@ -55,8 +39,24 @@ export const Ui_Input: FC<Ui_InputProps> = ({
       placeholder={placeholder}
       style={style}
       className={`
-      input${' '} ${classAttributes} 
-      ${(className as string) || ''}
+      input${' '} 
+        ${(className as string) || ''}
+        ${variant ? `input-${variant}` : ''}
+        ${disabled && disabled === true ? `input-${'disabled'}` : ''}
+        ${bordered && bordered === true ? `input-${'bordered'}` : ''}
+        ${checked && checked === true ? `input-${'checked'}` : ''}
+        ${loading && loading === true ? `input-${'loading'}` : ''}
+        ${indeterminate && indeterminate === true ? `input-${'indeterminate'}` : ''}
+        ${size && size === 'large' ? 'input-lg' : ''} 
+        ${size && size === 'medium' ? 'input-md' : ''} 
+        ${size && size === 'small' ? 'input-sm' : ''} 
+        ${size && size === 'mini' ? 'input-xs' : ''} 
+        ${size && size === 'tiny' ? 'input-xxs' : ''}
+        ${
+          size !== 'large' && size !== 'medium' && size !== 'small' && size !== 'mini' && size !== 'tiny'
+            ? 'input-base'
+            : ''
+        } 
       `}
       {...{ onChange, name }}
     />
@@ -66,11 +66,30 @@ export const Ui_Input: FC<Ui_InputProps> = ({
     <>
       {label && (
         <label className="label">
-          <span className={`label-text ${textSize}`}>{label}</span>
+          <span
+            className={`label-text 
+              ${size && size === 'large' ? 'text-base' : ''} 
+              ${size && size === 'medium' ? 'text-md' : ''} 
+              ${size && size === 'small' ? 'text-sm' : ''} 
+              ${size && size === 'mini' ? 'text-xs' : ''} 
+              ${size && size === 'tiny' ? 'text-xxs' : ''} 
+              ${
+                size !== 'large' && size !== 'medium' && size !== 'small' && size !== 'mini' && size !== 'tiny'
+                  ? 'text-base'
+                  : ''
+              } 
+          `}
+          >
+            {label}
+          </span>
         </label>
       )}
       {InputElement}
-      {altLabel && <span className={`label-text-alt text-xs pt-1 pl-1`}>{altLabel}</span>}
+      {altLabel && (
+        <span className={`label-text-alt text-xs pt-0 pl-1`} style={{ marginTop: -10 }}>
+          {altLabel}
+        </span>
+      )}
     </>
   )
 }

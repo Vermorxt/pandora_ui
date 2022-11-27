@@ -19,17 +19,17 @@ const component = (
 
 const testName = `@cms/core/${componentName}`
 
-interface SpecialPropsMerged extends SpecialProps {
+interface SpecialPropsMerged extends Ui_InputProps, SpecialProps {
   className: string
   prop?: Ui_InputProps
 }
 
-const componentPropsLabelTextSize: SpecialPropsMerged[] = [
-  { prop: { large: true }, className: `text-base` },
-  { prop: { medium: true }, className: `text-md` },
-  { prop: { small: true }, className: `text-sm` },
-  { prop: { tiny: true }, className: `text-xs` },
-  { prop: { mini: true }, className: `text-xxs` },
+const sizeProps: SpecialPropsMerged[] = [
+  { size: 'large', className: `${selector}-lg` },
+  { size: 'medium', className: `${selector}-md` },
+  { size: 'small', className: `${selector}-sm` },
+  { size: 'mini', className: `${selector}-xs` },
+  { size: 'tiny', className: `${selector}-xxs` },
 ]
 
 const componentPropsDefault: SpecialPropsMerged[] = [
@@ -39,7 +39,7 @@ const componentPropsDefault: SpecialPropsMerged[] = [
   { prop: { labelPosition: 'top' }, className: `${selector}-labelPosition` },
 ]
 
-const componentProps = [...componentPropsDefault]
+const componentProps = [...componentPropsDefault, , ...sizeProps]
 
 const testConfig = {
   testName,
