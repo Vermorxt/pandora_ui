@@ -4,24 +4,17 @@ import { Ui_KbdProps } from './type'
 import React from 'react'
 
 const Ui_Kbd = forwardRef<HTMLDivElement, Ui_KbdProps>(
-  ({ onClick, className, name, children, style, variant, ...rest }: Ui_KbdProps, ref) => {
-    const withoutPrefix_kbd = [] as any[]
-
-    const convertAttributeToClassName_kbd = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_kbd,
-      withoutPrefix: withoutPrefix_kbd,
-      addPrefix: 'kbd',
-    })
-
+  ({ onClick, className, name, children, style, variant, size, ...rest }: Ui_KbdProps, ref) => {
     return (
       <kbd
         {...{ onClick, name }}
-        className={`kbd${' '} ${`${classAttributes} ${variant ? `${variant}` : ''} ${(className as string) || ''}`}`}
+        className={`kbd${' '}
+        ${variant ? `input-${variant}` : ''}       
+        ${size && size === 'large' ? 'kbd-lg' : ''}
+        ${size && size === 'medium' ? 'kbd-md' : ''} 
+        ${size && size === 'small' ? 'kbd-sm' : ''} 
+        ${size && size === 'mini' ? 'kbd-xs' : ''} 
+        ${size && size === 'tiny' ? 'kbd-xxs' : ''} ${(className as string) || ''}`}
         style={style}
         ref={ref}
       >
