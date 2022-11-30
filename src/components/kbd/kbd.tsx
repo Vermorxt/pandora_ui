@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 import { Ui_KbdProps } from './type'
 import React from 'react'
 
@@ -14,7 +13,8 @@ const Ui_Kbd = forwardRef<HTMLDivElement, Ui_KbdProps>(
         ${size && size === 'medium' ? 'kbd-md' : ''} 
         ${size && size === 'small' ? 'kbd-sm' : ''} 
         ${size && size === 'mini' ? 'kbd-xs' : ''} 
-        ${size && size === 'tiny' ? 'kbd-xxs' : ''} ${(className as string) || ''}`}
+        ${size && size === 'tiny' ? 'kbd-xxs' : ''} 
+        ${(className as string) || ''}`}
         style={style}
         ref={ref}
       >

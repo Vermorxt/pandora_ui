@@ -4,16 +4,10 @@ import { Ui_LabelProps } from './type'
 import React from 'react'
 
 export const withoutPrefix_label = ['disabled']
-export const convertAttributeToClassName_label = [
-  ['large', 'medium', 'small', 'tiny'], // NOTE: attributes to convert
-  ['lg', 'md', 'sm', 'xs'], // NOTE: attributes translated based on attributes above
-]
 
 const Ui_Label: any = forwardRef<HTMLDivElement, Ui_LabelProps>(
-  ({ onClick, children, className, name, htmlFor, style, as, ...rest }, ref) => {
+  ({ onClick, children, className, name, htmlFor, style, size, as, disabled, variant, ...rest }, ref) => {
     const refElem = useRef<HTMLLabelElement>(null) || ref
-
-    const { large, medium, small, tiny } = rest
 
     let asElementType = 'label'
 
@@ -21,27 +15,20 @@ const Ui_Label: any = forwardRef<HTMLDivElement, Ui_LabelProps>(
       asElementType = 'btn'
     }
 
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_label,
-      withoutPrefix: withoutPrefix_label,
-      addPrefix: asElementType,
-    })
-
-    let textSize = 'text-xl'
-    if (large) textSize = 'text-xl'
-    if (medium) textSize = 'text-base'
-    if (small) textSize = 'text-sm'
-    if (tiny) textSize = 'text-xs'
-
     return (
       <label
         ref={refElem}
         style={style}
         htmlFor={htmlFor}
         className={`
-      ${classAttributes}
-      ${textSize}
+        ${disabled && disabled === true ? 'disabled' : ''}
+        ${size && size === 'large' ? 'text-lg' : ''}
+        ${size && size === 'medium' ? 'text-md' : ''} 
+        ${size && size === 'small' ? 'text-sm' : ''} 
+        ${size && size === 'mini' ? 'text-xs' : ''} 
+        ${size && size === 'tiny' ? 'text-xxs' : ''}
+        ${as && as === 'button' ? 'label-btn' : ''}
+        ${variant ? `text-${variant}` : ''}
       ${asElementType}
       ${(className as string) || ''}
       `}
