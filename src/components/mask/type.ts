@@ -23,6 +23,28 @@ export interface Ui_Mask_shapes {
   star2?: boolean
 }
 
-export interface Ui_MaskProps extends HTMLProps<HTMLImageElement>, I_Variants, Ui_Mask_shapes {
+export type T_Ui_Mask_shapes =
+  | 'squircle'
+  | 'hexagon'
+  | 'triangle'
+  | 'triangle2'
+  | 'triangle3'
+  | 'triangle4'
+  | 'heart'
+  | 'hexagon2'
+  | 'decagon'
+  | 'pentagon'
+  | 'diamond'
+  | 'square'
+  | 'circle'
+  | 'parallelogram'
+  | 'parallelogram2'
+  | 'parallelogram3'
+  | 'parallelogram4'
+  | 'star'
+  | 'star2'
+
+export interface Ui_MaskProps extends HTMLProps<HTMLImageElement>, I_Variants {
   src?: string
+  shape?: T_Ui_Mask_shapes
 }
