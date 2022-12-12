@@ -4,27 +4,18 @@ import { Ui_MenuProps } from './type'
 import React from 'react'
 
 const Ui_Menu = forwardRef<HTMLUListElement, Ui_MenuProps>(
-  ({ className, children, style, hover, rounded, shadow, bgColor, horizontal, ...rest }, ref) => {
-    const withoutPrefix_badge = [] as string[]
-    const convertAttributeToClassName_badge = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_badge,
-      withoutPrefix: withoutPrefix_badge,
-      addPrefix: 'text',
-    })
-
+  ({ className, children, style, hover, rounded, shadow, bgColor, horizontal, size, ...rest }, ref) => {
     return (
       <ul
         className={`
       menu${' '} 
       ${(className as string) || ''} 
-      ${classAttributes} 
       ${hover ? `menu-hover` : ''}
+      ${size && size === 'large' ? 'text-lg' : ''}
+      ${size && size === 'medium' ? 'text-md' : ''} 
+      ${size && size === 'small' ? 'text-sm' : ''} 
+      ${size && size === 'mini' ? 'text-xs' : ''} 
+      ${size && size === 'tiny' ? 'text-xxs' : ''}
       ${horizontal ? 'menu-horizontal' : ''} 
       ${rounded ? `rounded-${typeof rounded === 'boolean' ? 'box' : rounded}` : ''}
       ${shadow ? `shadow-${typeof shadow === 'boolean' ? 'xl' : shadow}` : ''}
