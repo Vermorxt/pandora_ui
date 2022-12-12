@@ -39,11 +39,11 @@ const componentPropsColors: SpecialPropsMerged[] = [
 ]
 
 const componentPropsSize: SpecialPropsMerged[] = [
-  { prop: { large: true }, className: `${selector}-lg` },
-  { prop: { medium: true }, className: `${selector}-md` },
-  { prop: { small: true }, className: `${selector}-sm` },
-  { prop: { tiny: true }, className: `${selector}-xs` },
-  { prop: { mini: true }, className: `${selector}-xxs` },
+  { prop: { size: 'large' }, className: `${selector}-lg` },
+  { prop: { size: 'medium' }, className: `${selector}-md` },
+  { prop: { size: 'small' }, className: `${selector}-sm` },
+  { prop: { size: 'mini' }, className: `${selector}-xs` },
+  { prop: { size: 'tiny' }, className: `${selector}-xxs` },
 ]
 
 const componentPropsDefault: SpecialPropsMerged[] = [

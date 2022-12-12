@@ -4,29 +4,42 @@ import React from 'react'
 import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 
 const Ui_Link: any = forwardRef<HTMLAnchorElement, Ui_LinkProps>(
-  ({ className, children, style, hover, href, target, variant, onClick, ...rest }, ref) => {
-    const withoutPrefix_badge = [] as string[]
-    const convertAttributeToClassName_badge = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_badge,
-      withoutPrefix: withoutPrefix_badge,
-      addPrefix: 'text',
-    })
-
+  (
+    {
+      className,
+      children,
+      style,
+      hover,
+      href,
+      target,
+      variant,
+      size,
+      disabled,
+      outline,
+      glass,
+      active,
+      onClick,
+      ...rest
+    },
+    ref
+  ) => {
     return (
       <a
         ref={ref}
         className={`
       link${' '} 
       ${(className as string) || ''} 
-      ${classAttributes} 
-      ${variant ? `${variant}` : ''}
-      ${hover ? `link-hover` : ''}
+      ${variant ? `text-${variant}` : ''}
+      ${glass && glass === true ? 'text-glass' : ''}
+      ${disabled && disabled === true ? 'text-disabled' : ''}
+      ${active && active === true ? 'text-active' : ''}
+      ${outline && outline === true ? 'text-outline' : ''}
+      ${size && size === 'large' ? 'text-lg' : ''}
+      ${size && size === 'medium' ? 'text-md' : ''} 
+      ${size && size === 'small' ? 'text-sm' : ''} 
+      ${size && size === 'mini' ? 'text-xs' : ''} 
+      ${size && size === 'tiny' ? 'text-xxs' : ''}
+      ${hover ? `link-hover` : ''}   
       `}
         style={style}
         href={href}
