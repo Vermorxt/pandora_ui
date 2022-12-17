@@ -1,3 +1,4 @@
+import { T_Ui_Size } from 'components/_types/sizes/sizes'
 import { HTMLProps } from 'react'
 import { I_Variants } from '../_types/colors/ui_variants'
 import { I_Ui_Sizes } from '../_types/sizes/sizes'
@@ -17,9 +18,8 @@ export interface Ui_Select_singleClass {
 }
 
 export interface Ui_SelectProps
-  extends HTMLProps<HTMLSelectElement>,
+  extends Omit<HTMLProps<HTMLSelectElement>, 'size'>,
     I_Variants,
-    I_Ui_Sizes,
     Ui_Select_variants,
     Ui_Select_singleClass {
   position?: SelectPositionProps
@@ -27,4 +27,5 @@ export interface Ui_SelectProps
   disabledOptions?: number[]
   optionLabel?: string
   defaultValue?: any
+  size?: T_Ui_Size
 }

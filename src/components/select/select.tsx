@@ -18,33 +18,13 @@ const Ui_Select: any = forwardRef<HTMLSelectElement, Ui_SelectProps>(
       optionLabel,
       options,
       defaultValue,
+      variant,
+      size,
       ...rest
     },
     ref
   ) => {
     const refElem = useRef<HTMLSelectElement>(null) || ref
-
-    const { large, medium, small, tiny, mini } = rest
-
-    const withoutPrefix_input = ['disabled']
-    const convertAttributeToClassName_input = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_input,
-      withoutPrefix: withoutPrefix_input,
-      addPrefix: 'input',
-    })
-
-    let textSize = 'text-base'
-    if (large) textSize = 'text-base'
-    if (medium) textSize = 'text-md'
-    if (small) textSize = 'text-sm'
-    if (tiny) textSize = 'text-xs'
-    if (mini) textSize = 'text-xxs'
 
     const selectOptions = [] as ReactElement[]
 
@@ -61,8 +41,15 @@ const Ui_Select: any = forwardRef<HTMLSelectElement, Ui_SelectProps>(
     const SelectElement = (
       <select
         className={`
-      select w-full ${' '} ${classAttributes} 
-      ${(className as string) || ''}
+        select w-full ${' '}
+        ${variant ? `select-${variant}` : ''}
+        ${disabled ? `disabled` : ''}
+        ${size && size === 'large' ? 'select-lg' : ''} 
+        ${size && size === 'medium' ? 'select-md' : ''} 
+        ${size && size === 'small' ? 'select-sm' : ''} 
+        ${size && size === 'mini' ? 'select-xs' : ''} 
+        ${size && size === 'tiny' ? 'select-xxs' : ''} 
+        ${(className as string) || ''}
       `}
         style={style}
         ref={refElem}
@@ -80,7 +67,16 @@ const Ui_Select: any = forwardRef<HTMLSelectElement, Ui_SelectProps>(
       <>
         {label && (
           <label className="label">
-            <span className={`label-text ${textSize}`}>{label}</span>
+            <span
+              className={`label-text 
+              ${size && size === 'large' ? 'text-base' : ''}
+              ${size && size === 'medium' ? 'text-md' : ''} 
+              ${size && size === 'small' ? 'text-sm' : ''} 
+              ${size && size === 'mini' ? 'text-xs' : ''} 
+              ${size && size === 'tiny' ? 'text-xxs' : ''} `}
+            >
+              {label}
+            </span>
           </label>
         )}
         {SelectElement}
