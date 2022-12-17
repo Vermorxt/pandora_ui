@@ -3,7 +3,11 @@
 exports[`@cms/core/[object Object] should create snapshot 1`] = `
 <div>
   <progress
-    class="progress   "
+    class="progress  
+           
+          
+          
+          "
   >
     Test
   </progress>

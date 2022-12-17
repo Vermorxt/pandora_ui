@@ -4,7 +4,7 @@ import { Ui_ProgressProps } from './type'
 import React from 'react'
 
 const Ui_Progress: any = forwardRef<HTMLProgressElement, Ui_ProgressProps>(
-  ({ onClick, className, name, children, type, style, value, max, ...rest }, ref) => {
+  ({ onClick, className, name, children, type, style, value, max, variant, ...rest }, ref) => {
     const withoutPrefix_progress = ['loading']
     const convertAttributeToClassName_progress = [
       ['large', 'medium', 'small', 'tiny', 'mini', 'wide', 'full'], // NOTE: attributes to convert
@@ -20,7 +20,11 @@ const Ui_Progress: any = forwardRef<HTMLProgressElement, Ui_ProgressProps>(
     return (
       <progress
         {...{ onClick, name }}
-        className={`progress${' '} ${`${classAttributes} ${(className as string) || ''}`}`}
+        className={`progress${' '} 
+          ${`${classAttributes} 
+          ${(className as string) || ''}
+          ${variant ? `progress-${variant}` : ''}
+          `}`}
         style={style}
         value={value}
         ref={ref}

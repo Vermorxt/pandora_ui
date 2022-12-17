@@ -52,3 +52,43 @@ const testConfig = {
 } as TestGeneratorProps
 
 testGenerator(testConfig)
+
+import { render, fireEvent } from '@testing-library/react'
+
+describe('Ui_MockupCode', () => {
+  it('should render a div with the mockup-code class', () => {
+    const { container } = render(<Ui_MockupCode>Test</Ui_MockupCode>)
+
+    expect(container.firstChild).toHaveClass('mockup-code')
+  })
+
+  it('should render a div with the specified class name', () => {
+    const { container } = render(<Ui_MockupCode className="test-class">Test</Ui_MockupCode>)
+
+    expect(container.firstChild).toHaveClass('test-class')
+  })
+
+  it('should render a div with the specified size class', () => {
+    const { container } = render(<Ui_MockupCode size="large">Test</Ui_MockupCode>)
+
+    expect(container.firstChild).toHaveClass('mockup-code-lg')
+  })
+
+  it('should render a div with the specified background color class', () => {
+    const { container } = render(<Ui_MockupCode bgColor="blue">Test</Ui_MockupCode>)
+
+    expect(container.firstChild).toHaveClass('bg-blue')
+  })
+
+  it('should render a div with the specified shadow class', () => {
+    const { container } = render(<Ui_MockupCode shadow="xl">Test</Ui_MockupCode>)
+
+    expect(container.firstChild).toHaveClass('shadow-xl')
+  })
+
+  it('should render a div with the specified rounded class', () => {
+    const { container } = render(<Ui_MockupCode rounded="circle">Test</Ui_MockupCode>)
+
+    expect(container.firstChild).toHaveClass('rounded-circle')
+  })
+})

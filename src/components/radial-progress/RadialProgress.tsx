@@ -16,6 +16,7 @@ const Ui_RadialProgress: any = forwardRef<HTMLDivElement, Ui_RadialProgressProps
       thickness,
       size,
       max,
+      variant,
       primary,
       secondary,
       textPrimary,
@@ -74,10 +75,11 @@ const Ui_RadialProgress: any = forwardRef<HTMLDivElement, Ui_RadialProgressProps
         {...{ onClick, name }}
         className={`radial-progress${' '}
         ${(className as string) || ''}
-        ${textPrimary ? 'text-primary' : ''}
-        ${textSecondary ? 'text-secondary' : ''}
-        ${primary ? 'bg-primary text-primary-content border-4 border-primary' : ''}
-        ${secondary ? 'bg-secondary text-secondary-content border-4 border-secondary' : ''}
+        ${textPrimary && textPrimary === true ? 'text-primary' : ''}
+        ${textSecondary && textSecondary === true ? 'text-secondary' : ''}
+        ${variant ? `bg-${variant} text-${variant}-content border-4 border-${variant} ` : ''}
+        ${primary && primary === true ? 'bg-primary text-primary-content border-4 border-primary' : ''}
+        ${secondary && secondary === true ? 'bg-secondary text-secondary-content border-4 border-secondary' : ''}
         ${classAttributes}
         `}
         style={style}

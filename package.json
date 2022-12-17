@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/vermorxt"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "copy-flags": "mkdir './dist' & mkdir './dist/flags' & cp -R './node_modules/flag-icons/flags/' './dist/flags'",
     "rollup": "rollup -c & yarn copy-flags",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@vermorxt/pandora_utils": "^0.0.2",
-    "daisyui": "^2.28.0",
+    "daisyui": "^2.45.0",
     "dayjs": "^1.11.5",
     "flag-icons": "^6.6.6",
     "next": "^12.3.1",

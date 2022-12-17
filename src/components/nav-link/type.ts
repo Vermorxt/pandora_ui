@@ -1,8 +1,10 @@
+import { T_Ui_Size } from 'components/_types/sizes/sizes'
 import { HTMLProps } from 'react'
-import { I_Ui_Sizes } from '../_types/sizes/sizes'
 import { I_Variants } from '../_types/colors/ui_variants'
 
-export interface Ui_NavLinkProps extends HTMLProps<HTMLAnchorElement>, I_Variants, I_Ui_Sizes {
+export interface Ui_NavLinkProps extends Omit<HTMLProps<HTMLAnchorElement>, 'size'>, I_Variants {
+  hover?: boolean
+  size?: T_Ui_Size
   href: string
   className?: string
   skipScrollTop?: boolean

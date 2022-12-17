@@ -32,9 +32,9 @@ module.exports = {
   },
   variants: {},
   plugins: [
-    require('daisyui'),
     require('@tailwindcss/typography'),
     require('tailwindcss'),
+    require('daisyui'),
     require('precss'),
     require('autoprefixer'),
     require('tailwind-safelist-generator')({
@@ -45,6 +45,8 @@ module.exports = {
         'text-{colors}',
         'text-{size}',
         'rounded-{size}',
+        'radio-{colors}',
+        'radio-{colors}:checked',
         'btn-{colors}',
         'bg-{colors}',
         'bg-{colors}-focus',

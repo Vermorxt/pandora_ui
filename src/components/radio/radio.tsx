@@ -5,25 +5,24 @@ import React from 'react'
 
 const Ui_Radio: any = forwardRef<HTMLDivElement, Ui_RadioProps>(
   (
-    { onChange, className, name, style, checked, disabled, label, indeterminate, labelPosition, dataTitle, ...rest },
+    {
+      onChange,
+      className,
+      name,
+      style,
+      checked,
+      disabled,
+      label,
+      indeterminate,
+      labelPosition,
+      dataTitle,
+      variant,
+      size,
+      ...rest
+    },
     ref
   ) => {
-    const withoutPrefix_radio = ['disabled']
-    const convertAttributeToClassName_radio = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-
     const refElem = useRef<HTMLInputElement>(null) || ref
-
-    const { large, medium, small, tiny, mini } = rest
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_radio,
-      withoutPrefix: withoutPrefix_radio,
-      addPrefix: 'radio',
-    })
 
     useEffect(() => {
       if (refElem?.current && indeterminate) {
@@ -47,7 +46,14 @@ const Ui_Radio: any = forwardRef<HTMLDivElement, Ui_RadioProps>(
         checked={checked}
         style={style}
         className={`
-      ${usedRadio} ${classAttributes} 
+      ${usedRadio}
+      ${variant ? `radio-${variant}` : ''}
+      ${disabled && disabled === true ? `disabled` : ''}
+      ${size && size === 'large' ? 'radio-lg' : ''} 
+      ${size && size === 'medium' ? 'radio-md' : ''} 
+      ${size && size === 'small' ? 'radio-sm' : ''} 
+      ${size && size === 'mini' ? 'radio-xs' : ''} 
+      ${size && size === 'tiny' ? 'radio-xxs' : ''} 
       ${(className as string) || ''}
       `}
         {...{ onChange, name }}
@@ -56,11 +62,11 @@ const Ui_Radio: any = forwardRef<HTMLDivElement, Ui_RadioProps>(
 
     if (label) {
       let textSize = 'text-xl'
-      if (large) textSize = 'text-xl'
-      if (medium) textSize = 'text-base'
-      if (small) textSize = 'text-sm'
-      if (tiny) textSize = 'text-xs'
-      if (mini) textSize = 'text-xxs'
+      if (size === 'large') textSize = 'text-xl'
+      if (size === 'medium') textSize = 'text-base'
+      if (size === 'small') textSize = 'text-sm'
+      if (size === 'mini') textSize = 'text-xs'
+      if (size === 'tiny') textSize = 'text-xxs'
 
       if (labelPosition === 'right') {
         return (

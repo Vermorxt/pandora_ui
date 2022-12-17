@@ -7,7 +7,23 @@ import { useRouter } from 'next/router'
 import { Helper } from '@vermorxt/pandora_utils'
 
 const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
-  ({ href, children, className, style, skipScrollTop, useLocationReplace, scrollSmooth, variant, ...rest }, ref) => {
+  (
+    {
+      href,
+      children,
+      className,
+      style,
+      skipScrollTop,
+      useLocationReplace,
+      scrollSmooth,
+      variant,
+      size,
+      hover,
+      disabled,
+      ...rest
+    },
+    ref
+  ) => {
     const router = useRouter()
     const handleClick = (event: MouseEvent<HTMLElement>) => {
       console.log('NAV LINK click: ', event)
@@ -65,7 +81,14 @@ const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
         onClick={handleClick}
         className={`
           ${classAttributes} 
-          ${variant ? `text-${variant}` : ''} 
+          ${variant ? `text-${variant}` : ''}
+          ${disabled && disabled === true ? 'text-disabled' : ''}
+          ${size && size === 'large' ? 'text-lg' : ''}
+          ${size && size === 'medium' ? 'text-md' : ''} 
+          ${size && size === 'small' ? 'text-sm' : ''} 
+          ${size && size === 'mini' ? 'text-xs' : ''} 
+          ${size && size === 'tiny' ? 'text-xxs' : ''}
+          ${hover ? `link-hover` : ''}   
           ${isCurrentPath ? 'active' : ''} 
           ${className ? className : ''} 
         `}
