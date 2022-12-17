@@ -5,20 +5,23 @@ import React from 'react'
 import { Helper } from '@vermorxt/pandora_utils'
 
 const Ui_Rating: any = forwardRef<HTMLDivElement, Ui_RatingProps>(
-  ({ onChange, className, name, style, color, halfSymbol, shape, disabled, defaultCheckedValue, ...rest }, ref) => {
-    const withoutPrefix_rating = ['loading', 'noAnimation']
-    const convertAttributeToClassName_rating = [
-      ['large', 'medium', 'small', 'tiny', 'wide', 'full'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'wide', 'block'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_rating,
-      withoutPrefix: withoutPrefix_rating,
-      addPrefix: 'rating',
-    })
-
+  (
+    {
+      onChange,
+      className,
+      name,
+      style,
+      color,
+      halfSymbol,
+      shape,
+      disabled,
+      defaultCheckedValue,
+      variant,
+      size,
+      ...rest
+    },
+    ref
+  ) => {
     let usedShape = shape
     if (!usedShape || usedShape === 'star') usedShape = 'star-2'
 
@@ -28,13 +31,22 @@ const Ui_Rating: any = forwardRef<HTMLDivElement, Ui_RatingProps>(
       return (
         <>
           <div
-            className={`rating rating-lg rating-half ${`${classAttributes} ${(className as string) || ''}`} `}
+            className={`
+            rating rating-lg rating-half
+            $
+            ${(className as string) || ''}
+            ${size && size === 'large' ? 'btn-lg' : ''} 
+            ${size && size === 'medium' ? 'btn-md' : ''} 
+            ${size && size === 'small' ? 'btn-sm' : ''} 
+            ${size && size === 'mini' ? 'btn-xs' : ''} 
+            ${size && size === 'tiny' ? 'btn-xxs' : ''} 
+            `}
             style={style}
           >
             <input
               type="radio"
               name={name}
-              className="rating-hidden"
+              className={`rating-hidden ${variant ? `bg-${variant}` : ''}`}
               defaultChecked={defaultCheckedValue === 0}
               onChange={onChange ? () => onChange({ value: 0 }) : () => null}
             />
@@ -44,7 +56,9 @@ const Ui_Rating: any = forwardRef<HTMLDivElement, Ui_RatingProps>(
                 type="radio"
                 name={name}
                 disabled={disabled}
-                className={Helper.isFloat(inputIndex) ? classNameStar1 : classNameStar2}
+                className={`${Helper.isFloat(inputIndex) ? classNameStar1 : classNameStar2} 
+                ${variant ? `bg-${variant}` : ''}
+                `}
                 defaultChecked={defaultCheckedValue === inputIndex}
                 onChange={onChange ? () => onChange({ value: inputIndex }) : () => null}
               />
@@ -58,14 +72,14 @@ const Ui_Rating: any = forwardRef<HTMLDivElement, Ui_RatingProps>(
 
     return (
       <>
-        <div className={`rating gap-1 ${`${classAttributes} ${(className as string) || ''}`} `} style={style}>
+        <div className={`rating gap-1 ${`${(className as string) || ''}`} `} style={style}>
           {[1, 2, 3, 4, 5].map(inputIndex => (
             <input
               key={inputIndex}
               type="radio"
               name={name}
               disabled={disabled}
-              className={classNameStar}
+              className={`${classNameStar} ${variant ? `bg-${variant}` : ''}`}
               defaultChecked={defaultCheckedValue === inputIndex}
               onChange={onChange ? () => onChange({ value: inputIndex }) : () => null}
             />
