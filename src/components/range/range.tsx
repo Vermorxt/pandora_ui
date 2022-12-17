@@ -27,6 +27,7 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
       placeholder,
       indeterminate,
       labelPosition,
+      variant,
       ...rest
     },
     ref
@@ -66,8 +67,10 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
           placeholder={placeholder}
           style={style}
           className={`
-      range${' '} ${classAttributes} 
+      range${' '} 
+      ${classAttributes}
       ${(className as string) || ''}
+      ${variant ? `range-${variant}` : ''}
       `}
           {...{ onChange, name }}
         />
