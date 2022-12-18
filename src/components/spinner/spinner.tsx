@@ -2,7 +2,7 @@ import { CSSProperties, FC } from 'react'
 import scss from './spinner.module.scss'
 import React from 'react'
 
-interface Ui_SpinnerProps {
+export interface Ui_SpinnerProps {
   large?: boolean
   medium?: boolean
   small?: boolean
