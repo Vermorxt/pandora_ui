@@ -12,7 +12,7 @@ export default {
       defaultValue: 10,
     },
     size: {
-      options: ['large', 'medium', 'small', 'mini'],
+      options: ['large', 'medium', 'small', 'mini', 'tiny'],
       control: { type: 'radio' },
     },
     disabled: {

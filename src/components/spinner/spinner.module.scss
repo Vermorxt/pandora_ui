@@ -23,6 +23,10 @@
   animation: rotate_small 2s linear infinite;
   transform: scale(1);
 }
+.mini {
+  animation: rotate_small 2s linear infinite;
+  transform: scale(0.8);
+}
 
 .tiny {
   animation: rotate_tiny 2s linear infinite;
