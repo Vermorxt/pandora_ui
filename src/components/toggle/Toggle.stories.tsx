@@ -11,10 +11,6 @@ export default {
       control: { type: 'radio' },
       options: ['primary', 'secondary'],
     },
-    size: {
-      options: ['large', 'medium', 'small', 'mini'],
-      control: { type: 'radio' },
-    },
     label: {
       control: { type: 'text' },
     },
