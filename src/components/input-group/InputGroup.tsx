@@ -13,10 +13,10 @@ const Ui_InputGroup = forwardRef<HTMLLabelElement, Ui_InputGroupProps>(
       ${(className as string) || ''}
       ${vertical ? `input-group-vertical` : ''}
       ${size && size === 'large' ? 'input-group-lg' : ''} 
-        ${size && size === 'medium' ? 'input-group-md' : ''} 
-        ${size && size === 'small' ? 'input-group-sm' : ''} 
-        ${size && size === 'mini' ? 'input-group-xs' : ''} 
-        ${size && size === 'tiny' ? 'input-group-xxs' : ''}
+      ${size && size === 'medium' ? 'input-group-md' : ''} 
+      ${size && size === 'small' ? 'input-group-sm' : ''} 
+      ${size && size === 'mini' ? 'input-group-xs' : ''} 
+      ${size && size === 'tiny' ? 'input-group-xxs' : ''}
       `}
         style={style}
         ref={ref}

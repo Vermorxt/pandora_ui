@@ -4,7 +4,7 @@ import { Ui_TabProps } from './type'
 import React from 'react'
 
 const Ui_Tabs: any = forwardRef<HTMLDivElement, Ui_TabProps & { Tab: FC<Ui_TabProps> }>(
-  ({ children, className, id, boxed, style, ...rest }, ref) => {
+  ({ children, className, id, boxed, style, size, ...rest }, ref) => {
     return (
       <div
         className={`
@@ -23,7 +23,7 @@ const Ui_Tabs: any = forwardRef<HTMLDivElement, Ui_TabProps & { Tab: FC<Ui_TabPr
 )
 
 export const Tab: any = forwardRef<HTMLAnchorElement, Ui_TabProps>(
-  ({ children, className, style, active, bordered, lifted, large, medium, small, tiny, mini, boxed, ...rest }, ref) => {
+  ({ children, className, style, active, bordered, lifted, boxed, size, ...rest }, ref) => {
     return (
       <a
         className={`tab 
@@ -31,11 +31,11 @@ export const Tab: any = forwardRef<HTMLAnchorElement, Ui_TabProps>(
         ${active ? 'tab-active' : ''} 
         ${bordered ? 'tab-bordered' : ''} 
         ${lifted ? 'tab-lifted' : ''} 
-        ${large ? 'tab-lg' : ''}
-        ${medium ? 'tab-md' : ''}
-        ${small ? 'tab-sm' : ''}
-        ${tiny ? 'tab-xs' : ''}
-        ${mini ? 'tab-xxs' : ''}
+        ${size && size === 'large' ? 'tab-lg' : ''} 
+        ${size && size === 'medium' ? 'tab-md' : ''} 
+        ${size && size === 'small' ? 'tab-sm' : ''} 
+        ${size && size === 'mini' ? 'tab-xs' : ''} 
+        ${size && size === 'tiny' ? 'tab-xxs' : ''}
       `}
         style={style}
         ref={ref}
