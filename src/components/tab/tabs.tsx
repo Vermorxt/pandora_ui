@@ -10,7 +10,7 @@ const Ui_Tabs: any = forwardRef<HTMLDivElement, Ui_TabProps & { Tab: FC<Ui_TabPr
         className={`
           tabs
           ${className ? className : ''}
-          ${boxed ? 'tabs-boxed' : ''} 
+          ${boxed && boxed === true ? 'tabs-boxed' : ''} 
         `}
         id={id}
         style={style}
