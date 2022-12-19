@@ -4,23 +4,24 @@ import { Ui_ToggleProps } from './type'
 import React from 'react'
 
 const Ui_Toggle: any = forwardRef<HTMLDivElement, Ui_ToggleProps>(
-  ({ onChange, className, name, style, checked, disabled, label, indeterminate, labelPosition, ...rest }, ref) => {
+  (
+    {
+      onChange,
+      className,
+      name,
+      style,
+      checked,
+      disabled,
+      label,
+      indeterminate,
+      labelPosition,
+      size,
+      variant,
+      ...rest
+    },
+    ref
+  ) => {
     const refElem = useRef<HTMLInputElement>(null) || ref
-
-    const { large, medium, small, tiny } = rest
-
-    const withoutPrefix_toggle = ['disabled']
-    const convertAttributeToClassName_toggle = [
-      ['large', 'medium', 'small', 'tiny'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_toggle,
-      withoutPrefix: withoutPrefix_toggle,
-      addPrefix: 'toggle',
-    })
 
     useEffect(() => {
       if (refElem?.current && indeterminate) {
@@ -36,8 +37,15 @@ const Ui_Toggle: any = forwardRef<HTMLDivElement, Ui_ToggleProps>(
         checked={checked}
         style={style}
         className={`
-      toggle${' '} ${classAttributes} 
+      toggle${' '} 
       ${(className as string) || ''}
+      ${disabled && disabled === true ? 'disabled' : ''}
+      ${variant ? `toggle-${variant}` : ''}
+      ${size && size === 'large' ? 'toggle-lg' : ''} 
+      ${size && size === 'medium' ? 'toggle-md' : ''} 
+      ${size && size === 'small' ? 'toggle-sm' : ''} 
+      ${size && size === 'mini' ? 'toggle-xs' : ''} 
+      ${size && size === 'tiny' ? 'toggle-xxs' : ''} 
       `}
         {...{ onChange, name }}
       />
@@ -45,9 +53,9 @@ const Ui_Toggle: any = forwardRef<HTMLDivElement, Ui_ToggleProps>(
 
     if (label) {
       let textSize = 'text-xl'
-      if (medium) textSize = 'text-base'
-      if (small) textSize = 'text-sm'
-      if (tiny) textSize = 'text-xs'
+      if (size === 'medium') textSize = 'text-base'
+      if (size === 'small') textSize = 'text-sm'
+      if (size === 'tiny') textSize = 'text-xs'
 
       if (labelPosition === 'right') {
         return (
