@@ -22,5 +22,5 @@ export interface Ui_ToggleProps
     Ui_Toggle_variants,
     Ui_Toggle_singleClass {
   position?: TogglePositionProps
-  // size?: T_Ui_Size
+  size?: T_Ui_Size
 }
