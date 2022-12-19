@@ -1,3 +1,4 @@
+import { I_Variants } from './../_types/colors/ui_variants'
 import { HTMLProps } from 'react'
 export interface Ui_StepsProps extends HTMLProps<HTMLUListElement> {
   rounded?: boolean | string // NOTE: see: https://tailwindcss.com/docs/border-radius#rounded-corners
@@ -7,4 +8,5 @@ export interface Ui_StepsProps extends HTMLProps<HTMLUListElement> {
   itemsCenter?: boolean
   dataContent?: string
   bgColor?: string
+  variant?: I_Variants
 }

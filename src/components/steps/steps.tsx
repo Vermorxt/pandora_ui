@@ -27,20 +27,11 @@ const Ui_Steps: any = forwardRef<HTMLUListElement, Ui_StepsProps & { Step: FC<Ui
 )
 
 export const Step: any = forwardRef<HTMLLIElement, Ui_StepsProps>(
-  ({ children, className, style, dataContent, ...rest }, ref) => {
-    const convertAttributeToClassName_step = [] as string[][]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_step,
-      withoutPrefix: [],
-      addPrefix: 'step',
-    })
-
+  ({ children, className, style, dataContent, variant, ...rest }, ref) => {
     return (
       <li
         className={`step 
-            ${classAttributes}
+            ${variant ? `step-${variant}` : ''} 
             ${className ? className : ''}
           `}
         style={style}
