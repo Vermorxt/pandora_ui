@@ -13,13 +13,14 @@ const Ui_Table: any = forwardRef<
     Th: FC<Ui_TableProps>
     Td: FC<Ui_TableProps>
   }
->(({ children, className, style, bgColor, compact, variant, ...rest }, ref) => {
+>(({ children, className, style, bgColor, compact, variant, zebra, ...rest }, ref) => {
   return (
     <table
       tabIndex={0}
       className={`table w-full 
         ${className ? className : ''}
-        ${compact ? 'table-compact table-auto ' : ''}
+        ${zebra && zebra === true ? 'table-zebra' : ''}
+        ${compact && compact === true ? 'table-compact table-auto ' : ''}
         ${bgColor === 'primary' ? `bg-primary text-primary-content` : ''}
         ${bgColor === 'secondary' ? `bg-secondary text-secondary-content` : ''}
         ${variant ? `text-${variant}-content bg-${variant}` : ''} 
@@ -65,8 +66,8 @@ const TableRow: any = forwardRef<HTMLTableRowElement, Ui_TableProps>(
             ${className ? className : ''}
             ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
             ${textColor ? `text-${textColor}` : ''}
-            ${active ? `active` : ''}
-            ${hover ? `hover` : ''} 
+            ${active && active === true ? `active` : ''}
+            ${hover && hover === true ? `hover` : ''} 
             ${variant ? `text-${variant}-content bg-${variant}` : ''} 
           `}
         style={style}
@@ -112,7 +113,7 @@ const Th: any = forwardRef<HTMLTableCellElement, Ui_TableProps>(
           ${className ? className : ''}
           ${bgColor ? `bg-${bgColor} text-${bgColor}-content` : ''}
           ${textColor ? `text-${textColor}` : ''}  
-          ${stickyHeader ? `sticky top-0` : ''}
+          ${stickyHeader && stickyHeader === true ? `sticky top-0` : ''}
           ${variant ? `text-${variant}-content bg-${variant}` : ''} 
         `}
         style={style}
