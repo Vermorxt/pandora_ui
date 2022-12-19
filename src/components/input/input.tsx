@@ -85,11 +85,7 @@ export const Ui_Input: FC<Ui_InputProps> = ({
         </label>
       )}
       {InputElement}
-      {altLabel && (
-        <span className={`label-text-alt text-xs pt-0 pl-1`} style={{ marginTop: -10 }}>
-          {altLabel}
-        </span>
-      )}
+      {altLabel && <span className={`label-text-alt text-xs pt-0 pl-1`}>{altLabel}</span>}
     </>
   )
 }

@@ -20,6 +20,7 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
       min,
       max,
       type,
+      size,
       step,
       disabled,
       label,
@@ -33,8 +34,6 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
     ref
   ) => {
     const refElem = useRef<HTMLInputElement>(null) || ref
-
-    const { large, medium, small, tiny } = rest
 
     const classAttributes = getClassNamesFromAttributes({
       names: rest,
@@ -50,9 +49,9 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
     }, [])
 
     let textSize = 'text-base'
-    if (medium) textSize = 'text-md'
-    if (small) textSize = 'text-sm'
-    if (tiny) textSize = 'text-xs'
+    if (size === 'medium') textSize = 'text-md'
+    if (size === 'small') textSize = 'text-sm'
+    if (size === 'mini') textSize = 'text-xs'
 
     const RangeElement = (
       <>
@@ -71,6 +70,11 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
       ${classAttributes}
       ${(className as string) || ''}
       ${variant ? `range-${variant}` : ''}
+      ${size && size === 'large' ? 'range-lg' : ''} 
+      ${size && size === 'medium' ? 'range-md' : ''} 
+      ${size && size === 'small' ? 'range-sm' : ''} 
+      ${size && size === 'mini' ? 'range-xs' : ''} 
+      ${size && size === 'tiny' ? 'range-xxs' : ''}
       `}
           {...{ onChange, name }}
         />
