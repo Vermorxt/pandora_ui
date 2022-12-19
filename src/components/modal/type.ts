@@ -1,3 +1,4 @@
+import { T_Ui_Size } from './../_types/sizes/sizes'
 import { HTMLProps } from 'react'
 interface Ui_Modal_sizes {
   large?: boolean
@@ -11,8 +12,9 @@ interface Ui_Modal_variants {
   closeClickOutside?: boolean
 }
 
-export interface Ui_ModalProps extends HTMLProps<HTMLLabelElement>, Ui_Modal_sizes, Ui_Modal_variants {
+export interface Ui_ModalProps extends Omit<HTMLProps<HTMLLabelElement>, 'size'>, Ui_Modal_variants {
   buttonText?: string
   message?: string
   id: string
+  size: T_Ui_Size & 'full'
 }

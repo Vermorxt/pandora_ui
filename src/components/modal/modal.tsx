@@ -7,7 +7,7 @@ import React from 'react'
 import { GLOBAL_WRAPPER_ID } from '../../_constants/main'
 
 const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
-  ({ onClick, children, className, id, buttonText, closeClickOutside, message, ...rest }, ref) => {
+  ({ onClick, children, className, id, buttonText, closeClickOutside, message, size, ...rest }, ref) => {
     const convertAttributeToClassName_modal = [
       ['large', 'medium', 'small', 'tiny', 'mini', 'full'], // NOTE: attributes to convert
       ['5/6', '4/6', '3/6', '2/6', '1/6', 'full'], // NOTE: attributes translated based on attributes above
@@ -33,7 +33,15 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
         <input type="checkbox" id={id} className="modal-toggle" />
         <div className={`modal`} ref={ref}>
           <div
-            className={`modal-box relative modal-box max-w-none ${`${classAttributes} ${(className as string) || ''}`}`}
+            className={`modal-box relative modal-box max-w-none ${`${classAttributes}       ${
+              size && size === 'large' ? 'w-5/6' : ''
+            } 
+            ${size && size === 'medium' ? 'w-4/6' : ''} 
+            ${size && size === 'small' ? 'w-3/6' : ''} 
+            ${size && size === 'mini' ? 'w-2/6' : ''} 
+            ${size && size === 'tiny' ? 'w-1/6' : ''}  
+            ${size && size === 'full' ? 'w-full' : ''}  
+            ${(className as string) || ''}`}`}
           >
             <label onClick={onClick} htmlFor={id} className="btn btn-sm btn-circle absolute right-2 top-2">
               ✕
@@ -50,7 +58,14 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
 
         <label htmlFor={id} className={`cursor-pointer modal`}>
           <label
-            className={`modal-box relative max-w-none ${`${classAttributes} ${(className as string) || ''}`}`}
+            className={`modal-box relative max-w-none ${`${classAttributes}  ${
+              size && size === 'medium' ? 'w-4/6' : ''
+            } 
+            ${size && size === 'small' ? 'w-3/6' : ''} 
+            ${size && size === 'mini' ? 'w-2/6' : ''} 
+            ${size && size === 'tiny' ? 'w-1/6' : ''}  
+            ${size && size === 'full' ? 'w-full' : ''}   
+            ${(className as string) || ''}`}`}
             htmlFor=""
           >
             {message || children}
