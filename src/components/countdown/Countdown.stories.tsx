@@ -46,6 +46,9 @@ export default {
     center: {
       control: { type: 'boolean' },
     },
+    allowMultipleTimers: {
+      control: { type: 'boolean' },
+    },
   },
 } as Meta
 

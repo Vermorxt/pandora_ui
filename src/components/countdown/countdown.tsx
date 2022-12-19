@@ -68,9 +68,12 @@ let timeOutTimer = null as any
 export const handleTime = (
   targetTime: string,
   showTimeValues: ShowTimeValues,
-  { setDayValue, setHourValue, setMinuteValue, setSecondValue, setIsFinished, onFinishCallback }: SetValues
+  { setDayValue, setHourValue, setMinuteValue, setSecondValue, setIsFinished, onFinishCallback }: SetValues,
+  allowMultipleTimers?: boolean
 ) => {
-  clearTimeout(timeOutTimer)
+  if (!allowMultipleTimers) {
+    clearTimeout(timeOutTimer)
+  }
 
   timeOutTimer = setTimeout(() => {
     const timeRemaining = getTimeRemaining(new Date(targetTime) as unknown as string)
@@ -83,14 +86,19 @@ export const handleTime = (
     }
 
     if (timeRemaining?.total > 0) {
-      handleTime(targetTime, showTimeValues, {
-        setDayValue,
-        setHourValue,
-        setMinuteValue,
-        setSecondValue,
-        setIsFinished,
-        onFinishCallback,
-      })
+      handleTime(
+        targetTime,
+        showTimeValues,
+        {
+          setDayValue,
+          setHourValue,
+          setMinuteValue,
+          setSecondValue,
+          setIsFinished,
+          onFinishCallback,
+        },
+        allowMultipleTimers
+      )
     } else {
       setIsFinished(true)
 
@@ -101,7 +109,17 @@ export const handleTime = (
 
 const Ui_Countdown = forwardRef<HTMLDivElement, Ui_CountdownProps>(
   ({ children, className, style, ...rest }: Ui_CountdownProps, ref) => {
-    const { value, size, showTimeValues, targetTime, template, center, finishColor, onFinishCallback } = rest
+    const {
+      value,
+      size,
+      showTimeValues,
+      targetTime,
+      template,
+      center,
+      finishColor,
+      allowMultipleTimers,
+      onFinishCallback,
+    } = rest
 
     const [isFinished, setIsFinished] = useState(false)
 
@@ -127,14 +145,19 @@ const Ui_Countdown = forwardRef<HTMLDivElement, Ui_CountdownProps>(
 
     useEffect(() => {
       if (showTimeValues && showTimeValues?.useValues?.length > 0) {
-        handleTime(targetTime as string, showTimeValues, {
-          setDayValue,
-          setHourValue,
-          setMinuteValue,
-          setSecondValue,
-          setIsFinished,
-          onFinishCallback,
-        })
+        handleTime(
+          targetTime as string,
+          showTimeValues,
+          {
+            setDayValue,
+            setHourValue,
+            setMinuteValue,
+            setSecondValue,
+            setIsFinished,
+            onFinishCallback,
+          },
+          allowMultipleTimers
+        )
       }
     }, [targetTime])
 

@@ -17,5 +17,6 @@ export interface Ui_CountdownProps extends Omit<HTMLProps<HTMLDivElement>, 'size
   template?: T_Ui_CountdownTemplate
   center?: boolean
   finishColor?: string
+  allowMultipleTimers?: boolean
   onFinishCallback?: OnFinishCallback
 }

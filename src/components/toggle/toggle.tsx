@@ -55,7 +55,7 @@ const Ui_Toggle: any = forwardRef<HTMLDivElement, Ui_ToggleProps>(
       let textSize = 'text-xl'
       if (size === 'medium') textSize = 'text-base'
       if (size === 'small') textSize = 'text-sm'
-      if (size === 'tiny') textSize = 'text-xs'
+      if (size === 'mini') textSize = 'text-xs'
 
       if (labelPosition === 'right') {
         return (

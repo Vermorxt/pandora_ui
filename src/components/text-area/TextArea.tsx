@@ -18,6 +18,7 @@ const Ui_TextArea: any = forwardRef<HTMLDivElement, Ui_TextAreaProps>(
       placeholder,
       indeterminate,
       labelPosition,
+      variant,
       bordered,
       ...rest
     },
@@ -54,6 +55,7 @@ const Ui_TextArea: any = forwardRef<HTMLDivElement, Ui_TextAreaProps>(
         className={`
       textarea${' '} 
       ${classAttributes}
+      ${variant ? `textarea-${variant}` : ''} 
       ${bordered && bordered === true ? 'textarea-bordered' : ''} 
       ${(className as string) || ''}
       `}
