@@ -1,26 +1,31 @@
 import { forwardRef, ReactPortal, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import Ui_Button from '../button'
-import { getClassNamesFromAttributes } from '../_utils/css-class-generator'
 import { Ui_ModalProps } from './type'
 import React from 'react'
 import { GLOBAL_WRAPPER_ID } from '../../_constants/main'
 
 const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
-  ({ onClick, children, className, id, buttonText, closeClickOutside, message, size, ...rest }, ref) => {
-    const convertAttributeToClassName_modal = [
-      ['large', 'medium', 'small', 'tiny', 'mini', 'full'], // NOTE: attributes to convert
-      ['5/6', '4/6', '3/6', '2/6', '1/6', 'full'], // NOTE: attributes translated based on attributes above
-    ]
-
+  (
+    {
+      onClick,
+      children,
+      className,
+      style,
+      id,
+      isOpen,
+      buttonText,
+      closeClickOutside,
+      message,
+      size,
+      labelStyle,
+      labelClassName,
+      ...rest
+    },
+    ref
+  ) => {
     const [portalContainer, setPortalContainer] = useState<Element>()
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName_modal,
-      withoutPrefix: [],
-      addPrefix: 'w',
-      defaultValue: 'w-2/6',
-    })
+    const [open, setOpen] = useState<boolean>(isOpen ? isOpen : false)
 
     useEffect(() => {
       if (!portalContainer) {
@@ -28,22 +33,25 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
       }
     }, [])
 
+    useEffect(() => {
+      setOpen(isOpen ? isOpen : false)
+    }, [isOpen])
+
     const ModalBodyElem = () => (
       <>
-        <input type="checkbox" id={id} className="modal-toggle" />
-        <div className={`modal`} ref={ref}>
+        <input type="checkbox" id={id} checked={open} className="modal-toggle" onChange={event => setOpen(!open)} />
+        <div className={`modal`} ref={ref} style={style}>
           <div
-            className={`modal-box relative modal-box max-w-none ${`${classAttributes}       ${
-              size && size === 'large' ? 'w-5/6' : ''
-            } 
+            className={`modal-box relative modal-box max-w-none        
+            ${size && size === 'large' ? 'w-5/6' : ''} 
             ${size && size === 'medium' ? 'w-4/6' : ''} 
             ${size && size === 'small' ? 'w-3/6' : ''} 
             ${size && size === 'mini' ? 'w-2/6' : ''} 
             ${size && size === 'tiny' ? 'w-1/6' : ''}  
             ${size && size === 'full' ? 'w-full' : ''}  
-            ${(className as string) || ''}`}`}
+            ${(className as string) || ''}`}
           >
-            <label onClick={onClick} htmlFor={id} className="btn btn-sm btn-circle absolute right-2 top-2">
+            <label onClick={onClick} htmlFor={id} className={`btn btn-sm btn-circle absolute right-2 top-2 `}>
               ✕
             </label>
             {message || children}
@@ -54,19 +62,25 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
 
     const ModalBodyElemCloseClickOutSide = () => (
       <>
-        <input type="checkbox" id={id} className="modal-toggle" />
+        <input
+          type="checkbox"
+          id={id}
+          className="modal-toggle"
+          onChange={event => console.log('change input modal outside: ', event)}
+        />
 
         <label htmlFor={id} className={`cursor-pointer modal`}>
           <label
-            className={`modal-box relative max-w-none ${`${classAttributes}  ${
-              size && size === 'medium' ? 'w-4/6' : ''
-            } 
+            className={`modal-box relative max-w-none 
+            ${size && size === 'large' ? 'w-5/6' : ''} 
+            ${size && size === 'medium' ? 'w-4/6' : ''} 
             ${size && size === 'small' ? 'w-3/6' : ''} 
             ${size && size === 'mini' ? 'w-2/6' : ''} 
             ${size && size === 'tiny' ? 'w-1/6' : ''}  
             ${size && size === 'full' ? 'w-full' : ''}   
-            ${(className as string) || ''}`}`}
-            htmlFor=""
+            ${(className as string) || ''}`}
+            htmlFor={id}
+            style={style}
           >
             {message || children}
           </label>
@@ -76,14 +90,20 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
 
     if (!portalContainer)
       return (
-        <Ui_Button className="gap-2" loading>
+        <Ui_Button className={`gap-2 ${(labelClassName as string) || ''}`} loading style={labelStyle}>
           Loading ...
         </Ui_Button>
       )
 
     return (
       <>
-        <label htmlFor={id} className={`btn modal-button`} onClick={onClick}>
+        <label
+          htmlFor={id}
+          className={`btn modal-button
+          ${(labelClassName as string) || ''}`}
+          style={labelStyle}
+          onClick={onClick}
+        >
           {buttonText || 'open modal'}
         </label>
 
