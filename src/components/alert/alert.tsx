@@ -33,18 +33,21 @@ const Ui_Alert: FC<any & Ui_AlertProps> = forwardRef<HTMLDivElement, Ui_AlertPro
           {variant && variant === 'error' && <XCircleIcon style={{ width: DEFAULT_ICON_SIZE }} />}
           {children}
         </div>
-        <div className="flex-none">
-          {onDeny && (
-            <Ui_Button size="small" variant="ghost" onClick={onDeny}>
-              {onDenyButtonText || 'Deny'}
-            </Ui_Button>
-          )}
-          {onAccept && (
-            <Ui_Button size="small" variant="primary" onClick={onAccept}>
-              {onAcceptButtonText || 'Accept'}
-            </Ui_Button>
-          )}
-        </div>
+
+        {(onDeny || onAccept) && (
+          <div className="flex-none">
+            {onDeny && (
+              <Ui_Button size="small" variant="ghost" onClick={onDeny}>
+                {onDenyButtonText || 'Deny'}
+              </Ui_Button>
+            )}
+            {onAccept && (
+              <Ui_Button size="small" variant="primary" onClick={onAccept}>
+                {onAcceptButtonText || 'Accept'}
+              </Ui_Button>
+            )}
+          </div>
+        )}
       </div>
     )
   }

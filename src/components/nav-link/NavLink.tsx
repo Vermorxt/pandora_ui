@@ -60,19 +60,6 @@ const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
 
     const isCurrentPath = router?.pathname === href || router?.asPath === href
 
-    const withoutPrefix = [] as string[]
-    const convertAttributeToClassName = [
-      ['large', 'medium', 'small', 'tiny', 'mini'], // NOTE: attributes to convert
-      ['lg', 'md', 'sm', 'xs', 'xxs'], // NOTE: attributes translated based on attributes above
-    ]
-
-    const classAttributes = getClassNamesFromAttributes({
-      names: rest,
-      convert: convertAttributeToClassName,
-      withoutPrefix: withoutPrefix,
-      addPrefix: 'text',
-    })
-
     return (
       <a
         href={href}
@@ -80,7 +67,6 @@ const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
         style={style}
         onClick={handleClick}
         className={`
-          ${classAttributes} 
           ${variant ? `text-${variant}` : ''}
           ${disabled && disabled === true ? 'text-disabled' : ''}
           ${size && size === 'large' ? 'text-lg' : ''}
@@ -89,7 +75,7 @@ const Ui_NavLink: any = forwardRef<HTMLAnchorElement, Ui_NavLinkProps>(
           ${size && size === 'mini' ? 'text-xs' : ''} 
           ${size && size === 'tiny' ? 'text-xxs' : ''}
           ${hover ? `link-hover` : ''}   
-          ${isCurrentPath ? 'active' : ''} 
+          ${isCurrentPath ? 'active ' : ''} 
           ${className ? className : ''} 
         `}
         {...rest}

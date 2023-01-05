@@ -16,10 +16,10 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
       <button
         class="
         btn 
-      btn-ghost
+      !btn-ghost
        
        
-      btn-sm 
+      !btn-sm 
        
        
        
@@ -38,10 +38,10 @@ exports[`@cms/core/Ui_Alert should match snapshot 1`] = `
       <button
         class="
         btn 
-      btn-primary
+      !btn-primary
        
        
-      btn-sm 
+      !btn-sm 
        
        
        

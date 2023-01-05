@@ -9,6 +9,7 @@ export type T_Variants =
   | 'warning'
   | 'error'
   | 'neutral'
+  | 'none'
 
 export interface I_Variants {
   variant?: T_Variants

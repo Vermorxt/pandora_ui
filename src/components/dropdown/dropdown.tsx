@@ -65,6 +65,7 @@ export const Ui_Dropdown: any = forwardRef<
       <div className={defaultClassNames}>
         <Ui_Dropdown.Label
           tabIndex={tabIndex || 0}
+          style={style}
           className={`btn m-1 
         ${className ? className : ''}
         ${variant ? `btn-${variant}` : ''}
@@ -94,6 +95,7 @@ export const Ui_Dropdown: any = forwardRef<
       <div className={defaultClassNames} ref={ref} style={style}>
         <Ui_Dropdown.Label
           tabIndex={0}
+          style={style}
           className={`btn m-1 
           btn${' '}
         ${className ? className : ''}
@@ -126,7 +128,7 @@ export const Ui_Dropdown: any = forwardRef<
 })
 
 const Label: FC = forwardRef<HTMLLabelElement, Ui_DropdownProps>(
-  ({ children, className, tabIndex, loading, size, disabled, noAnimation, variant, outline, position }, ref) => {
+  ({ children, className, tabIndex, loading, size, disabled, noAnimation, variant, outline, style }, ref) => {
     return (
       <label
         tabIndex={tabIndex || 0}
@@ -147,6 +149,7 @@ const Label: FC = forwardRef<HTMLLabelElement, Ui_DropdownProps>(
         ${disabled ? 'btn-disabled' : ''}
         ${noAnimation ? 'no-animation' : ''}`.trim()}
         ref={ref}
+        style={style}
       >
         {children}
       </label>
@@ -154,7 +157,7 @@ const Label: FC = forwardRef<HTMLLabelElement, Ui_DropdownProps>(
   }
 )
 
-const Content: FC = forwardRef<HTMLDivElement, Ui_DropdownProps>(({ children, className, type }, ref) => {
+const Content: FC = forwardRef<HTMLDivElement, Ui_DropdownProps>(({ children, className, type, style }, ref) => {
   const classNamesArray = className?.split(' ') || ([] as string[])
   const hasBgClass = classNamesArray.find(t => t.includes('bg-'))
 
@@ -169,6 +172,7 @@ const Content: FC = forwardRef<HTMLDivElement, Ui_DropdownProps>(({ children, cl
       className={`${defaultClasses} ${className ? className : ''} 
       ${type && type === 'card' ? 'card card-compact w-64' : ''} ${type && type === 'full' ? 'w-full' : ''}`}
       ref={ref}
+      style={style}
     >
       {children}
     </div>
