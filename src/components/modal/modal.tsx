@@ -14,6 +14,7 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
       style,
       id,
       isOpen,
+      forceClose,
       buttonText,
       closeClickOutside,
       message,
@@ -36,6 +37,10 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
     useEffect(() => {
       setOpen(isOpen ? isOpen : false)
     }, [isOpen])
+
+    useEffect(() => {
+      if (forceClose) setOpen(false)
+    }, [forceClose])
 
     const ModalBodyElem = () => (
       <>

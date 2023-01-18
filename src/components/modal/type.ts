@@ -19,5 +19,6 @@ export interface Ui_ModalProps extends Omit<HTMLProps<HTMLLabelElement>, 'size'>
   labelStyle?: React.CSSProperties
   labelClassName?: string
   isOpen?: boolean
+  forceClose?: boolean
   size?: T_Ui_Size & 'full'
 }
