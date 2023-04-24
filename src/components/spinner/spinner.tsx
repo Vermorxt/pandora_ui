@@ -1,7 +1,7 @@
 import { CSSProperties, FC } from 'react'
 import scss from './spinner.module.scss'
 import React from 'react'
-import { T_Ui_Size } from 'components/_types/sizes/sizes'
+import { T_Ui_Size } from './../../components/_types/sizes/sizes'
 
 export interface Ui_SpinnerProps {
   large?: boolean

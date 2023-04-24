@@ -29,6 +29,16 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
       indeterminate,
       labelPosition,
       variant,
+      hideStepLabel,
+      onClick,
+      onMouseDown,
+      onMouseUp,
+      onWheel,
+      onTouchStart,
+      onTouchEnd,
+      onFocus,
+      onBlur,
+      onDoubleClick,
       ...rest
     },
     ref
@@ -76,9 +86,21 @@ const Ui_Range: any = forwardRef<HTMLDivElement, Ui_RangeProps>(
       ${size && size === 'mini' ? 'range-xs' : ''} 
       ${size && size === 'tiny' ? 'range-xxs' : ''}
       `}
-          {...{ onChange, name }}
+          {...{
+            onChange,
+            name,
+            onClick,
+            onMouseDown,
+            onMouseUp,
+            onWheel,
+            onTouchStart,
+            onTouchEnd,
+            onFocus,
+            onBlur,
+            onDoubleClick,
+          }}
         />
-        {step && (
+        {step && !hideStepLabel && (
           <div className="w-full flex justify-between text-xs px-2">
             {Array.from(Array(100 / Number(step) + 1)).map((a, i) => (
               <span key={i}>|</span>

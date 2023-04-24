@@ -1,6 +1,7 @@
-import { InitialFormValues } from 'components/_types/form/initial-form-values'
-import { ValidationOptions } from 'components/_types/form/validation-options'
-import { AnyType } from '_types/AnyType'
+import { InitialFormValues } from './../../../components/_types/form/initial-form-values'
+import { ValidationOptions } from './../../../components/_types/form/validation-options'
+import { AnyType } from './../../../_types/AnyType'
+
 import { getFieldError } from './validation'
 
 export type formError = { [key: string]: { message: string } }

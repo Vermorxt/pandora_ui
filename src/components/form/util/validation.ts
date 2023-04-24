@@ -1,7 +1,7 @@
+import { AnyType } from './../../../_types/AnyType'
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
-import { ValidationOptions } from 'components/_types/form/validation-options'
-import { AnyType } from '_types/AnyType'
+import { ValidationOptions } from './../../../components/_types/form/validation-options'
 
 /* eslint-disable no-prototype-builtins */
 export const validateUrlScheme = (url: string) => {

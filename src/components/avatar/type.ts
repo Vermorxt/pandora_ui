@@ -1,5 +1,5 @@
-import { T_Variants } from 'components/_types/colors/ui_variants'
-import { T_Ui_Mask } from 'components/_types/mask/mask'
+import { T_Variants } from './../../components/_types/colors/ui_variants'
+import { T_Ui_Mask } from './../../components/_types/mask/mask'
 import { HTMLProps } from 'react'
 import { T_Ui_Size } from '../_types/sizes/sizes'
 

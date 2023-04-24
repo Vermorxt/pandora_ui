@@ -1,7 +1,7 @@
 import { FC, forwardRef } from 'react'
 import { Ui_BottomNavigationProps } from './type'
 import React from 'react'
-import { T_Variants } from 'components/_types/colors/ui_variants'
+import { T_Variants } from './../../components/_types/colors/ui_variants'
 
 const Ui_BottomNavigation: FC<any> = forwardRef<HTMLDivElement, Ui_BottomNavigationProps>(
   (
@@ -28,10 +28,10 @@ const Ui_BottomNavigation: FC<any> = forwardRef<HTMLDivElement, Ui_BottomNavigat
       styleSheet = {
         ...styleSheet,
         ...{
-          borderRadius: 100,
+          borderRadius: 20,
           overflow: 'hidden',
           maxWidth: '95%',
-          margin: '0 auto 20px',
+          margin: '0 auto 10px',
         },
       }
     }

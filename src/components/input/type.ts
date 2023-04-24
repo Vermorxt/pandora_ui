@@ -19,7 +19,7 @@ export interface Ui_Input_singleClass {
 }
 
 export interface Ui_InputProps
-  extends Omit<HTMLProps<HTMLSpanElement>, 'size'>,
+  extends Omit<HTMLProps<HTMLInputElement>, 'size'>,
     I_Variants,
     Ui_Input_variants,
     Ui_Input_singleClass {

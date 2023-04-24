@@ -1,7 +1,6 @@
 import { T_Ui_Size } from './../_types/sizes/sizes'
 import { HTMLProps } from 'react'
 import { I_Variants } from '../_types/colors/ui_variants'
-import { I_Ui_Sizes } from '../_types/sizes/sizes'
 export type RangePositionProps = 'top' | 'left' | 'bottom' | 'right'
 
 export interface Ui_Range_variants {
@@ -16,10 +15,11 @@ export interface Ui_Range_singleClass {
   altLabel?: string
   bordered?: boolean
   labelPosition?: 'left' | 'right' | 'top' | 'bottom'
+  hideStepLabel?: boolean
 }
 
 export interface Ui_RangeProps
-  extends Omit<HTMLProps<HTMLSpanElement>, 'size'>,
+  extends Omit<HTMLProps<HTMLInputElement>, 'size'>,
     I_Variants,
     Ui_Range_variants,
     Ui_Range_singleClass {

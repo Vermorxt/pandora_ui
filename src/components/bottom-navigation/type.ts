@@ -1,5 +1,5 @@
-import { T_Variants } from 'components/_types/colors/ui_variants'
-import { T_Ui_Size } from 'components/_types/sizes/sizes'
+import { T_Variants } from './../../components/_types/colors/ui_variants'
+import { T_Ui_Size } from './../../components/_types/sizes/sizes'
 import { HTMLProps } from 'react'
 import { I_Variants } from '../_types/colors/ui_variants'
 

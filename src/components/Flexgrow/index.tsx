@@ -10,18 +10,18 @@ export interface Ui_FlexGrowProps {
 }
 
 const Ui_FlexGrow: FC<Ui_FlexGrowProps> & { Static: FC<Ui_FlexGrowProps>; Full: FC<Ui_FlexGrowProps> } = props => (
-  <div style={{ ...props?.style, display: 'flex', width: '100%' }} {...props}>
+  <div {...props} style={{ display: 'flex', width: '100%', ...props?.style }}>
     {props?.children}
   </div>
 )
 
 const Static: FC<Ui_FlexGrowProps> = props => (
-  <div style={{ ...props?.style, display: 'block' }} {...props}>
+  <div {...props} style={{ display: 'block', ...props?.style }}>
     {props?.children}
   </div>
 )
 const Full: FC<Ui_FlexGrowProps> = props => (
-  <div style={{ ...props?.style, flexGrow: 1 }} {...props}>
+  <div {...props} style={{ ...props?.style, flexGrow: 1 }}>
     {props?.children}
   </div>
 )

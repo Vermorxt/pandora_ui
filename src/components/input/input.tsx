@@ -4,6 +4,9 @@ import React from 'react'
 
 export const Ui_Input: FC<Ui_InputProps> = ({
   onChange,
+  onFocus,
+  onBlur,
+  onClick,
   className,
   name,
   style,
@@ -19,6 +22,7 @@ export const Ui_Input: FC<Ui_InputProps> = ({
   loading,
   checked,
   bordered,
+
   labelPosition,
   ...rest
 }) => {
@@ -58,7 +62,7 @@ export const Ui_Input: FC<Ui_InputProps> = ({
             : ''
         } 
       `}
-      {...{ onChange, name }}
+      {...{ onChange, onFocus, onBlur, onClick, name }}
     />
   )
 

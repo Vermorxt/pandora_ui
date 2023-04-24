@@ -47,7 +47,7 @@ const Ui_Modal: any = forwardRef<HTMLDivElement, Ui_ModalProps>(
         <input type="checkbox" id={id} checked={open} className="modal-toggle" onChange={event => setOpen(!open)} />
         <div className={`modal`} ref={ref} style={style}>
           <div
-            className={`modal-box relative modal-box max-w-none        
+            className={`modal-box relative modal-box max-w-none overflow-hidden        
             ${size && size === 'large' ? 'w-5/6' : ''} 
             ${size && size === 'medium' ? 'w-4/6' : ''} 
             ${size && size === 'small' ? 'w-3/6' : ''} 

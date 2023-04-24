@@ -23,6 +23,7 @@ export interface Ui_ButtonProps
     Ui_Button_singleClass {
   size?: T_Ui_Size | 'block' | 'wide' | 'full'
   outline?: boolean
+  active?: boolean
   tooltip?: TooltipProps
   type?: Ui_ButtonType
 }

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import Countdown from '.'
 import { ShowTimeValues, T_Ui_CountdownTemplate, Ui_CountdownProps } from './type'
 import dayjs from 'dayjs'
-import { T_Ui_Size } from 'components/_types/sizes/sizes'
+import { T_Ui_Size } from './../../components/_types/sizes/sizes'
 
 // NOTE: use subtract instead add -> https://github.com/storybookjs/storybook/issues/12208
 const initialTargetTime = dayjs().subtract(-10, 'seconds').toISOString()

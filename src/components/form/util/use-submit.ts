@@ -1,5 +1,5 @@
+import { AnyType } from './../../../_types/AnyType'
 import { FormEvent } from 'react'
-import { AnyType } from '_types/AnyType'
 import { Helper } from '@vermorxt/pandora_utils'
 
 const isCheckbox = (element: AnyType): boolean => element.type === 'checkbox'

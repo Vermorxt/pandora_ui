@@ -1,4 +1,4 @@
-import { ValidationOptions } from 'components/_types/form/validation-options'
+import { ValidationOptions } from './../../../components/_types/form/validation-options'
 import React, { FC, InputHTMLAttributes, useEffect, useState } from 'react'
 import Text from '../text'
 import { formErrors } from '../util/form-is-valid'

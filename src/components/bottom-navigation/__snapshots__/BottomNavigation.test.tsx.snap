@@ -4,7 +4,9 @@ exports[`@cms/core/[object Object] should create snapshot 1`] = `
 <div>
   <div
     class="btm-nav  
-           
+          
+          
+
         "
   />
 </div>

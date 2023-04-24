@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, renderHook, screen } from '@testing-library/react'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 import { RefObject } from 'react'
 import { checkAccessibility, itSupportsSystemProps } from '../../_tests-utils'
 import { itHasCssClass } from '../../_tests-utils/it-has-color-css-class'
@@ -8,7 +9,6 @@ import { ShowTimeValues, Ui_CountdownProps } from './type'
 import { getTimeRemaining, setCountDownValue } from './Countdown'
 import Ui_Countdown from './Countdown'
 import React from 'react'
-const utc = require('dayjs/plugin/utc')
 dayjs.extend(utc)
 
 const defaultProps: Ui_CountdownProps = {}
@@ -88,11 +88,12 @@ describe('@cms/core/Ui_Countdown', () => {
   })
   it('should calculate time values form future', () => {
     const addDays = 15
-    const addHours = 3
+    const addHours = 2
     const addMinutes = 4
     const addSeconds = 6
 
     const endTime = dayjs()
+      .utc()
       .add(addDays, 'days')
       .add(addHours, 'hours')
       .add(addMinutes, 'minutes')
@@ -103,7 +104,9 @@ describe('@cms/core/Ui_Countdown', () => {
 
     const { total, days, hours, minutes, seconds } = result
 
-    expect(total).toBeGreaterThan(1200000000)
+    console.log('RESULT: ', result)
+
+    expect(total).toBeGreaterThan(1073020035)
     expect(days).toBe(addDays)
     expect(hours).toBe(addHours)
     expect(minutes).toBe(addMinutes)

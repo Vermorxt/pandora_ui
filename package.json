@@ -1,9 +1,10 @@
 {
   "name": "@vermorxt/pandora_ui",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/vermorxt"
+    "registry": "https://npm.pkg.github.com/vermorxt/pandora_ui.git"
   },
-  "version": "0.0.67",
+  "private": false,
+  "version": "0.0.83",
   "scripts": {
     "copy-flags": "mkdir './dist' & mkdir './dist/flags' & cp -R './node_modules/flag-icons/flags/' './dist/flags'",
     "rollup": "rollup -c & yarn copy-flags",

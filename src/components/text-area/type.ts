@@ -18,7 +18,7 @@ export interface Ui_TextArea_singleClass {
 }
 
 export interface Ui_TextAreaProps
-  extends HTMLProps<HTMLSpanElement>,
+  extends HTMLProps<HTMLTextAreaElement>,
     I_Variants,
     I_Ui_Sizes,
     Ui_TextArea_variants,

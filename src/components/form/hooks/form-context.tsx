@@ -1,4 +1,4 @@
-import { InitialFormValues } from 'components/_types/form/initial-form-values'
+import { InitialFormValues } from './../../../components/_types/form/initial-form-values'
 import React, { createContext, FC, FormEvent, ReactNode, useContext } from 'react'
 import {
   Checkbox,

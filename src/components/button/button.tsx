@@ -19,6 +19,7 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
       noAnimation,
       allowFullScreen,
       outline,
+      active,
       ...rest
     }: Ui_ButtonProps,
     ref
@@ -40,6 +41,7 @@ const Ui_Button = forwardRef<HTMLButtonElement, Ui_ButtonProps>(
       ${size && size === 'wide' ? 'btn-wide' : ''} 
       ${loading && loading === true ? 'loading' : ''}
       ${outline && outline === true ? 'btn-outline' : ''}
+      ${active && active === true ? 'btn-active' : ''}
       ${disabled ? 'btn-disabled overflow-hidden' : ''}
       ${noAnimation ? 'no-animation' : ''}
       ${`${(className as string) || ''}`}
